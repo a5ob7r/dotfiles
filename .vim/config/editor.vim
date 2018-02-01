@@ -2,6 +2,8 @@
 
 syntax on
 
+filetype indent plugin on
+
 set showmatch
 
 set virtualedit+=onemore
