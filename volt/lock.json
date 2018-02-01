@@ -1,0 +1,62 @@
+{
+  "version": 2,
+  "trx_id": 7,
+  "current_profile_name": "custom",
+  "repos": [
+    {
+      "type": "git",
+      "trx_id": 2,
+      "path": "github.com/kristijanhusak/vim-hybrid-material",
+      "version": "e878e18914facb584943387fd1fe45b18de49a74"
+    },
+    {
+      "type": "git",
+      "trx_id": 3,
+      "path": "github.com/itchyny/lightline.vim",
+      "version": "6f84195f109d3e7f7ecb5e4a9ae8c5d3009259ac"
+    },
+    {
+      "type": "git",
+      "trx_id": 4,
+      "path": "github.com/KeitaNakamura/neodark.vim",
+      "version": "d850315a8c0c8f49604db0a56f4b99cbe5a1ae45"
+    },
+    {
+      "type": "git",
+      "trx_id": 5,
+      "path": "github.com/scrooloose/nerdtree",
+      "version": "57788abd6fab6ec928b29a5619b8c0b1f686047e"
+    },
+    {
+      "type": "git",
+      "trx_id": 6,
+      "path": "github.com/tiagofumo/vim-nerdtree-syntax-highlight",
+      "version": "30dcd52f2cda981555f2d83e1a9ff876e7715f49"
+    },
+    {
+      "type": "git",
+      "trx_id": 7,
+      "path": "github.com/vivien/vim-linux-coding-style",
+      "version": "7da66c1b34dc2976a70c9393c7e0c9f47e129e89"
+    }
+  ],
+  "profiles": [
+    {
+      "name": "default",
+      "repos_path": [],
+      "use_vimrc": true,
+      "use_gvimrc": true
+    },
+    {
+      "name": "custom",
+      "repos_path": [
+        "github.com/itchyny/lightline.vim",
+        "github.com/KeitaNakamura/neodark.vim",
+        "github.com/scrooloose/nerdtree",
+        "github.com/vivien/vim-linux-coding-style"
+      ],
+      "use_vimrc": true,
+      "use_gvimrc": true
+    }
+  ]
+}
