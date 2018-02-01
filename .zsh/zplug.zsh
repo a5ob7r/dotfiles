@@ -2,7 +2,7 @@
 # zplug
 # -------------------------------------
 
-source ~/.zplug/init.zsh
+source $ZPLUG_HOME/init.zsh
 
 # 'zplug' self update
 zplug 'zplug/zplug', hook-build:'zplug --self-manage'
