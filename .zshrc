@@ -81,6 +81,14 @@ setopt nobeep
 setopt notify
 setopt print_eight_bit
 
+setopt extended_history
+setopt append_history
+setopt hist_verify
+setopt hist_expire_dups_first
+
+setopt share_history
+setopt hist_ignore_dups
+
 
 echo "${fg_bold[red]} _____      _          _ _  ${reset_color}"
 echo "${fg_bold[red]}|__  /  ___| |__   ___| | | ${reset_color}"
