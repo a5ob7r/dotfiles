@@ -1,18 +1,13 @@
-# -------------------------------------
-# Alias
-# -------------------------------------
-
-setopt complete_aliases
-
-# alias ezsh='vim ~/.zshrc'
-# alias szsh='source ~/.zshrc'
 alias grep="grep --color -n -I --exclude='*.svn-*' --exclude='entries' --exclude='*/cache/*'"
-alias tree="tree -N"
-alias ls="ls -AFG"
-alias la="ls -hlT"
+alias la="ls -hlTAFG"
 
 if [ -f /Applications/MacVim.app/Contents/MacOS/Vim ]; then
-  alias vi='env LANG=ja_JP.UTF-8 /Applications/MacVim.app/Contents/MacOS/Vim "$@"'
-  alias vim='env LANG=ja_JP.UTF-8 /Applications/MacVim.app/Contents/MacOS/Vim "$@"'
+    VIM_ALIAS='env LANG=ja_JP.UTF-8 /Applications/MacVim.app/Contents/MacOS/Vim "$@"'
+    alias vi=${VIM_ALIAS}
+    alias vim=${VIM_ALIAS}
+fi
+
+if type tree > /dev/null 2>&1; then
+    alias tree="tree -N"
 fi
 
