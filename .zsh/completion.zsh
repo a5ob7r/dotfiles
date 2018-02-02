@@ -1,22 +1,3 @@
-# -------------------------------------
-# Completion
-# -------------------------------------
-
-setopt auto_menu
-setopt auto_param_slash
-setopt mark_dirs
-setopt menu_complete
-setopt list_packed
-setopt list_types
-setopt complete_in_word
-setopt always_last_prompt
-setopt auto_param_keys
-
-# setopt auto_list
-setopt extended_glob
-setopt magic_equal_subst
-setopt hist_expand
-
 autoload -Uz compinit && compinit -u
 
 zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z} r:|[._-]=*'
