@@ -8,6 +8,8 @@
 # export LSCOLORS=ExFxBxDxCxegedabagacad
 
 export PAGER=less
+export LESS='-R'
+export LESSOPEN='| /usr/local/bin/src-hilite-lesspipe.sh  %s'
 
 export LANG=ja_JP.UTF-8
 export LC_TIME="C"
