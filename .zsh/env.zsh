@@ -1,4 +1,5 @@
 # environment
+bindkey -e
 export LANG=ja_JP.UTF-8
 export LC_TIME="C"
 
@@ -25,7 +26,7 @@ path=(
 # add anyanv commnad path to $PATH when no the command path
 if [ -d $HOME/.anyenv ] ; then
     export PATH="$HOME/.anyenv/bin:$PATH"
-    eval "$(anyenv init -)"
+    eval "$(anyenv init - --no-rehash)"
 
     # correspond tmux
     for D in `\ls $HOME/.anyenv/envs`
