@@ -1,3 +1,5 @@
+source $HOME/dotfiles/.zsh/env.zsh
+source $HOME/dotfiles/.zsh/tmux.zsh
 source $HOME/dotfiles/.zsh/zplug.zsh
 source $HOME/dotfiles/.zsh/alias.zsh
 source $HOME/dotfiles/.zsh/completion.zsh
