@@ -17,9 +17,9 @@ typeset -U path PATH
 
 # add $path
 path=(
-    '/usr/local/bin'(N-/)
-    '$HOME/bin'(N-/)
-    '/Library/TeX/texbin'(N-/)
+    /usr/local/bin(N-/)
+    $HOME/bin(N-/)
+    /Library/TeX/texbin(N-/)
     $path
 )
 
