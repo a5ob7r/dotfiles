@@ -14,10 +14,13 @@ export ZPLUG_HOME=$HOME/dotfiles/.zplug
 # prevent adding duplication path
 typeset -U path PATH
 
-# add $PATH
-export PATH="/usr/local/bin:$PATH"
-export PATH="$HOME/bin/:$PATH"
-export PATH="/Library/TeX/texbin/:$PATH"
+# add $path
+path=(
+    '/usr/local/bin'(N-/)
+    '$HOME/bin'(N-/)
+    '/Library/TeX/texbin'(N-/)
+    $path
+)
 
 # add anyanv commnad path to $PATH when no the command path
 if [ -d $HOME/.anyenv ] ; then
