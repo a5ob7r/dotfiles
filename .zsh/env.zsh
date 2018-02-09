@@ -11,17 +11,24 @@ export VISUAL=vim
 export VOLTPATH=$HOME/dotfiles/volt
 export ZPLUG_HOME=$HOME/dotfiles/.zplug
 
+# prevent adding duplication path
+typeset -U path PATH
+
 # add $PATH
 export PATH="/usr/local/bin:$PATH"
 export PATH="$HOME/bin/:$PATH"
 export PATH="/Library/TeX/texbin/:$PATH"
 
 # add anyanv commnad path to $PATH when no the command path
-if ! type anyenv > /dev/null 2>&1; then
-    if [ -d $HOME/.anyenv ] ; then
-        export PATH="$HOME/.anyenv/bin:$PATH"
-        eval "$(anyenv init -)"
-    fi
+if [ -d $HOME/.anyenv ] ; then
+    export PATH="$HOME/.anyenv/bin:$PATH"
+    eval "$(anyenv init -)"
+
+    # correspond tmux
+    for D in `\ls $HOME/.anyenv/envs`
+    do
+        export PATH="$HOME/.anyenv/envs/$D/shims:$PATH"
+    done
 fi
 
 # less source highlight
