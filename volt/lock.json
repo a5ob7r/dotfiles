@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "trx_id": 7,
+  "trx_id": 8,
   "current_profile_name": "custom",
   "repos": [
     {
@@ -38,6 +38,12 @@
       "trx_id": 7,
       "path": "github.com/vivien/vim-linux-coding-style",
       "version": "7da66c1b34dc2976a70c9393c7e0c9f47e129e89"
+    },
+    {
+      "type": "git",
+      "trx_id": 8,
+      "path": "github.com/Shougo/denite.nvim",
+      "version": "b16579be4431a7eb708deb17d73ec641a8c89a54"
     }
   ],
   "profiles": [
@@ -53,7 +59,8 @@
         "github.com/itchyny/lightline.vim",
         "github.com/KeitaNakamura/neodark.vim",
         "github.com/scrooloose/nerdtree",
-        "github.com/vivien/vim-linux-coding-style"
+        "github.com/vivien/vim-linux-coding-style",
+        "github.com/Shougo/denite.nvim"
       ],
       "use_vimrc": true,
       "use_gvimrc": true
