@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "trx_id": 11,
+  "trx_id": 12,
   "current_profile_name": "custom",
   "repos": [
     {
@@ -44,6 +44,12 @@
       "trx_id": 8,
       "path": "github.com/Shougo/denite.nvim",
       "version": "b16579be4431a7eb708deb17d73ec641a8c89a54"
+    },
+    {
+      "type": "git",
+      "trx_id": 12,
+      "path": "github.com/kannokanno/previm",
+      "version": "f9cb0db8bd2148ccb505f816443ab5d75fc29bfe"
     }
   ],
   "profiles": [
@@ -58,7 +64,8 @@
         "github.com/KeitaNakamura/neodark.vim",
         "github.com/scrooloose/nerdtree",
         "github.com/vivien/vim-linux-coding-style",
-        "github.com/Shougo/denite.nvim"
+        "github.com/Shougo/denite.nvim",
+        "github.com/kannokanno/previm"
       ]
     }
   ]
