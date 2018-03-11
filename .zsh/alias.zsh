@@ -9,3 +9,7 @@ if type tree > /dev/null 2>&1; then
     alias tree="tree -N"
 fi
 
+if type exa > /dev/null 2>&1; then
+    alias ll='exa -lahg'
+fi
+
