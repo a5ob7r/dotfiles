@@ -1,5 +1,8 @@
 function! s:config()
   " Plugin configuration like the code written in vimrc.
+  let g:lightline = {
+      \ 'colorscheme': 'neodark',
+      \ }
 endfunction
 
 function! s:loaded_on()

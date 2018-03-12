@@ -2,15 +2,6 @@ function! s:config()
   " Plugin configuration like the code written in vimrc.
   let g:neodark#background='#202020'
   colorscheme neodark
-
-  " if has("gui_running")
-  "   let g:neodark#use_256color = 0
-  " else
-  "   let g:neodark#use_256color = 1
-  " endif
-
-  let g:lightline = {}
-  let g:lightline.colorscheme = 'neodark'
 endfunction
 
 function! s:loaded_on()
