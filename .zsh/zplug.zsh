@@ -4,8 +4,8 @@ source $ZPLUG_HOME/init.zsh
 zplug 'zplug/zplug', hook-build:'zplug --self-manage'
 
 # plugins
-# zplug "zsh-users/zsh-completions"
-# zplug "felixr/docker-zsh-completion"
+zplug "zsh-users/zsh-completions"
+zplug "felixr/docker-zsh-completion"
 
 zplug "zsh-users/zsh-autosuggestions"
 zplug "zsh-users/zsh-syntax-highlighting"
