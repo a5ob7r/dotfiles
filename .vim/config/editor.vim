@@ -2,8 +2,6 @@
 
 syntax on
 
-filetype indent plugin on
-
 set showmatch
 
 set virtualedit+=onemore
@@ -26,10 +24,17 @@ set list
 set listchars=tab:▸\ ,eol:↲,extends:❯,precedes:❮
 
 " tab
-set expandtab
 set tabstop=4
 set shiftwidth=4
 set softtabstop=4
+set expandtab
+
+filetype indent plugin on
+augroup fileTypeIndent
+    autocmd!
+    autocmd FileType ruby   setlocal ts=2 sw=2 sts=2 ex
+    autocmd FileType eruby  setlocal ts=2 sw=2 sts=2 ex
+augroup END
 
 set smartindent
 
