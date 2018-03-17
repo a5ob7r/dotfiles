@@ -3,8 +3,8 @@
 " key config
 nnoremap j gj
 nnoremap k gk
-" nnoremap : ;
-" nnoremap ; :
+
+inoremap <silent> jj <ESC>
 
 nnoremap <Esc><Esc> :nohlsearch<CR><Esc>
 
