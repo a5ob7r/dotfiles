@@ -1,6 +1,7 @@
 function! s:config()
   " Plugin configuration like the code written in vimrc.
-  nnoremap ntt :NERDTreeToggle<CR>
+  let g:mapleader=" "
+  nnoremap <leader>n :NERDTreeToggle<CR>
   let g:NERDTreeQuitOnOpen=1
 endfunction
 
