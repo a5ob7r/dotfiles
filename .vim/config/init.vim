@@ -27,3 +27,11 @@ set cmdheight=2
 
 set visualbell
 
+" command line mode menu
+set wildmenu
+set wildmode=longest:full,full
+
+if executable("rg")
+    set grepprg=rg\ --vimgrep\ --no-heading
+    set grepformat=%f:%l:%c:%m,%f:%l:%m
+endif
