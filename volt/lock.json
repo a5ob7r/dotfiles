@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "trx_id": 12,
+  "trx_id": 13,
   "current_profile_name": "custom",
   "repos": [
     {
@@ -50,6 +50,12 @@
       "trx_id": 12,
       "path": "github.com/kannokanno/previm",
       "version": "f9cb0db8bd2148ccb505f816443ab5d75fc29bfe"
+    },
+    {
+      "type": "git",
+      "trx_id": 13,
+      "path": "github.com/junegunn/fzf.vim",
+      "version": "a362bc58f1fbbfbbbef749851006e46155979c7d"
     }
   ],
   "profiles": [
@@ -65,7 +71,8 @@
         "github.com/scrooloose/nerdtree",
         "github.com/vivien/vim-linux-coding-style",
         "github.com/Shougo/denite.nvim",
-        "github.com/kannokanno/previm"
+        "github.com/kannokanno/previm",
+        "github.com/junegunn/fzf.vim"
       ]
     }
   ]

@@ -8,6 +8,7 @@ source $HOME/dotfiles/.zsh/completion.zsh
 source $HOME/dotfiles/.zsh/search_hist.zsh
 source $HOME/dotfiles/.zsh/option.zsh
 source $HOME/dotfiles/.zsh/other.zsh
+source $HOME/dotfiles/.zsh/fzf.zsh
 
 
 echo "${fg_bold[red]} _____      _          _ _  ${reset_color}"
