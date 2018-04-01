@@ -15,6 +15,7 @@ function! s:config()
   let g:mapleader=" "
   noremap <leader>b :Buffers<CR>
   noremap <leader>f :Files<CR>
+  noremap <leader>/ :BLines<CR>
 endfunction
 
 function! s:loaded_on()
