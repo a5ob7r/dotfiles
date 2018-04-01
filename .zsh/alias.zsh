@@ -1,4 +1,3 @@
-alias grep="grep --color -n -I --exclude='*.svn-*' --exclude='entries' --exclude='*/cache/*'"
 alias la="ls -hlTAFG"
 
 if [ -f /Applications/MacVim.app/Contents/MacOS/Vim ]; then
@@ -12,4 +11,3 @@ fi
 if type exa > /dev/null 2>&1; then
     alias ll='exa -lahg'
 fi
-
