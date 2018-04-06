@@ -1,10 +1,9 @@
 function! s:on_load_pre()
   " Plugin configuration like the code written in vimrc.
-  let g:previm_open_cmd='open -a Firefox'
-  augroup PrevimSettings
-    autocmd!
-    autocmd BufNewFile,BufRead *.{md,mdwn,mkd,mkdn,mark*} set filetype=markdown
-augroup END
+  " This configuration is executed *before* a plugin is loaded.
+  python3 from powerline.vim import setup as powerline_setup
+  python3 powerline_setup()
+  python3 del powerline_setup
 endfunction
 
 function! s:on_load_post()
