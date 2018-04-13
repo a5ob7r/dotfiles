@@ -20,7 +20,7 @@
     {
       "type": "git",
       "path": "github.com/scrooloose/nerdtree",
-      "version": "57788abd6fab6ec928b29a5619b8c0b1f686047e"
+      "version": "727770147a7589ab3a06722f4852c0237c8b3549"
     },
     {
       "type": "git",
@@ -35,17 +35,17 @@
     {
       "type": "git",
       "path": "github.com/Shougo/denite.nvim",
-      "version": "b16579be4431a7eb708deb17d73ec641a8c89a54"
+      "version": "0f8d216b6bcb4be708dce1adfe1a789fff57ca07"
     },
     {
       "type": "git",
       "path": "github.com/kannokanno/previm",
-      "version": "f9cb0db8bd2148ccb505f816443ab5d75fc29bfe"
+      "version": "506dccb2a68af2b20e9ee010df51581f3840d28a"
     },
     {
       "type": "git",
       "path": "github.com/junegunn/fzf.vim",
-      "version": "a362bc58f1fbbfbbbef749851006e46155979c7d"
+      "version": "dcf49751e934c3e28ba591df7c8ae7ca0499ebc2"
     },
     {
       "type": "git",
