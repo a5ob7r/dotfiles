@@ -15,12 +15,12 @@
     {
       "type": "git",
       "path": "github.com/KeitaNakamura/neodark.vim",
-      "version": "d850315a8c0c8f49604db0a56f4b99cbe5a1ae45"
+      "version": "c966731b54a64b379ca5519c25d3cedb90df1d31"
     },
     {
       "type": "git",
       "path": "github.com/scrooloose/nerdtree",
-      "version": "727770147a7589ab3a06722f4852c0237c8b3549"
+      "version": "9af083a6d13b7d86f94f43de18d42b6e212f8dbe"
     },
     {
       "type": "git",
@@ -35,7 +35,7 @@
     {
       "type": "git",
       "path": "github.com/Shougo/denite.nvim",
-      "version": "0f8d216b6bcb4be708dce1adfe1a789fff57ca07"
+      "version": "3e0356c1dbc0e596855f60c9a36318072103fe00"
     },
     {
       "type": "git",
@@ -45,12 +45,12 @@
     {
       "type": "git",
       "path": "github.com/junegunn/fzf.vim",
-      "version": "dcf49751e934c3e28ba591df7c8ae7ca0499ebc2"
+      "version": "ce82e10630830bc37a50f706cc3b7216d24e5009"
     },
     {
       "type": "git",
       "path": "github.com/powerline/powerline",
-      "version": "e52754d5c5c6a82238b43a5687a5c4c647c9ebc1"
+      "version": "e3c34e713634afa051441ed5df4d74ec1ce6177b"
     }
   ],
   "profiles": [
