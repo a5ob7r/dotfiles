@@ -8,8 +8,8 @@ set_zsh_plugins() {
   zplug "zsh-users/zsh-completions"
   zplug "felixr/docker-zsh-completion"
   if zplug check "felixr/docker-zsh-completion"; then
-      zstyle ':completion:*:*:docker:*' option-stacking yes
-      zstyle ':completion:*:*:docker-*:*' option-stacking yes
+    zstyle ':completion:*:*:docker:*' option-stacking yes
+    zstyle ':completion:*:*:docker-*:*' option-stacking yes
   fi
   
   zplug "zsh-users/zsh-autosuggestions"
@@ -17,8 +17,8 @@ set_zsh_plugins() {
   
   zplug "zsh-users/zsh-history-substring-search"
   if zplug check "zsh-users/zsh-history-substring-search"; then
-      bindkey -M emacs '^P' history-substring-search-up
-      bindkey -M emacs '^N' history-substring-search-down
+    bindkey -M emacs '^P' history-substring-search-up
+    bindkey -M emacs '^N' history-substring-search-down
   fi
   
   zplug "junegunn/fzf-bin", as:command, from:gh-r, rename-to:fzf, use:"*darwin*amd64*"
@@ -33,10 +33,10 @@ set_zsh_plugins() {
 load_zsh_plugins() {
   # Install plugins if there are plugins that have not been installed
   if ! zplug check --verbose; then
-      printf "Install? [y/N]: "
-      if read -q; then
-          echo; zplug install
-      fi
+    printf "Install? [y/N]: "
+    if read -q; then
+      echo; zplug install
+    fi
   fi
   
   # Then, source plugins and add commands to $PATH

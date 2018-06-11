@@ -34,23 +34,23 @@ typeset -U path PATH
 
 # add $path
 path=(
-    /usr/local/bin(N-/)
-    $HOME/bin(N-/)
-    /Library/TeX/texbin(N-/)
-    $path
-    $GOPATH/bin
+  /usr/local/bin(N-/)
+  $HOME/bin(N-/)
+  /Library/TeX/texbin(N-/)
+  $path
+  $GOPATH/bin
 )
 
 # add anyanv commnad path to $PATH when no the command path
 if [ -d $HOME/.anyenv ] ; then
-    export PATH="$HOME/.anyenv/bin:$PATH"
-    eval "$(anyenv init - --no-rehash)"
+  export PATH="$HOME/.anyenv/bin:$PATH"
+  eval "$(anyenv init - --no-rehash)"
 
-    # correspond tmux
-    for D in `\ls $HOME/.anyenv/envs`
-    do
-        export PATH="$HOME/.anyenv/envs/$D/shims:$PATH"
-    done
+  # correspond tmux
+  for D in `\ls $HOME/.anyenv/envs`
+  do
+    export PATH="$HOME/.anyenv/envs/$D/shims:$PATH"
+  done
 fi
 
 # autoload
