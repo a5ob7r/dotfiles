@@ -27,7 +27,7 @@ export LS_COLORS='di=34:ln=35:so=32:pi=33:ex=31:bd=46;34:cd=43;34:su=41;30:sg=46
 export VOLTPATH=$HOME/dotfiles/volt
 export ZPLUG_HOME=$HOME/.zplug
 export POWERLINE_ROOT=$HOME/Library/Python/3.6/lib/python/site-packages/powerline
-export GOPATH=$HOME
+export GOPATH=$HOME/go
 
 # prevent adding duplication path
 typeset -U path PATH
