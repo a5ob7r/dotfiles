@@ -7,10 +7,6 @@ export PAGER=less
 export EDITOR=vim
 export VISUAL=vim
 
-# less source highlight
-export LESS='-R'
-export LESSOPEN='| /usr/local/bin/src-hilite-lesspipe.sh  %s'
-
 # colorized for man with less
 export LESS_TERMCAP_mb=$'\E[01;31m'      # Begins blinking.
 export LESS_TERMCAP_md=$'\E[01;31m'      # Begins bold.
