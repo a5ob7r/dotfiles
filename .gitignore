@@ -2,7 +2,3 @@
 /.vim/pack
 
 /volt/repos
-
-/.zsh/zsh_histfile
-
-/.zplug
