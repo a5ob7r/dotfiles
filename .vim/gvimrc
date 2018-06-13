@@ -1,5 +1,0 @@
-set t_Co=256
-set guifont=RictyDiminishedDiscord-with-icons-Regular:h14
-" set antialias
-"set transparency=5
-"set blurradius=20

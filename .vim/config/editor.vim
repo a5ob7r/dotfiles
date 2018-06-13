@@ -1,5 +1,3 @@
-"" editor.vim
-
 syntax on
 
 set showmatch

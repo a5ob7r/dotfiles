@@ -1,5 +1,3 @@
-"" init.vim
-
 set nocompatible
 set encoding=utf-8
 
@@ -32,6 +30,6 @@ set wildmenu
 set wildmode=longest:full,full
 
 if executable("rg")
-    set grepprg=rg\ --vimgrep\ --no-heading
-    set grepformat=%f:%l:%c:%m,%f:%l:%m
+  set grepprg=rg\ --vimgrep\ --no-heading
+  set grepformat=%f:%l:%c:%m,%f:%l:%m
 endif
