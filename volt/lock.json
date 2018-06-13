@@ -34,11 +34,6 @@
     },
     {
       "type": "git",
-      "path": "github.com/Shougo/denite.nvim",
-      "version": "3e0356c1dbc0e596855f60c9a36318072103fe00"
-    },
-    {
-      "type": "git",
       "path": "github.com/kannokanno/previm",
       "version": "506dccb2a68af2b20e9ee010df51581f3840d28a"
     },
@@ -69,7 +64,6 @@
         "github.com/KeitaNakamura/neodark.vim",
         "github.com/scrooloose/nerdtree",
         "github.com/vivien/vim-linux-coding-style",
-        "github.com/Shougo/denite.nvim",
         "github.com/kannokanno/previm",
         "github.com/junegunn/fzf.vim",
         "github.com/powerline/powerline",
