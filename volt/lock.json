@@ -51,6 +51,11 @@
       "type": "git",
       "path": "github.com/powerline/powerline",
       "version": "e3c34e713634afa051441ed5df4d74ec1ce6177b"
+    },
+    {
+      "type": "git",
+      "path": "github.com/mattn/emmet-vim",
+      "version": "f5b185e3a27d8db82b93bf7070387a332395abe1"
     }
   ],
   "profiles": [
@@ -67,7 +72,8 @@
         "github.com/Shougo/denite.nvim",
         "github.com/kannokanno/previm",
         "github.com/junegunn/fzf.vim",
-        "github.com/powerline/powerline"
+        "github.com/powerline/powerline",
+        "github.com/mattn/emmet-vim"
       ]
     }
   ]
