@@ -35,10 +35,10 @@ typeset -U path PATH
 # add $path
 path=(
   /usr/local/bin(N-/)
-  $HOME/bin(N-/)
-  /Library/TeX/texbin(N-/)
   $path
-  $GOPATH/bin
+  $HOME/bin(N-/)
+  $GOPATH/bin(N-/)
+  /Library/TeX/texbin(N-/)
 )
 
 # add anyanv commnad path to $PATH when no the command path
