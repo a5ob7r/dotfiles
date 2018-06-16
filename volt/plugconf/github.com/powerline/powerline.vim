@@ -1,9 +1,10 @@
 function! s:on_load_pre()
   " Plugin configuration like the code written in vimrc.
   " This configuration is executed *before* a plugin is loaded.
-  python3 from powerline.vim import setup as powerline_setup
-  python3 powerline_setup()
-  python3 del powerline_setup
+  python3
+        \ from powerline.vim import setup as powerline_setup;
+        \ powerline_setup();
+        \ del powerline_setup
 endfunction
 
 function! s:on_load_post()
