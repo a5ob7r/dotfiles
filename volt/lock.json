@@ -4,16 +4,6 @@
   "repos": [
     {
       "type": "git",
-      "path": "github.com/kristijanhusak/vim-hybrid-material",
-      "version": "e878e18914facb584943387fd1fe45b18de49a74"
-    },
-    {
-      "type": "git",
-      "path": "github.com/itchyny/lightline.vim",
-      "version": "6f84195f109d3e7f7ecb5e4a9ae8c5d3009259ac"
-    },
-    {
-      "type": "git",
       "path": "github.com/KeitaNakamura/neodark.vim",
       "version": "c966731b54a64b379ca5519c25d3cedb90df1d31"
     },
@@ -21,11 +11,6 @@
       "type": "git",
       "path": "github.com/scrooloose/nerdtree",
       "version": "9af083a6d13b7d86f94f43de18d42b6e212f8dbe"
-    },
-    {
-      "type": "git",
-      "path": "github.com/tiagofumo/vim-nerdtree-syntax-highlight",
-      "version": "30dcd52f2cda981555f2d83e1a9ff876e7715f49"
     },
     {
       "type": "git",
