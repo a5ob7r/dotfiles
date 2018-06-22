@@ -28,7 +28,7 @@ set softtabstop=2
 set expandtab
 
 " indent
-filetype indent on
+filetype indent plugin on
 set cindent
 
 " search
