@@ -10,3 +10,5 @@ fi
 if type docker-compose > /dev/null 2>&1; then
   alias dkcp='docker-compose'
 fi
+
+alias cdh='cd ~'
