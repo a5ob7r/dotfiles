@@ -28,6 +28,10 @@ export ZPLUG_HOME=$HOME/.zplug
 export POWERLINE_ROOT=$HOME/Library/Python/3.6/lib/python/site-packages/powerline
 export GOPATH=$HOME/go
 
+export FZF_DEFAULT_OPTS='--reverse'
+export FZF_DEFAULT_COMMAND='rg --files --hidden --follow --glob "!.git/*"'
+export FZF_TMUX=1
+
 # prevent adding duplication path
 typeset -U path PATH
 

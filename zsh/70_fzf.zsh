@@ -1,7 +1,3 @@
-export FZF_DEFAULT_OPTS='--reverse'
-export FZF_DEFAULT_COMMAND='rg --files --hidden --follow --glob "!.git/*"'
-export FZF_TMUX=1
-
 # Key bindings
 # ------------
 if [[ $- == *i* ]]; then
