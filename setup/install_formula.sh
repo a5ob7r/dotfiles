@@ -10,6 +10,7 @@ install_formula() {
   brew install zsh --without-etcdir
   brew install tmux
   brew install reattach-to-user-namespace
+  brew install fzf
   
   # option formulas
   brew install source-highlight

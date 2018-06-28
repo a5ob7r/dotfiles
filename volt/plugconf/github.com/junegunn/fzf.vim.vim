@@ -1,6 +1,6 @@
 function! s:on_load_pre()
   " Plugin configuration like the code written in vimrc.
-  source $ZPLUG_HOME/repos/junegunn/fzf/plugin/fzf.vim
+  source /usr/local/opt/fzf/plugin/fzf.vim
 
   let g:fzf_buffers_jump = 1
 

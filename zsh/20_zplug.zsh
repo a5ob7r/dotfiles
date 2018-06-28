@@ -14,9 +14,6 @@ set_zsh_plugins() {
     bindkey -M emacs '^N' history-substring-search-down
   fi
   
-  zplug "junegunn/fzf-bin", as:command, from:gh-r, rename-to:fzf, use:"*darwin*amd64*"
-  zplug "junegunn/fzf", as:command, use:bin/fzf-tmux
-  
   zplug "b4b4r07/enhancd", use:init.sh
   
   zplug "mafredri/zsh-async", from:github
