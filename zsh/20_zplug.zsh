@@ -8,11 +8,6 @@ set_zsh_plugins() {
   zplug "zsh-users/zsh-completions"
   zplug "zsh-users/zsh-autosuggestions"
   zplug "zsh-users/zsh-syntax-highlighting", defer:2
-  zplug "zsh-users/zsh-history-substring-search"
-  if zplug check "zsh-users/zsh-history-substring-search"; then
-    bindkey -M emacs '^P' history-substring-search-up
-    bindkey -M emacs '^N' history-substring-search-down
-  fi
   
   zplug "b4b4r07/enhancd", use:init.sh
   
