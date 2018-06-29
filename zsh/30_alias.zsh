@@ -12,3 +12,4 @@ if type docker-compose > /dev/null 2>&1; then
 fi
 
 alias cdh='cd ~'
+alias g='git'
