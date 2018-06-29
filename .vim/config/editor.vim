@@ -5,6 +5,7 @@ set showmatch
 set virtualedit+=onemore
 set backspace=indent,eol,start
 
+set modeline
 set breakindent
 set showbreak=>>
 set breakindentopt=shift:2,sbr
