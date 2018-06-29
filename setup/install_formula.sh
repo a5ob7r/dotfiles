@@ -4,22 +4,24 @@ install_formula() {
   brew update
   
   # essential formulas
-  brew install git
-  brew install tig
-  brew install vim
-  brew install zsh --without-etcdir
-  brew install tmux
-  brew install reattach-to-user-namespace
-  brew install fzf
+  brew install \
+    git \
+    tig \
+    vim \
+    zsh --without-etcdir \
+    tmux \
+    reattach-to-user-namespace \
+    fzf
   
   # option formulas
-  brew install source-highlight
-  brew install exa
-  brew install ripgrep
-  brew install direnv
-  #brew install grv
-  #brew install the_silver_searcher
-  #brew install htop
+  brew install \
+    source-highlight \
+    exa \
+    ripgrep \
+    direnv \
+    #grv \
+    #the_silver_searcher \
+    #htop
 }
 
 # check brew is installed
