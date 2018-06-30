@@ -10,7 +10,6 @@ install_formula() {
     vim \
     zsh --without-etcdir \
     tmux \
-    reattach-to-user-namespace \
     fzf
   
   # option formulas
