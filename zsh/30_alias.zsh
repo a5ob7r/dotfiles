@@ -13,3 +13,4 @@ fi
 
 alias cdh='cd ~'
 alias g='git'
+alias shinit='exec $SHELL -l'
