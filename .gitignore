@@ -1,4 +1,5 @@
 /.vim/tmp/*
 /.vim/pack
+/.vim/.netrwhist
 
 /volt/repos
