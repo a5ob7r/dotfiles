@@ -9,5 +9,5 @@ unlink:
 	@$(foreach dotfile, $(DOTFILES), unlink $(HOME)/$(dotfile);)
 
 brew:
-	@script/install_brew.sh
-	@script/install_formula.sh
+	@etc/script/macos/install_brew.sh
+	@etc/script/macos/install_formula.sh
