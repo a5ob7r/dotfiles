@@ -36,13 +36,28 @@ export FZF_TMUX=1
 typeset -U path PATH
 
 # add $path
-path=(
-  /usr/local/bin(N-/)
-  $path
+export path=(
   $HOME/bin(N-/)
   $GOPATH/bin(N-/)
-  /Library/TeX/texbin(N-/)
+  $HOME/.local/bin(N-/)
+  /usr/local/bin(N-/)
+  $path
 )
+
+# add path per OS type
+case $OSTYPE in
+  darwin*)
+    export path=(
+      /Library/TeX/texbin(N-/)
+      $path
+    )
+    ;;
+  linux*)
+    export path=(
+      $path
+    )
+    ;;
+esac
 
 # add anyanv commnad path to $PATH when no the command path
 if [ -d $HOME/.anyenv ] ; then
