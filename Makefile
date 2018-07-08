@@ -3,7 +3,7 @@ DOTFILES_RAW := $(wildcard .??*)
 DOTFILES := $(filter-out $(FINLTER), $(DOTFILES_RAW))
 
 link:
-	@$(foreach dotfile, $(DOTFILES), ln -sfhv dotfiles/$(dotfile) $(HOME)/$(dotfile);)
+	@$(foreach dotfile, $(DOTFILES), ln -sfv dotfiles/$(dotfile) $(HOME)/$(dotfile);)
 
 unlink:
 	@$(foreach dotfile, $(DOTFILES), unlink $(HOME)/$(dotfile);)
