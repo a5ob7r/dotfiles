@@ -1,0 +1,17 @@
+[user]
+	name = a5ob7r
+	email = 12132068+a5ob7r@users.noreply.github.com
+[color]
+	ui = true
+[diff]
+	tool = vimdiff
+[difftool]
+	prompt = false
+[pager]
+	log  = diff-highlight | less
+	show = diff-highlight | less
+	diff = diff-highlight | less
+[ghq]
+	root = ~/src
+[alias]
+	co = checkout
