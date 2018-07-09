@@ -1,7 +1,9 @@
 bindkey -e
 
 # for direnv
-eval "$(direnv hook zsh)"
+if type direnv > /dev/null 2>&1; then
+  eval "$(direnv hook zsh)"
+fi
 
 # define colors
 local DEFAULT=%{$reset_color%}
