@@ -11,4 +11,4 @@ if ! [[ -d $HOME/.config ]]; then
   mkdir $HOME/.config
 fi
 
-ln -sfv $HOME/dotfiles/.config/powerline $HOME/.config/powerline
+ln -sfnv $HOME/dotfiles/.config/powerline $HOME/.config/powerline
