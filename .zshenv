@@ -74,3 +74,7 @@ fi
 # autoload
 autoload -Uz colors && colors
 autoload -Uz compinit && compinit -u
+
+# load local zshenv
+__zshenv_local=$HOME/.zshenv.local
+[ -f $__zshenv_local ] && source $__zshenv_local
