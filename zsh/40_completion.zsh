@@ -4,7 +4,6 @@ zstyle ':completion:*' completer _expand _complete _match _approximate _list
 zstyle ':completion:*' group-name ''
 zstyle ':completion:*' list-separator '->'
 zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}
-zstyle ':completion:*' menu select interactive
 zstyle ':completion:*' use-cache true
 zstyle ':completion:*:messages' format '%F{YELLOW}%d'$DEFAULT
 zstyle ':completion:*:warnings' format '%F{RED}No matches for:''%F{YELLOW} %d'
