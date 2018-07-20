@@ -35,7 +35,6 @@ export WHITE=%{$fg[white]%}
 # external configure
 export VOLTPATH=$HOME/dotfiles/volt
 export ZPLUG_HOME=$HOME/.zplug
-export POWERLINE_ROOT=$HOME/Library/Python/3.6/lib/python/site-packages/powerline
 export GOPATH=$HOME/go
 
 export FZF_DEFAULT_OPTS='--reverse'
