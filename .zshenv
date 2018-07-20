@@ -44,21 +44,6 @@ export path=( \
   $path \
 )
 
-# add path per OS type
-case $OSTYPE in
-  darwin*)
-    export path=( \
-      /Library/TeX/texbin(N-/) \
-      $path \
-    )
-    ;;
-  linux*)
-    export path=( \
-      $path \
-    )
-    ;;
-esac
-
 typeset -U fpath FPATH
 
 export fpath=( \
