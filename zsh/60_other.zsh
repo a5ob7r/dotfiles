@@ -5,10 +5,6 @@ if type direnv > /dev/null 2>&1; then
   eval "$(direnv hook zsh)"
 fi
 
-if type pipenv > /dev/null 2>&1; then
-  eval "$(pipenv --completion)"
-fi
-
 # define colors
 local DEFAULT=%{$reset_color%}
 local RED=%{$fg[red]%}

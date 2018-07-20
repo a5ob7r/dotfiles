@@ -59,6 +59,13 @@ case $OSTYPE in
     ;;
 esac
 
+typeset -U fpath FPATH
+
+export fpath=( \
+  $HOME/dotfiles/zsh/compdefs(N-/) \
+  $fpath \
+  )
+
 # add anyanv commnad path to $PATH when no the command path
 if [ -d $HOME/.anyenv ] ; then
   export PATH="$HOME/.anyenv/bin:$PATH"
