@@ -5,10 +5,10 @@ zstyle ':completion:*' group-name ''
 zstyle ':completion:*' list-separator '->'
 zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}
 zstyle ':completion:*' use-cache true
-zstyle ':completion:*:messages' format '%F{YELLOW}%d'$DEFAULT
-zstyle ':completion:*:warnings' format '%F{RED}No matches for:''%F{YELLOW} %d'
+zstyle ':completion:*:messages' format $YELLOW'%d'$DEFAULT
+zstyle ':completion:*:warnings' format $RED'No matches for: '$YELLOW'%d'
 zstyle ':completion:*:options' description 'yes'
-zstyle ':completion:*:descriptions' format '%F{yellow}Completing %B%d%b%f'
+zstyle ':completion:*:descriptions' format $YELLOW'Completing %B%d%b%f'
 zstyle ':completion:*:manuals' separate-sections true
 zstyle ':completion:*:default' menu select=2
 

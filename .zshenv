@@ -22,6 +22,16 @@ export HISTSIZE=100000
 export SAVEHIST=100000
 export HISTTIMEFORMAT="[%Y/%M/%D %H:%M:%S] "
 
+# define colors
+export DEFAULT=%{$reset_color%}
+export RED=%{$fg[red]%}
+export GREEN=%{$fg[green]%}
+export YELLOW=%{$fg[yellow]%}
+export BLUE=%{$fg[blue]%}
+export PURPLE=%{$fg[purple]%}
+export CYAN=%{$fg[cyan]%}
+export WHITE=%{$fg[white]%}
+
 # external configure
 export VOLTPATH=$HOME/dotfiles/volt
 export ZPLUG_HOME=$HOME/.zplug
