@@ -1,4 +1,7 @@
 set diff-highlight = true
+set diff-options = -m --first-parent
+set ignore-case = true
+set refresh-mode = auto
 
 # Area                  Foreground      Background         Options
 # ==============================================================================
