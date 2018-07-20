@@ -1,6 +1,3 @@
-set blob-view-line-number = yes
-set blame-view-line-number = yes
-set diff-view   = line-number:yes,interval=1 text:yes,commit-title-overflow=no
 set diff-highlight = true
 
 # Area                  Foreground      Background         Options
@@ -73,4 +70,3 @@ color cursor            default     237
 # color "CommitDate: "    67          default
 # color "Merge: "         161         default
 # color diff-stat         166         234
-
