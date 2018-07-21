@@ -1,5 +1,5 @@
 if type exa > /dev/null 2>&1; then
-  alias ll='exa -lg'
+  alias ll='exa -1'
   alias la='exa -lag'
 fi
 
