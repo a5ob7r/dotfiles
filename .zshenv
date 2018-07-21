@@ -76,8 +76,11 @@ if [ $SHLVL -eq 1 ]; then
   # load local zshenv
   __zshenv_local=$HOME/.zshenv.local
   [ -f $__zshenv_local ] && source $__zshenv_local
+
+  # export LS_COLORS
+  eval $(dircolors -b $HOME/.dircolors)
 fi
 
 # autoload
 autoload -Uz colors && colors
-autoload -Uz compinit && compinit -u
+#autoload -Uz compinit && compinit -u

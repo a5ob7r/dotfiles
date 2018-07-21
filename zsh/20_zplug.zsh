@@ -13,11 +13,6 @@ set_zsh_plugins() {
   
   zplug "mafredri/zsh-async", from:github
   zplug "sindresorhus/pure", use:pure.zsh, from:github, as:theme
-
-  zplug "trapd00r/LS_COLORS"
-  if zplug check "trapd00r/LS_COLORS"; then
-    eval $( dircolors -b $ZPLUG_HOME/repos/trapd00r/LS_COLORS/LS_COLORS )
-  fi
 }
 
 load_zsh_plugins() {
