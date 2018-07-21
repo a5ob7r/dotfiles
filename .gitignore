@@ -5,3 +5,5 @@
 /volt/repos
 
 /tmux/powerline.conf
+
+*.zwc
