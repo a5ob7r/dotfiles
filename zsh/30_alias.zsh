@@ -1,13 +1,13 @@
-if type exa > /dev/null 2>&1; then
+if (( $+commands[exa] )); then
   alias ll='exa -1'
   alias la='exa -lag'
 fi
 
-if type docker > /dev/null 2>&1; then
+if (( $+commands[docker] )); then
   alias dk='docker'
 fi
 
-if type docker-compose > /dev/null 2>&1; then
+if (( $+commands[docker-compose] )); then
   alias dkcp='docker-compose'
 fi
 

@@ -1,10 +1,9 @@
-is_exists() { type "$1" >/dev/null 2>&1; return $?; }
 is_tmux_runnning() { [ ! -z "$TMUX" ]; }
 is_ssh_running() { [ ! -z "$SSH_CONECTION" ]; }
 is_shell_called_interactively() { [ ! -z "$PS1" ]; }
 
 tmux_automatically_attach_session() {
-  if ! is_exists 'tmux'; then
+  if ! (( $+commands[tmux] )); then
     echo 'Error: tmux command not found' 2>&1
     return 1
   fi
