@@ -35,7 +35,6 @@ if [ $SHLVL -eq 1 ]; then
 
   # external configure
   export VOLTPATH=$HOME/dotfiles/volt
-  export ZPLUG_HOME=$HOME/.zplug
   export GOPATH=$HOME/go
 
   export FZF_DEFAULT_OPTS='--reverse'
@@ -83,4 +82,4 @@ fi
 
 # autoload
 autoload -Uz colors && colors
-#autoload -Uz compinit && compinit -u
+autoload -Uz compinit && compinit -u
