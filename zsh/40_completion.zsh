@@ -17,3 +17,10 @@ bindkey -M menuselect 'h' vi-backward-char
 bindkey -M menuselect 'j' vi-down-line-or-history
 bindkey -M menuselect 'k' vi-up-line-or-history
 bindkey -M menuselect 'l' vi-forward-char
+
+if [[ $SHLVL -ne 1 ]] && (( $+commands[anyenv] )); then
+  source "$ANYENV_ROOT/completions/anyenv.zsh"
+  for D in `\ls $ANYENV_ROOT/envs`; do
+    source "$ANYENV_ROOT/envs/$D/completions/$D.zsh"
+  done
+fi
