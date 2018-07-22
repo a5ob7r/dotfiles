@@ -37,6 +37,7 @@ if [ $SHLVL -eq 1 ]; then
   export VOLTPATH=$HOME/dotfiles/volt
   export ZPLUG_HOME=$HOME/.zplug
   export GOPATH=$HOME/go
+  export ANYENV_ROOT=$HOME/.anyenv
 
   export FZF_DEFAULT_OPTS='--reverse'
   export FZF_DEFAULT_COMMAND='rg --files --hidden --follow --glob "!.git/*"'
@@ -62,14 +63,14 @@ if [ $SHLVL -eq 1 ]; then
     )
 
   # add anyanv commnad path to $PATH when no the command path
-  if [ -d $HOME/.anyenv ] ; then
-    export PATH="$HOME/.anyenv/bin:$PATH"
+  if [ -d $ANYENV_ROOT ] ; then
+    export PATH="$ANYENV_ROOT/bin:$PATH"
     eval "$(anyenv init - --no-rehash)"
 
     # correspond tmux
-    for D in `\ls $HOME/.anyenv/envs`
+    for D in `\ls $ANYENV_ROOT/envs`
     do
-      export PATH="$HOME/.anyenv/envs/$D/shims:$PATH"
+      export PATH="$ANYENV_ROOT/envs/$D/shims:$PATH"
     done
   fi
 
