@@ -67,6 +67,3 @@ if [ $SHLVL -eq 1 ]; then
   __zshenv_local=$HOME/.zshenv.local
   [ -f $__zshenv_local ] && source $__zshenv_local
 fi
-
-# autoload
-autoload -Uz compinit && compinit -u
