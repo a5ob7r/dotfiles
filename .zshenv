@@ -1,6 +1,4 @@
 if [ $SHLVL -eq 1 ]; then
-  export DOTFILES="$HOME/dotfiles"
-
   # environment
   export LANG=en_US.UTF-8
   export LC_TIME="C"
@@ -24,6 +22,8 @@ if [ $SHLVL -eq 1 ]; then
   export HISTSIZE=100000
   export SAVEHIST=100000
   export HISTTIMEFORMAT="[%Y/%M/%D %H:%M:%S] "
+
+  export DOTFILES=${0:A:h}/dotfiles
 
   # external configure
   export VOLTPATH=$DOTFILES/volt
