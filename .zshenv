@@ -1,4 +1,6 @@
 if [ $SHLVL -eq 1 ]; then
+  export DOTFILES="$HOME/dotfiles"
+
   # environment
   export LANG=en_US.UTF-8
   export LC_TIME="C"
