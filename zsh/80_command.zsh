@@ -21,6 +21,6 @@ zshtimes() {
 }
 
 zshcompiles() {
-  local f_zsh=($HOME/.zshrc $HOME/.zshenv `ls -1 $HOME/dotfiles/zsh/*.zsh`)
+  local f_zsh=($HOME/.zshrc $HOME/.zshenv `ls -1 $DOTFILES/zsh/*.zsh`)
   for f in $f_zsh; do zcompile $f; done
 }

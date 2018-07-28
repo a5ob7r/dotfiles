@@ -26,7 +26,7 @@ if [ $SHLVL -eq 1 ]; then
   export HISTTIMEFORMAT="[%Y/%M/%D %H:%M:%S] "
 
   # external configure
-  export VOLTPATH=$HOME/dotfiles/volt
+  export VOLTPATH=$DOTFILES/volt
   export GOPATH=$HOME/go
   export ANYENV_ROOT=$HOME/.anyenv
 
@@ -49,7 +49,7 @@ if [ $SHLVL -eq 1 ]; then
   typeset -U fpath FPATH
 
   export fpath=( \
-    $HOME/dotfiles/zsh/compdefs(N-/) \
+    $DOTFILES/zsh/compdefs(N-/) \
     $fpath \
     )
 

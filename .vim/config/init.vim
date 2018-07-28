@@ -4,7 +4,7 @@ set encoding=utf-8
 " destination directory of swapfile
 set directory=~/.vim/tmp
 
-set viminfo+=n$HOME/dotfiles/.vim/tmp/.viminfo
+set viminfo+=n$DOTFILES/.vim/tmp/.viminfo
 
 set lazyredraw
 set ttyfast
