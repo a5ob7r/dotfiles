@@ -23,7 +23,7 @@ if [ $SHLVL -eq 1 ]; then
   export SAVEHIST=100000
   export HISTTIMEFORMAT="[%Y/%M/%D %H:%M:%S] "
 
-  export DOTFILES=${0:A:h}/dotfiles
+  export DOTFILES=$HOME/dotfiles
 
   # external configure
   export VOLTPATH=$DOTFILES/volt
