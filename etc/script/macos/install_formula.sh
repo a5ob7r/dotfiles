@@ -1,26 +1,30 @@
-#!/bin/sh
+#!/bin/bash
 
 install_formula() {
   brew update
+
+  local formulas=( \
+    "git" \
+    "tig" \
+    "vim" \
+    "zsh --without-etcdir" \
+    "tmux" \
+    "exa" \
+    "ripgrep" \
+    "direnv" \
+    "python" \
+    "hub" \
+    "coreutils" \
+    "bash" \
+    "ctags" \
+    "go" \
+    "htop" \
+    "gibo" \
+    )
   
-  # essential formulas
-  brew install \
-    git \
-    tig \
-    vim \
-    zsh --without-etcdir \
-    tmux \
-    fzf
-  
-  # option formulas
-  brew install \
-    source-highlight \
-    exa \
-    ripgrep \
-    direnv \
-    #grv \
-    #the_silver_searcher \
-    #htop
+  for ((i=0; i<${#formulas[@]}; i++)); do
+    brew install ${formulas[i]}
+  done
 }
 
 # check brew is installed
