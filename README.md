@@ -1,7 +1,7 @@
 # dotfiles
-## Using Tool in This dotfiles
-### zplug
-- <https://github.com/zplug/zplug>
+## dependence tools
+### zplugin
+- <https://github.com/zdharma/zplugin>
 - zsh plugin manager
 
 ### volt
