@@ -2,7 +2,7 @@ set nocompatible
 
 set encoding=utf-8
 " determine character code automatically
-set fileencodings=iso-2022-jp,euc-jp,sjis,utf-8,shift_jis,cp932,ucs-bom
+set fileencodings=utf-8,sjis,shift_jis,iso-2022-jp,euc-jp,cp932,ucs-bom
 
 " destination directory of swapfile
 set directory=~/.vim/tmp
