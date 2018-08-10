@@ -17,5 +17,15 @@
 - statusline and prompt plugin for command line tool
 
 ## Usage
-1. Clone this repository in **$HOME** directory.
+1. Fetch download script and run it.
+```
+# need git
+$ curl https://raw.githubusercontent.com/a5ob7r/dotfiles/master/etc/install.sh | sh
+```
+
 2. Make symbolic link of dot files to $HOME directory.
+```
+$ cd path/to/dotfiles
+
+$ make link
+```
