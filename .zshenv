@@ -8,6 +8,8 @@ if [ $SHLVL -eq 1 ]; then
   export EDITOR=vim
   export VISUAL=vim
 
+  export LESS='-ij10FMRX'
+
   # colorized for man with less
   export LESS_TERMCAP_mb=$'\E[01;31m'      # Begins blinking.
   export LESS_TERMCAP_md=$'\E[01;31m'      # Begins bold.
