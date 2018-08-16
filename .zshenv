@@ -23,7 +23,6 @@ if [[ $SHLVL -eq 1 ]]; then
   export HISTFILE=$HOME/.zsh_history
   export HISTSIZE=100000
   export SAVEHIST=100000
-  export HISTTIMEFORMAT="[%Y/%M/%D %H:%M:%S] "
 
   export DOTFILES=$(dirname $(readlink .zshenv))
 
