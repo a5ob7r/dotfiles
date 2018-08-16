@@ -1,4 +1,4 @@
-if [ $SHLVL -eq 1 ]; then
+if [[ $SHLVL -eq 1 ]]; then
   # environment
   export LANG=en_US.UTF-8
   export LC_TIME="C"
@@ -45,29 +45,28 @@ if [ $SHLVL -eq 1 ]; then
     $GOPATH/bin(N-/) \
     $HOME/.local/bin(N-/) \
     /usr/local/bin(N-/) \
-    $path \
-  )
+    $path(N-/) \
+    )
 
   typeset -U fpath FPATH
 
   export fpath=( \
     $DOTFILES/zsh/compdefs(N-/) \
-    $fpath \
+    $fpath(N-/) \
     )
 
   # add anyanv commnad path to $PATH when no the command path
-  if [ -d $ANYENV_ROOT ] ; then
+  if [[ -d $ANYENV_ROOT ]] ; then
     export PATH="$ANYENV_ROOT/bin:$PATH"
     eval "$(anyenv init - --no-rehash)"
 
     # correspond tmux
-    for D in `\ls $ANYENV_ROOT/envs`
-    do
+    for D in `\ls $ANYENV_ROOT/envs`; do
       export PATH="$ANYENV_ROOT/envs/$D/shims:$PATH"
     done
   fi
 
   # load local zshenv
-  __zshenv_local=$HOME/.zshenv.local
-  [ -f $__zshenv_local ] && source $__zshenv_local
+  _zshenv_local=$HOME/.zshenv.local
+  [[ -f $_zshenv_local ]] && source $_zshenv_local
 fi
