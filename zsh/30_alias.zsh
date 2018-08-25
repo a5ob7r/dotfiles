@@ -11,6 +11,10 @@ if (( $+commands[docker-compose] )); then
   alias dkcp='docker-compose'
 fi
 
+if (( $+commands[tmux] )); then
+  alias t='tmux'
+fi
+
 alias cdh='cd ~'
 alias g='git'
 alias shinit='exec $SHELL -l'
