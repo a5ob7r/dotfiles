@@ -10,7 +10,7 @@
     {
       "type": "git",
       "path": "github.com/scrooloose/nerdtree",
-      "version": "d6032c876c6d6932ab7f07e262a16c9a85a31d5b"
+      "version": "808f5b225b090bb4a94a2c47bb08d1bc1f7f8a4e"
     },
     {
       "type": "git",
@@ -20,32 +20,32 @@
     {
       "type": "git",
       "path": "github.com/kannokanno/previm",
-      "version": "506dccb2a68af2b20e9ee010df51581f3840d28a"
+      "version": "6ab010bd5a76afcd3772559bc78e76edcd0107d0"
     },
     {
       "type": "git",
       "path": "github.com/junegunn/fzf.vim",
-      "version": "033033daa391cb9c98840c29324de167697ada5d"
+      "version": "2eb1bccea9a5ae28f9d0d61c6d20eb29430d7020"
     },
     {
       "type": "git",
       "path": "github.com/powerline/powerline",
-      "version": "6257332372bf9f64d928b6a3b53d2842d9c7e01f"
+      "version": "616ea816c86828d3a1e846da99a958237108da55"
     },
     {
       "type": "git",
       "path": "github.com/mattn/emmet-vim",
-      "version": "f5b185e3a27d8db82b93bf7070387a332395abe1"
+      "version": "63c98d801b2123cc0e88f622644770ca7d89e791"
     },
     {
       "type": "git",
       "path": "github.com/prabirshrestha/async.vim",
-      "version": "f29f6167a1ef431b8c34587a80ed44e8fdc669d4"
+      "version": "c5b236ffbe52b47f9afcb5cd785bf21a410f35de"
     },
     {
       "type": "git",
       "path": "github.com/prabirshrestha/vim-lsp",
-      "version": "3441fa8c2d27b46a510cd9c17cfa1bde04ca4a6e"
+      "version": "1886d68b9a2ca6b4a6b46e865255f0887a225e32"
     }
   ],
   "profiles": [
