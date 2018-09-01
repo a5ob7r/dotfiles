@@ -15,6 +15,11 @@ if (( $+commands[tmux] )); then
   alias t='tmux'
 fi
 
+if (( $+commands[hub] )); then
+  alias g='hub'
+elif (( $+commands[git] )); then
+  alias g='git'
+fi
+
 alias cdh='cd ~'
-alias g='git'
 alias shinit='exec $SHELL -l'
