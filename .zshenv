@@ -27,6 +27,8 @@ if [[ -z $TMUX ]]; then
   export HISTSIZE=100000
   export SAVEHIST=100000
 
+  export SPROMPT="zsh: correct: %F{red}%R%f -> %F{green}%r%f [No/Yes/Abort/Edit]? "
+
   export DOTFILES=$(dirname $(readlink .zshenv))
 
   # external configure
