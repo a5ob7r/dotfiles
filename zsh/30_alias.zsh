@@ -1,6 +1,15 @@
+# define alias of colorful and detail ls
 if (( $+commands[exa] )); then
   alias ll='exa -1'
   alias la='exa -lag'
+elif type ls --color=auto > /dev/null 2>&1; then
+  # when GNU LS(= coreutils) is installed
+  alias ll='ls -1 --color=auto'
+  alias la='ls -lAh --color=auto'
+else
+  # BSD LS
+  alias ll='ls -1G'
+  alias la="ls -hlTAFG"
 fi
 
 if (( $+commands[docker] )); then
