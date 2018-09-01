@@ -3,6 +3,11 @@ set diff-options = -m --first-parent
 set ignore-case = true
 set refresh-mode = auto
 
+set main-view = id:false \
+                author:abbreviated \
+                date:relative-compact \
+                commit-title:graph=true,refs=true,overflow=true
+
 # Area                  Foreground      Background         Options
 # ==============================================================================
 
