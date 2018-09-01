@@ -1,3 +1,8 @@
+# execute whenever the current working directory is changed
+function chpwd() {
+  ll
+}
+
 function fghq() {
   local dir
   dir=$(ghq list | fzf-tmux) &&
