@@ -17,7 +17,6 @@ setopt list_packed
 setopt list_types
 setopt magic_equal_subst
 setopt mark_dirs
-setopt menu_complete
 setopt no_flow_control
 setopt nobeep
 setopt notify
