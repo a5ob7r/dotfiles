@@ -1,4 +1,7 @@
-if [[ $SHLVL -eq 1 ]]; then
+if [[ -z $TMUX ]]; then
+  # when on no tmux,
+  # define environment variables and execute processing needed only once
+
   # environment
   export LANG=en_US.UTF-8
   export LC_TIME="C"
