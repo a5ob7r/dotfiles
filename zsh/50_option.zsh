@@ -20,7 +20,6 @@ setopt mark_dirs
 setopt menu_complete
 setopt no_flow_control
 setopt nobeep
-setopt noflowcontrol
 setopt notify
 setopt print_eight_bit
 setopt prompt_subst
