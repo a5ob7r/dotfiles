@@ -1,8 +1,7 @@
-is_tmux_runnning() { [ ! -z "$TMUX" ]; }
-is_ssh_running() { [ ! -z "$SSH_CONECTION" ]; }
+function is_tmux_runnning() { [[ -n "$TMUX" ]] }
+function is_ssh_running() { [[ -n "$SSH_CONECTION" ]] }
 
-tmux_automatically_attach_session() {
-
+function tmux_automatically_attach_session() {
   if ! (( $+commands[tmux] )); then
     echo 'Error: tmux command not found' 2>&1
     return 1

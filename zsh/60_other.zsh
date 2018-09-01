@@ -7,4 +7,4 @@ fi
 
 SPROMPT="zsh: correct: %F{red}%R%f -> %F{green}%r%f [No/Yes/Abort/Edit]? "
 
-chpwd() { ll }
+function chpwd() { ll }
