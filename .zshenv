@@ -2,48 +2,22 @@ if [[ -z $TMUX ]]; then
   # when on no tmux,
   # define environment variables and execute processing needed only once
 
-  # environment
+  # {{{ dotfiles
+  # detect and define dotfiles directory path
+  export DOTFILES=$(dirname $(readlink .zshenv))
+  # }}}
+
+  # {{{ basic
   export LANG=en_US.UTF-8
   export LC_TIME="C"
 
-  # tool confiture
-  export PAGER=less
   export EDITOR=vim
   export VISUAL=vim
-
-  export LESS='-ij10FMRX'
-
-  # colorized for man with less
-  export LESS_TERMCAP_mb=$'\E[01;31m'      # Begins blinking.
-  export LESS_TERMCAP_md=$'\E[01;31m'      # Begins bold.
-  export LESS_TERMCAP_me=$'\E[0m'          # Ends mode.
-  export LESS_TERMCAP_se=$'\E[0m'          # Ends standout-mode.
-  export LESS_TERMCAP_so=$'\E[00;47;30m'   # Begins standout-mode.
-  export LESS_TERMCAP_ue=$'\E[0m'          # Ends underline.
-  export LESS_TERMCAP_us=$'\E[01;32m'      # Begins underline.
-
-  # history
-  export HISTFILE=$HOME/.zsh_history
-  export HISTSIZE=100000
-  export SAVEHIST=100000
-
-  export SPROMPT="zsh: correct: %F{red}%R%f -> %F{green}%r%f [No/Yes/Abort/Edit]? "
-
-  export DOTFILES=$(dirname $(readlink .zshenv))
-
-  # external configure
-  export VOLTPATH=$DOTFILES/volt
-  export GOPATH=$HOME/go
-  export ANYENV_ROOT=$HOME/.anyenv
-
-  export FZF_DEFAULT_OPTS='--reverse'
-  export FZF_DEFAULT_COMMAND='rg --files --hidden --follow --glob "!.git/*"'
-  export FZF_TMUX=1
+  export PAGER=less
 
   # prevent adding duplication path
   typeset -U path PATH
 
-  # add $path
   export path=( \
     $HOME/bin(N-/) \
     $GOPATH/bin(N-/) \
@@ -51,13 +25,50 @@ if [[ -z $TMUX ]]; then
     /usr/local/bin(N-/) \
     $path(N-/) \
     )
+  # }}}
 
+  # {{{ less
+  # default less option
+  export LESS='-ij10FMRX'
+  # }}}
+
+  # {{{ man
+  # colorized man with less
+  export LESS_TERMCAP_mb=$'\E[01;31m'      # Begins blinking.
+  export LESS_TERMCAP_md=$'\E[01;31m'      # Begins bold.
+  export LESS_TERMCAP_me=$'\E[0m'          # Ends mode.
+  export LESS_TERMCAP_se=$'\E[0m'          # Ends standout-mode.
+  export LESS_TERMCAP_so=$'\E[00;47;30m'   # Begins standout-mode.
+  export LESS_TERMCAP_ue=$'\E[0m'          # Ends underline.
+  export LESS_TERMCAP_us=$'\E[01;32m'      # Begins underline.
+  # }}}
+
+  # {{{ zsh
+  # history
+  export HISTFILE=$HOME/.zsh_history
+  export HISTSIZE=100000
+  export SAVEHIST=100000
+
+  # spelling correction prompt
+  export SPROMPT="zsh: correct: %F{red}%R%f -> %F{green}%r%f [No/Yes/Abort/Edit]? "
+
+  # prevent adding duplication fpath
   typeset -U fpath FPATH
-
+  # function path
   export fpath=( \
     $DOTFILES/zsh/compdefs(N-/) \
     $fpath(N-/) \
     )
+  # }}}
+
+  # {{{ fzf
+  export FZF_DEFAULT_OPTS='--reverse'
+  export FZF_DEFAULT_COMMAND='rg --files --hidden --follow --glob "!.git/*"'
+  export FZF_TMUX=1
+  # }}}
+
+  # {{{ anyenv
+  export ANYENV_ROOT=$HOME/.anyenv
 
   # add anyanv commnad path to $PATH when no the command path
   if [[ -d $ANYENV_ROOT ]] ; then
@@ -69,8 +80,15 @@ if [[ -z $TMUX ]]; then
       export PATH="$ANYENV_ROOT/envs/$D/shims:$PATH"
     done
   fi
+  # }}}
 
-  # load local zshenv
+  # {{{ other
+  export VOLTPATH=$DOTFILES/volt
+  export GOPATH=$HOME/go
+  # }}}
+
+  # {{{ local zshenv
   _zshenv_local=$HOME/.zshenv.local
   [[ -f $_zshenv_local ]] && source $_zshenv_local
+  # }}}
 fi
