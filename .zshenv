@@ -85,6 +85,10 @@ if [[ -z $TMUX ]]; then
   # {{{ other
   export VOLTPATH=$DOTFILES/volt
   export GOPATH=$HOME/go
+  export path=( \
+    $GOPATH/bin(N-/) \
+    $path(N-/) \
+    )
   # }}}
 
   # {{{ local zshenv
