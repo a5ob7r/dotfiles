@@ -2,7 +2,7 @@
 if (( $+commands[exa] )); then
   alias ll='exa -1'
   alias la='exa -lag'
-elif type ls --color=auto > /dev/null 2>&1; then
+elif ls --color=auto > /dev/null 2>&1; then
   # when GNU LS(= coreutils) is installed
   alias ll='ls -1 --color=auto'
   alias la='ls -lAh --color=auto'
