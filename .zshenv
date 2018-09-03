@@ -20,10 +20,9 @@ if [[ -z $TMUX ]]; then
 
   export path=( \
     $HOME/bin(N-/) \
-    $GOPATH/bin(N-/) \
     $HOME/.local/bin(N-/) \
     /usr/local/bin(N-/) \
-    $path(N-/) \
+    $path \
     )
   # }}}
 
@@ -57,7 +56,7 @@ if [[ -z $TMUX ]]; then
   # function path
   export fpath=( \
     $DOTFILES/zsh/compdefs(N-/) \
-    $fpath(N-/) \
+    $fpath \
     )
   # }}}
 
@@ -87,7 +86,7 @@ if [[ -z $TMUX ]]; then
   export GOPATH=$HOME/go
   export path=( \
     $GOPATH/bin(N-/) \
-    $path(N-/) \
+    $path \
     )
   # }}}
 
