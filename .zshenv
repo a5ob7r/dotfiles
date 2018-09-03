@@ -4,7 +4,7 @@ if [[ -z $TMUX ]]; then
 
   # {{{ dotfiles
   # detect and define dotfiles directory path
-  export DOTFILES=$(dirname $(readlink .zshenv))
+  export DOTFILES=$(dirname $(readlink $HOME/.zshenv))
   # }}}
 
   # {{{ basic
