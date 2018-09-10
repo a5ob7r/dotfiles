@@ -8,6 +8,8 @@ set main-view = id:false \
                 date:relative-compact \
                 commit-title:graph=true,refs=true,overflow=true
 
+bind status C !git commit -v
+
 # Area                  Foreground      Background         Options
 # ==============================================================================
 
