@@ -4,11 +4,6 @@ set encoding=utf-8
 " determine character code automatically
 set fileencodings=utf-8,sjis,shift_jis,iso-2022-jp,euc-jp,cp932,ucs-bom
 
-" destination directory of swapfile
-set directory=~/.vim/tmp
-
-set viminfo+=n$DOTFILES/.vim/tmp/.viminfo
-
 set lazyredraw
 set ttyfast
 
