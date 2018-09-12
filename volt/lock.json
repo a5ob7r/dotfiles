@@ -56,6 +56,11 @@
       "type": "git",
       "path": "github.com/prabirshrestha/asyncomplete-lsp.vim",
       "version": "79ee4c90dee3aa7b3b24b11ea0b4c4d4d43418da"
+    },
+    {
+      "type": "git",
+      "path": "github.com/itchyny/lightline.vim",
+      "version": "166f179cf89320b1b6f95def3a49fda448f4f711"
     }
   ],
   "profiles": [
@@ -71,12 +76,12 @@
         "github.com/vivien/vim-linux-coding-style",
         "github.com/kannokanno/previm",
         "github.com/junegunn/fzf.vim",
-        "github.com/powerline/powerline",
         "github.com/mattn/emmet-vim",
         "github.com/prabirshrestha/async.vim",
         "github.com/prabirshrestha/vim-lsp",
         "github.com/prabirshrestha/asyncomplete.vim",
-        "github.com/prabirshrestha/asyncomplete-lsp.vim"
+        "github.com/prabirshrestha/asyncomplete-lsp.vim",
+        "github.com/itchyny/lightline.vim"
       ]
     }
   ]
