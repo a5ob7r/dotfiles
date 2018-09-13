@@ -36,6 +36,9 @@ set wildmode=longest:full,full
 " {{{ other
 set visualbell
 
+" for vim-gitgutter sign update frequency
+set updatetime=100
+
 if executable("rg")
   set grepprg=rg\ --vimgrep\ --no-heading
   set grepformat=%f:%l:%c:%m,%f:%l:%m
