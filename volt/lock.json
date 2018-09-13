@@ -77,10 +77,6 @@
         "github.com/kannokanno/previm",
         "github.com/junegunn/fzf.vim",
         "github.com/mattn/emmet-vim",
-        "github.com/prabirshrestha/async.vim",
-        "github.com/prabirshrestha/vim-lsp",
-        "github.com/prabirshrestha/asyncomplete.vim",
-        "github.com/prabirshrestha/asyncomplete-lsp.vim",
         "github.com/itchyny/lightline.vim"
       ]
     }
