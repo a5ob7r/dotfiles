@@ -2,7 +2,10 @@ function! s:on_load_pre()
   " Plugin configuration like the code written in vimrc.
   " This configuration is executed *before* a plugin is loaded.
   let g:lightline = {
-    \ 'colorscheme': 'neodark',
+    \ 'active': {
+    \   'left': [ [ 'mode', 'paste' ], [ 'readonly', 'relativepath', 'modified' ] ]
+    \   },
+    \ 'colorscheme': 'neodark'
     \ }
 endfunction
 
