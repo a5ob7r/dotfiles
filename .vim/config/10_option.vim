@@ -12,6 +12,7 @@ set display=lastline
 set encoding=utf-8
 set expandtab
 set fileencodings=utf-8,sjis,shift_jis,iso-2022-jp,euc-jp,cp932,ucs-bom
+set history=10000
 set hlsearch
 set ignorecase
 set incsearch
