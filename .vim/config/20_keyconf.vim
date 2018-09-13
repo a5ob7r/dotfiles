@@ -1,9 +1,7 @@
-" key config
 let g:mapleader=" "
 
 nnoremap j gj
 nnoremap k gk
+nnoremap <Esc><Esc> :nohlsearch<CR><Esc>
 
 inoremap <silent> jj <ESC>
-
-nnoremap <Esc><Esc> :nohlsearch<CR><Esc>
