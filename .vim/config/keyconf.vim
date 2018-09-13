@@ -1,4 +1,6 @@
 " key config
+let g:mapleader=" "
+
 nnoremap j gj
 nnoremap k gk
 

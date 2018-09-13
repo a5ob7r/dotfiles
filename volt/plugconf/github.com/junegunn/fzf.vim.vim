@@ -11,7 +11,6 @@ function! s:on_load_pre()
   \           : fzf#vim#with_preview('right:50%:hidden', '?'),
   \   <bang>0)
 
-  let g:mapleader=" "
   noremap <leader>b :Buffers<CR>
   noremap <leader>f :Files<CR>
   noremap <leader>/ :BLines<CR>

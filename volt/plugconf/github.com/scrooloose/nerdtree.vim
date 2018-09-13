@@ -1,6 +1,5 @@
 function! s:on_load_pre()
   " Plugin configuration like the code written in vimrc.
-  let g:mapleader=" "
   nnoremap <leader>n :NERDTreeToggle<CR>
   let g:NERDTreeQuitOnOpen=1
 endfunction
