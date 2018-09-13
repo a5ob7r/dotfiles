@@ -66,6 +66,11 @@
       "type": "git",
       "path": "github.com/airblade/vim-gitgutter",
       "version": "50a7062909d91a290fae04219887b1b45f3138db"
+    },
+    {
+      "type": "git",
+      "path": "github.com/itchyny/vim-gitbranch",
+      "version": "8118dc1cdd387bd609852be4bf350360ce881193"
     }
   ],
   "profiles": [
@@ -83,7 +88,8 @@
         "github.com/junegunn/fzf.vim",
         "github.com/mattn/emmet-vim",
         "github.com/itchyny/lightline.vim",
-        "github.com/airblade/vim-gitgutter"
+        "github.com/airblade/vim-gitgutter",
+        "github.com/itchyny/vim-gitbranch"
       ]
     }
   ]

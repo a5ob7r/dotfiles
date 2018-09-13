@@ -1,18 +1,6 @@
 function! s:on_load_pre()
   " Plugin configuration like the code written in vimrc.
   " This configuration is executed *before* a plugin is loaded.
-  let g:lightline = {
-    \ 'active': {
-    \   'left': [
-    \       [ 'mode', 'paste' ],
-    \       [ 'gitbranch', 'readonly', 'relativepath', 'modified' ]
-    \     ]
-    \   },
-    \ 'component_function': {
-    \   'gitbranch': 'gitbranch#name'
-    \   },
-    \ 'colorscheme': 'neodark'
-    \ }
 endfunction
 
 function! s:on_load_post()
@@ -43,5 +31,5 @@ function! s:depends()
   " (the argument of :return must be list literal, and the elements are string)
   " e.g. return ['github.com/tyru/open-browser.vim']
 
-  return ['github.com/KeitaNakamura/neodark.vim']
+  return []
 endfunction
