@@ -71,6 +71,11 @@
       "type": "git",
       "path": "github.com/itchyny/vim-gitbranch",
       "version": "8118dc1cdd387bd609852be4bf350360ce881193"
+    },
+    {
+      "type": "git",
+      "path": "github.com/w0rp/ale",
+      "version": "78af99c2566ef8fed443ce253e0de9323b9e5043"
     }
   ],
   "profiles": [
@@ -89,7 +94,8 @@
         "github.com/mattn/emmet-vim",
         "github.com/itchyny/lightline.vim",
         "github.com/airblade/vim-gitgutter",
-        "github.com/itchyny/vim-gitbranch"
+        "github.com/itchyny/vim-gitbranch",
+        "github.com/w0rp/ale"
       ]
     }
   ]
