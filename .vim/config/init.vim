@@ -16,8 +16,7 @@ set ttyfast
 " {{{ window
 set number
 
-set cursorline
-set nocursorcolumn
+"set cursorline
 
 set background=dark
 set termguicolors
