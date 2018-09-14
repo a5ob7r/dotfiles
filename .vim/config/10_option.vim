@@ -1,7 +1,7 @@
 filetype indent plugin on
 syntax on
 
-set background=dark
+set background=light
 set backspace=indent,eol,start
 set breakindent
 set breakindentopt=shift:2,sbr
