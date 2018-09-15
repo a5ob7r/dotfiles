@@ -76,6 +76,11 @@
       "type": "git",
       "path": "github.com/w0rp/ale",
       "version": "78af99c2566ef8fed443ce253e0de9323b9e5043"
+    },
+    {
+      "type": "git",
+      "path": "github.com/tpope/vim-commentary",
+      "version": "141d9d32a9fb58fe474fcc89cd7221eb2dd57b3a"
     }
   ],
   "profiles": [
@@ -95,7 +100,8 @@
         "github.com/itchyny/lightline.vim",
         "github.com/airblade/vim-gitgutter",
         "github.com/itchyny/vim-gitbranch",
-        "github.com/w0rp/ale"
+        "github.com/w0rp/ale",
+        "github.com/tpope/vim-commentary"
       ]
     }
   ]
