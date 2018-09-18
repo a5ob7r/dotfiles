@@ -81,6 +81,11 @@
       "type": "git",
       "path": "github.com/tpope/vim-commentary",
       "version": "141d9d32a9fb58fe474fcc89cd7221eb2dd57b3a"
+    },
+    {
+      "type": "git",
+      "path": "github.com/tpope/vim-surround",
+      "version": "597068870b8f093a8b2d11536c62ff31222ee8d0"
     }
   ],
   "profiles": [
@@ -101,7 +106,8 @@
         "github.com/airblade/vim-gitgutter",
         "github.com/itchyny/vim-gitbranch",
         "github.com/w0rp/ale",
-        "github.com/tpope/vim-commentary"
+        "github.com/tpope/vim-commentary",
+        "github.com/tpope/vim-surround"
       ]
     }
   ]
