@@ -86,6 +86,11 @@
       "type": "git",
       "path": "github.com/tpope/vim-surround",
       "version": "597068870b8f093a8b2d11536c62ff31222ee8d0"
+    },
+    {
+      "type": "git",
+      "path": "github.com/sheerun/vim-polyglot",
+      "version": "055f7710b65dfa2df52fc0b5be2486ae36ac5751"
     }
   ],
   "profiles": [
@@ -107,7 +112,8 @@
         "github.com/itchyny/vim-gitbranch",
         "github.com/w0rp/ale",
         "github.com/tpope/vim-commentary",
-        "github.com/tpope/vim-surround"
+        "github.com/tpope/vim-surround",
+        "github.com/sheerun/vim-polyglot"
       ]
     }
   ]
