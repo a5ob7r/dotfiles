@@ -91,6 +91,11 @@
       "type": "git",
       "path": "github.com/sheerun/vim-polyglot",
       "version": "055f7710b65dfa2df52fc0b5be2486ae36ac5751"
+    },
+    {
+      "type": "git",
+      "path": "github.com/mechatroner/rainbow_csv",
+      "version": "bba97d30abfe9a8b8f1902b1de813c2747e669c4"
     }
   ],
   "profiles": [
@@ -113,7 +118,8 @@
         "github.com/w0rp/ale",
         "github.com/tpope/vim-commentary",
         "github.com/tpope/vim-surround",
-        "github.com/sheerun/vim-polyglot"
+        "github.com/sheerun/vim-polyglot",
+        "github.com/mechatroner/rainbow_csv"
       ]
     }
   ]
