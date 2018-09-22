@@ -20,7 +20,7 @@ bindkey -M menuselect 'l' vi-forward-char
 
 if [[ -n $TMUX ]] && (( $+commands[anyenv] )); then
   source "$ANYENV_ROOT/completions/anyenv.zsh"
-  for D in `\ls $ANYENV_ROOT/envs`; do
-    source "$ANYENV_ROOT/envs/$D/completions/$D.zsh"
+  for env in "$ANYENV_ROOT"/envs/*; do
+    source "$env"/completions/*.zsh
   done
 fi

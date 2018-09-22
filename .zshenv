@@ -73,11 +73,6 @@ if [[ -z $TMUX ]]; then
   if [[ -d $ANYENV_ROOT ]] ; then
     export PATH="$ANYENV_ROOT/bin:$PATH"
     eval "$(anyenv init - --no-rehash)"
-
-    # correspond tmux
-    for D in `\ls $ANYENV_ROOT/envs`; do
-      export PATH="$ANYENV_ROOT/envs/$D/shims:$PATH"
-    done
   fi
   # }}}
 
