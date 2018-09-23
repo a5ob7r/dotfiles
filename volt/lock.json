@@ -10,7 +10,7 @@
     {
       "type": "git",
       "path": "github.com/scrooloose/nerdtree",
-      "version": "808f5b225b090bb4a94a2c47bb08d1bc1f7f8a4e"
+      "version": "599238ad99642e8767c4be6adda75bd84afdfd42"
     },
     {
       "type": "git",
@@ -25,7 +25,7 @@
     {
       "type": "git",
       "path": "github.com/junegunn/fzf.vim",
-      "version": "2eb1bccea9a5ae28f9d0d61c6d20eb29430d7020"
+      "version": "c3954d294a0f6c4fb5a46a1839cd42ec26767dea"
     },
     {
       "type": "git",
@@ -60,7 +60,7 @@
     {
       "type": "git",
       "path": "github.com/itchyny/lightline.vim",
-      "version": "166f179cf89320b1b6f95def3a49fda448f4f711"
+      "version": "47765c787ddc981c2eab6105ade84067d164893c"
     },
     {
       "type": "git",
@@ -75,7 +75,7 @@
     {
       "type": "git",
       "path": "github.com/w0rp/ale",
-      "version": "78af99c2566ef8fed443ce253e0de9323b9e5043"
+      "version": "aa5c82b1718f44d04f6dd11bc63f6eeed2089d9d"
     },
     {
       "type": "git",
