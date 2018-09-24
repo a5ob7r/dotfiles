@@ -4,6 +4,7 @@ function! s:on_load_pre()
   let g:ale_linters = {
         \ 'zsh': ['shellcheck']
         \}
+  let g:ale_python_auto_pipenv = 1
 endfunction
 
 function! s:on_load_post()
