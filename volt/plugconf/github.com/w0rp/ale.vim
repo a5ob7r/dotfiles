@@ -1,6 +1,9 @@
 function! s:on_load_pre()
   " Plugin configuration like the code written in vimrc.
   " This configuration is executed *before* a plugin is loaded.
+  let g:ale_lint_on_insert_leave = 1
+  let g:ale_lint_on_text_changed = 0
+  let g:ale_lint_on_enter = 0
   let g:ale_linters = {
         \ 'zsh': ['shellcheck']
         \}
