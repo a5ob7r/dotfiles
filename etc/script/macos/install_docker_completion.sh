@@ -1,3 +1,6 @@
+#!/usr/bin/env bash
+
+# Create zsh completion function for docker command with Docker.app.
 # https://docs.docker.com/docker-for-mac/#zsh
 
 etc=/Applications/Docker.app/Contents/Resources/etc
