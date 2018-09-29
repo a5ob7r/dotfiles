@@ -4,7 +4,7 @@ if [[ -z $TMUX ]]; then
 
   # {{{ dotfiles
   # detect and define dotfiles directory path
-  export DOTFILES=$(dirname $(readlink $HOME/.zshenv))
+  export DOTFILES=$(dirname $(readlink ~/.zshenv))
   # }}}
 
   # {{{ basic
@@ -19,8 +19,8 @@ if [[ -z $TMUX ]]; then
   typeset -U path PATH
 
   export path=( \
-    $HOME/bin(N-/) \
-    $HOME/.local/bin(N-/) \
+    ~/bin(N-/) \
+    ~/.local/bin(N-/) \
     /usr/local/bin(N-/) \
     $path \
     )
@@ -44,7 +44,7 @@ if [[ -z $TMUX ]]; then
 
   # {{{ zsh
   # history
-  export HISTFILE=$HOME/.zsh_history
+  export HISTFILE=~/.zsh_history
   export HISTSIZE=100000
   export SAVEHIST=100000
 
@@ -67,7 +67,7 @@ if [[ -z $TMUX ]]; then
   # }}}
 
   # {{{ anyenv
-  export ANYENV_ROOT=$HOME/.anyenv
+  export ANYENV_ROOT=~/.anyenv
 
   # add anyanv commnad path to $PATH when no the command path
   if [[ -d $ANYENV_ROOT ]] ; then
@@ -78,7 +78,7 @@ if [[ -z $TMUX ]]; then
 
   # {{{ other
   export VOLTPATH=$DOTFILES/volt
-  export GOPATH=$HOME/go
+  export GOPATH=~/go
   export path=( \
     $GOPATH/bin(N-/) \
     $path \
@@ -86,7 +86,7 @@ if [[ -z $TMUX ]]; then
   # }}}
 
   # {{{ local zshenv
-  _zshenv_local=$HOME/.zshenv.local
+  _zshenv_local=~/.zshenv.local
   [[ -f $_zshenv_local ]] && source $_zshenv_local
   # }}}
 fi

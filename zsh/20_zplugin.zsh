@@ -1,4 +1,4 @@
-source "$HOME/.zplugin/bin/zplugin.zsh"
+source ~/.zplugin/bin/zplugin.zsh
 
 # If you place the source below compinit,
 # then add those two lines after the source:
