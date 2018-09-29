@@ -8,6 +8,9 @@ function! s:on_load_pre()
         \ 'zsh': ['shellcheck']
         \}
   let g:ale_python_auto_pipenv = 1
+
+  nmap <silent> <C-p> <Plug>(ale_previous_wrap)
+  nmap <silent> <C-n> <Plug>(ale_next_wrap)
 endfunction
 
 function! s:on_load_post()
