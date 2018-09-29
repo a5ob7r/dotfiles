@@ -1,0 +1,16 @@
+git
+tig
+vim
+zsh --without-etcdir
+tmux
+exa
+ripgrep
+direnv
+python
+hub
+coreutils
+bash
+ctags
+go
+htop
+gibo
