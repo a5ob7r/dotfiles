@@ -83,6 +83,7 @@ if [[ -z $TMUX ]]; then
     $GOPATH/bin(N-/) \
     $path \
     )
+  export PIPENV_VENV_IN_PROJECT=1
   # }}}
 
   # {{{ local zshenv
