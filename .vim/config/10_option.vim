@@ -41,8 +41,6 @@ set wildmenu
 set wildmode=longest:full,full
 set wrapscan
 
-autocmd FileType gitcommit set textwidth=72
-
 if executable("rg")
   set grepformat=%f:%l:%c:%m,%f:%l:%m
   set grepprg=rg\ --vimgrep\ --no-heading
