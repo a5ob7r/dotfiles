@@ -101,6 +101,11 @@
       "type": "git",
       "path": "github.com/maximbaz/lightline-ale",
       "version": "dd59077f9537b344f7ae80f713c1e4856ec1520c"
+    },
+    {
+      "type": "git",
+      "path": "github.com/tpope/vim-endwise",
+      "version": "f41ebc27b7042760c7812da9f33d5167b33a874e"
     }
   ],
   "profiles": [
@@ -125,7 +130,8 @@
         "github.com/tpope/vim-surround",
         "github.com/sheerun/vim-polyglot",
         "github.com/mechatroner/rainbow_csv",
-        "github.com/maximbaz/lightline-ale"
+        "github.com/maximbaz/lightline-ale",
+        "github.com/tpope/vim-endwise"
       ]
     }
   ]
