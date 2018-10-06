@@ -106,6 +106,21 @@
       "type": "git",
       "path": "github.com/tpope/vim-endwise",
       "version": "f41ebc27b7042760c7812da9f33d5167b33a874e"
+    },
+    {
+      "type": "git",
+      "path": "github.com/Shougo/deoplete.nvim",
+      "version": "63fb188c547eb5ccf8cd713a33fbb7c80ac03ec9"
+    },
+    {
+      "type": "git",
+      "path": "github.com/roxma/nvim-yarp",
+      "version": "5443ac06b3989baa9262adec810503e0234c316e"
+    },
+    {
+      "type": "git",
+      "path": "github.com/roxma/vim-hug-neovim-rpc",
+      "version": "a8cdb6b627da3a9c4b8ea85a329112484a857cf1"
     }
   ],
   "profiles": [
@@ -131,7 +146,10 @@
         "github.com/sheerun/vim-polyglot",
         "github.com/mechatroner/rainbow_csv",
         "github.com/maximbaz/lightline-ale",
-        "github.com/tpope/vim-endwise"
+        "github.com/tpope/vim-endwise",
+        "github.com/Shougo/deoplete.nvim",
+        "github.com/roxma/nvim-yarp",
+        "github.com/roxma/vim-hug-neovim-rpc"
       ]
     }
   ]
