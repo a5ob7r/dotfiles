@@ -121,6 +121,26 @@
       "type": "git",
       "path": "github.com/roxma/vim-hug-neovim-rpc",
       "version": "a8cdb6b627da3a9c4b8ea85a329112484a857cf1"
+    },
+    {
+      "type": "git",
+      "path": "github.com/prabirshrestha/asyncomplete-file.vim",
+      "version": "99707aad551d0863268323febacd038aa66074ad"
+    },
+    {
+      "type": "git",
+      "path": "github.com/akemrir/asyncomplete-ruby.vim",
+      "version": "780d21d01c4b947b0b05988a979c6c68e911c7df"
+    },
+    {
+      "type": "git",
+      "path": "github.com/prabirshrestha/asyncomplete-tags.vim",
+      "version": "585a722f463dacb00ad11a2d2c7a0083f471ca39"
+    },
+    {
+      "type": "git",
+      "path": "github.com/prabirshrestha/asyncomplete-buffer.vim",
+      "version": "68fdc6e2b82faea914ec24c1780145d8be62bf9c"
     }
   ],
   "profiles": [
@@ -150,6 +170,18 @@
         "github.com/Shougo/deoplete.nvim",
         "github.com/roxma/nvim-yarp",
         "github.com/roxma/vim-hug-neovim-rpc"
+      ]
+    },
+    {
+      "name": "asyncs",
+      "repos_path": [
+        "github.com/prabirshrestha/asyncomplete.vim",
+        "github.com/prabirshrestha/asyncomplete-file.vim",
+        "github.com/prabirshrestha/asyncomplete-tags.vim",
+        "github.com/prabirshrestha/vim-lsp",
+        "github.com/prabirshrestha/async.vim",
+        "github.com/prabirshrestha/asyncomplete-lsp.vim",
+        "github.com/prabirshrestha/asyncomplete-buffer.vim"
       ]
     }
   ]
