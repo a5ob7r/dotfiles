@@ -141,6 +141,11 @@
       "type": "git",
       "path": "github.com/prabirshrestha/asyncomplete-buffer.vim",
       "version": "68fdc6e2b82faea914ec24c1780145d8be62bf9c"
+    },
+    {
+      "type": "git",
+      "path": "github.com/tyru/open-browser.vim",
+      "version": "de4eeb085051e9b56dd5574eba7c7e72feb21246"
     }
   ],
   "profiles": [
@@ -173,7 +178,8 @@
         "github.com/prabirshrestha/asyncomplete-tags.vim",
         "github.com/prabirshrestha/async.vim",
         "github.com/prabirshrestha/vim-lsp",
-        "github.com/prabirshrestha/asyncomplete-lsp.vim"
+        "github.com/prabirshrestha/asyncomplete-lsp.vim",
+        "github.com/tyru/open-browser.vim"
       ]
     },
     {
