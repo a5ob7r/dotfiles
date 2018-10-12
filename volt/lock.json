@@ -174,7 +174,6 @@
         "github.com/tpope/vim-endwise",
         "github.com/prabirshrestha/asyncomplete.vim",
         "github.com/prabirshrestha/asyncomplete-file.vim",
-        "github.com/prabirshrestha/asyncomplete-buffer.vim",
         "github.com/prabirshrestha/asyncomplete-tags.vim",
         "github.com/prabirshrestha/async.vim",
         "github.com/prabirshrestha/vim-lsp",
