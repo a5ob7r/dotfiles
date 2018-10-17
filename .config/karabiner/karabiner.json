@@ -152,6 +152,7 @@
                                 "conditions": [
                                     {
                                         "bundle_identifiers": [
+                                            "^io\\.alacritty$",
                                             "^org\\.gnu\\.Emacs$",
                                             "^org\\.gnu\\.AquamacsEmacs$",
                                             "^org\\.gnu\\.Aquamacs$",
@@ -212,6 +213,7 @@
                                 "conditions": [
                                     {
                                         "bundle_identifiers": [
+                                            "^io\\.alacritty$",
                                             "^org\\.gnu\\.Emacs$",
                                             "^org\\.gnu\\.AquamacsEmacs$",
                                             "^org\\.gnu\\.Aquamacs$",
@@ -272,6 +274,7 @@
                                 "conditions": [
                                     {
                                         "bundle_identifiers": [
+                                            "^io\\.alacritty$",
                                             "^org\\.gnu\\.Emacs$",
                                             "^org\\.gnu\\.AquamacsEmacs$",
                                             "^org\\.gnu\\.Aquamacs$",
@@ -372,6 +375,7 @@
                                 "conditions": [
                                     {
                                         "bundle_identifiers": [
+                                            "^io\\.alacritty$",
                                             "^org\\.gnu\\.Emacs$",
                                             "^org\\.gnu\\.AquamacsEmacs$",
                                             "^org\\.gnu\\.Aquamacs$",
@@ -433,6 +437,7 @@
                                 "conditions": [
                                     {
                                         "bundle_identifiers": [
+                                            "^io\\.alacritty$",
                                             "^org\\.gnu\\.Emacs$",
                                             "^org\\.gnu\\.AquamacsEmacs$",
                                             "^org\\.gnu\\.Aquamacs$",
@@ -494,6 +499,7 @@
                                 "conditions": [
                                     {
                                         "bundle_identifiers": [
+                                            "^io\\.alacritty$",
                                             "^org\\.gnu\\.Emacs$",
                                             "^org\\.gnu\\.AquamacsEmacs$",
                                             "^org\\.gnu\\.Aquamacs$",
@@ -555,6 +561,7 @@
                                 "conditions": [
                                     {
                                         "bundle_identifiers": [
+                                            "^io\\.alacritty$",
                                             "^org\\.gnu\\.Emacs$",
                                             "^org\\.gnu\\.AquamacsEmacs$",
                                             "^org\\.gnu\\.Aquamacs$",
@@ -616,6 +623,7 @@
                                 "conditions": [
                                     {
                                         "bundle_identifiers": [
+                                            "^io\\.alacritty$",
                                             "^org\\.gnu\\.Emacs$",
                                             "^org\\.gnu\\.AquamacsEmacs$",
                                             "^org\\.gnu\\.Aquamacs$",
@@ -681,6 +689,7 @@
                                 "conditions": [
                                     {
                                         "bundle_identifiers": [
+                                            "^io\\.alacritty$",
                                             "^com\\.apple\\.Terminal$",
                                             "^com\\.googlecode\\.iterm2$",
                                             "^com\\.github\\.atom$",
