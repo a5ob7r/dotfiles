@@ -7,5 +7,6 @@ git clone "$DOTFILES_REMOTE" "$DOTFILES"
 
 cd "$DOTFILES" || exit
 
-./etc/script/universal/install_zplugin.sh
 ./etc/script/universal/install_fzf.sh
+
+make link

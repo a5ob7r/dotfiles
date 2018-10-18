@@ -1,3 +1,6 @@
+! [[ -d ~/.zplugin ]] && \
+  sh -c "$(curl -fsSL https://raw.githubusercontent.com/zdharma/zplugin/master/doc/install.sh)"
+
 source ~/.zplugin/bin/zplugin.zsh
 
 # If you place the source below compinit,
