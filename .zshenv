@@ -87,7 +87,6 @@ if [[ -z $TMUX ]]; then
   # }}}
 
   # {{{ local zshenv
-  _zshenv_local=~/.zshenv.local
-  [[ -f $_zshenv_local ]] && source $_zshenv_local
+  [[ -f ~/.zshrc.local ]] && source ~/.zshrc.local
   # }}}
 fi
