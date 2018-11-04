@@ -13,6 +13,7 @@ function! s:on_load_pre()
 
   noremap <leader>b :Buffers<CR>
   noremap <leader>f :Files<CR>
+  noremap <leader>g :Rg<CR>
   noremap <leader>/ :BLines<CR>
 endfunction
 
