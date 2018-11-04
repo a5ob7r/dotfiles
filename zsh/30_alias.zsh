@@ -30,5 +30,10 @@ elif (( $+commands[git] )); then
   alias g='git'
 fi
 
+if (( $+commands[volt] )); then
+  alias v='volt'
+  alias vb='volt build'
+fi
+
 alias cdh='cd ~'
 alias shinit='exec $SHELL -l'
