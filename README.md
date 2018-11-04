@@ -1,5 +1,5 @@
 # dotfiles
-## tools
+## Tools
 - [Zsh](https://github.com/zsh-users/zsh)
   - [zplugin](https://github.com/zdharma/zplugin) - zsh plugin manager
 
@@ -7,6 +7,10 @@
   - [volt](https://github.com/vim-volt/volt) - vim plugin manager
 
 - [fzf](https://github.com/junegunn/fzf) - fuzzy finder for command line tool
+
+## Colors
+- [Oceanic Next](https://github.com/voronianski/oceanic-next-color-scheme) - Terminal
+- [neodark.vim](https://github.com/KeitaNakamura/neodark.vim) - Vim
 
 ## Usage
 ### Use Installer Script
