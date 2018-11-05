@@ -8,7 +8,7 @@ set breakindentopt=shift:2,sbr
 set cindent
 set clipboard+=unnamed
 set cmdheight=2
-set colorcolumn=+1
+set colorcolumn=81
 set display=lastline
 set encoding=utf-8
 set expandtab
@@ -32,7 +32,6 @@ set smartcase
 set softtabstop=2
 set tabstop=2
 "set termguicolors
-set textwidth=80
 set ttyfast
 set updatetime=100
 set virtualedit+=onemore
