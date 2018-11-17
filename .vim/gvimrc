@@ -1,6 +1,10 @@
-"set blurradius=20
-set guifont=Cica-Regular:h14
-set transparency=10
+if has('gui_macvim')
+  set guifont=Cica-Regular:h14
+  set transparency=10
+  " set blurradius=20
+else
+  set guifont=monospace
+endif
 
 " {{{ hide GUI interface
 set guioptions-=m
