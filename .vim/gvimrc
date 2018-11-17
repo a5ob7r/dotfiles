@@ -1,3 +1,11 @@
 "set blurradius=20
 set guifont=Cica-Regular:h14
 set transparency=10
+
+" {{{ hide GUI interface
+set guioptions-=m
+set guioptions-=T
+set guioptions-=r
+set guioptions-=l
+set guioptions-=b
+" }}}
