@@ -6,6 +6,11 @@ else
   set guifont=monospace
 endif
 
+" {{{ window size
+set columns=120
+set lines=40
+" }}}
+
 " {{{ hide GUI interface
 set guioptions-=m
 set guioptions-=T
