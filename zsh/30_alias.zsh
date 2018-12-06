@@ -35,5 +35,9 @@ if (( $+commands[volt] )); then
   alias vb='volt build'
 fi
 
+if (( $+commands[pipenv])); then
+  alias p='pipenv'
+fi
+
 alias cdh='cd ~'
 alias shinit='exec $SHELL -l'
