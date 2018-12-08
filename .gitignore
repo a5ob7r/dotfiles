@@ -7,3 +7,5 @@
 /tmux/powerline.conf
 
 *.zwc
+
+alacritty.yml
