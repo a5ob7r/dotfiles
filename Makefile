@@ -15,12 +15,12 @@ endif
 link:
 	@$(foreach dotfile, $(DOTFILES), ln -sfv $(CURDIR)/$(dotfile) $(HOME)/$(dotfile);)
 	@$(foreach config, $(CONFIG_ALL), ln -sfv $(CURDIR)/$(config) $(HOME)/$(config);)
-	@ln -sfv $(CURDIR)/.config/$(ALACRITTY) $(CURDIR)/.config/alacritty.yml
+	@ln -sfv $(CURDIR)/.config/alacritty/$(ALACRITTY) $(CURDIR)/.config/alacritty/alacritty.yml
 
 unlink:
 	@$(foreach dotfile, $(DOTFILES), unlink $(HOME)/$(dotfile);)
 	@$(foreach config, $(CONFIG_ALL), unlink $(HOME)/$(config);)
-	@unlink $(CURDIR)/.config/$(ALACRITTY)
+	@unlink $(CURDIR)/.config/alacritty/$(ALACRITTY)
 
 powerline-conf:
 	@etc/script/universal/link_powerline_conf.sh
