@@ -10,7 +10,7 @@
     {
       "type": "git",
       "path": "github.com/scrooloose/nerdtree",
-      "version": "370eb5bcb44d7df6cd4512e05d4511fd479497d7"
+      "version": "c1876da09c38315d7fdea33d9082d1868b5fbd2b"
     },
     {
       "type": "git",
@@ -75,7 +75,7 @@
     {
       "type": "git",
       "path": "github.com/w0rp/ale",
-      "version": "0a384a49d371838903d8401c5358ec60f3f4266d"
+      "version": "9226e13b31474ac17d0c25cd27aa55bff21d55c2"
     },
     {
       "type": "git",
@@ -145,7 +145,7 @@
     {
       "type": "git",
       "path": "github.com/tyru/open-browser.vim",
-      "version": "de4eeb085051e9b56dd5574eba7c7e72feb21246"
+      "version": "b900ff9d39bb36891704bd0fe76737ee3a7ac2b9"
     }
   ],
   "profiles": [
