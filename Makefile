@@ -20,7 +20,7 @@ link:
 unlink:
 	@$(foreach dotfile, $(DOTFILES), unlink $(HOME)/$(dotfile);)
 	@$(foreach config, $(CONFIG_ALL), unlink $(HOME)/$(config);)
-	@unlink $(CURDIR)/.config/alacritty/$(ALACRITTY)
+	@unlink $(CURDIR)/.config/alacritty/alacritty.yml
 
 powerline-conf:
 	@etc/script/universal/link_powerline_conf.sh
