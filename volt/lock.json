@@ -10,7 +10,7 @@
     {
       "type": "git",
       "path": "github.com/scrooloose/nerdtree",
-      "version": "c1876da09c38315d7fdea33d9082d1868b5fbd2b"
+      "version": "72c3656799289d4635520c28e17f737066ce19d6"
     },
     {
       "type": "git",
@@ -20,12 +20,12 @@
     {
       "type": "git",
       "path": "github.com/kannokanno/previm",
-      "version": "f77e611b34eafbfdecd818d7b23cde2c8febfc47"
+      "version": "03b472f166579f52496415a45ac43167888fe96d"
     },
     {
       "type": "git",
       "path": "github.com/junegunn/fzf.vim",
-      "version": "95f025ef2dbc8fedf124521904a80c1879acd359"
+      "version": "f0acabf7e837e626c7102c30af890bccf79e33b7"
     },
     {
       "type": "git",
@@ -45,7 +45,7 @@
     {
       "type": "git",
       "path": "github.com/prabirshrestha/vim-lsp",
-      "version": "778630e682e4f48c35571051cb47d55a3323f2f3"
+      "version": "8024ac55cda57ca73cbcb444bd0eefd63112ed66"
     },
     {
       "type": "git",
@@ -60,12 +60,12 @@
     {
       "type": "git",
       "path": "github.com/itchyny/lightline.vim",
-      "version": "688240e0ef849cdc8457822658cedf10358c75d6"
+      "version": "1ef44bfa50320347004be77f836e97dc4f54982e"
     },
     {
       "type": "git",
       "path": "github.com/airblade/vim-gitgutter",
-      "version": "c2651aefbd92dca05de1943619df965b848f9b4f"
+      "version": "1d422b9f98194e38bc56e54192c9bc66d95c21f1"
     },
     {
       "type": "git",
@@ -75,7 +75,7 @@
     {
       "type": "git",
       "path": "github.com/w0rp/ale",
-      "version": "9226e13b31474ac17d0c25cd27aa55bff21d55c2"
+      "version": "f1ed654ca5318de5a24b37d882e55e04e4e566c8"
     },
     {
       "type": "git",
