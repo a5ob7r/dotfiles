@@ -1,0 +1,146 @@
+#!/usr/bin/env bash
+
+detect_os() {
+  if [[ "$OSTYPE" = 'linux-gnu' ]]; then
+    echo 'linux'
+    return 0
+  elif [[ "$OSTYPE" = 'darwin' ]]; then
+    echo 'darwin'
+    return 0
+  else
+    echo ''
+    return 1
+  fi
+}
+
+mkbin() {
+  local bin_dir=$1/bin
+  shift
+  if [[ -e $bin_dir ]]; then
+    # echo "Home binary directory($bin_dir) already exists."
+    return 1
+  fi
+
+  # cat <<EOS
+# Home binary directory($bin_dir) does not exist.
+# So Make home binary directory($bin_dir) to home.
+# EOS
+  mkdir -p "$bin_dir" || return 1
+}
+
+add_execute_auth_bin() {
+  local bin
+  bin=$1
+  shift
+  bin_path=~/.cache/gbm/bin/"$bin"
+
+  if ! [[ -e $bin_path ]]; then
+    echo "$bin does not exist in home binary directory."
+    return 1
+  fi
+
+  chmod u+x "$bin_path" || return 1
+}
+
+trim_bin_name() {
+  local repo=$1
+  shift
+  echo "$repo" \
+    | sed -e "s/.*\///g"
+}
+
+expand_zip() {
+  local bin_path=$1
+  shift
+  local ext=${bin_path##*.}
+
+  if [[ $ext = 'zip' ]]; then
+    unzip "$bin_path" \
+      && rm "$bin_path"
+  fi
+}
+
+fetch_bin() {
+  local repo=$1
+  shift
+  local bin_path=$1
+  shift
+  local os=$1
+  shift
+
+  local github_releases_url=https://api.github.com/repos/"${repo}"/releases/latest
+
+  echo "Fetch $repo."
+  curl -sSL "$github_releases_url" \
+    | grep "${os}[-_]amd64" \
+    | grep 'browser_download_url' \
+    | grep -o 'https.*[^"]' \
+    | xargs curl -L -o "$bin_path"
+}
+
+setup_gbm() {
+  mkbin ~
+  mkbin ~/.cache/gbm
+}
+
+install() {
+  local repo=$1
+
+  local bin
+  bin=$(trim_bin_name "$repo")
+  local bin_path=~/.cache/gbm/bin/"$bin"
+  local os
+  os=$(detect_os)
+
+  if [[ -z $os ]]; then
+    echo 'Your OS is not Linux or macOS'
+    return 1
+  fi
+
+  fetch_bin "$repo" "$bin_path" "$os"  || return 1
+  add_execute_auth_bin "$bin" || return 1
+  expand_zip "$bin_path" || return 1
+}
+
+link() {
+  local bin_dir=~/bin
+  local gbm_bin_dir=~/.cache/gbm/bin
+
+  for bin in "$gbm_bin_dir"/*; do
+    local bin_name
+    bin_name=$(basename "$bin")
+    ln -s "$bin" $bin_dir/"$bin_name"
+  done
+}
+
+usage() {
+  cat <<"EOS"
+Usage: gbm install <repository>
+           link
+
+Sub Command:
+  install  Install binary.
+  link     Make symbolic link to home bin dirctory.
+EOS
+}
+
+gbm() {
+  setup_gbm
+
+  sub_command=$1
+  shift
+  case $sub_command in
+    install)
+      install "$1" || return 1
+      link
+      ;;
+    link)
+      link
+      ;;
+    *)
+      usage
+      ;;
+  esac
+}
+
+gbm "$@"
