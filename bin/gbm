@@ -29,15 +29,8 @@ mkbin() {
 }
 
 add_execute_auth_bin() {
-  local bin
-  bin=$1
+  bin_path=$1
   shift
-  bin_path=~/.cache/gbm/bin/"$bin"
-
-  if ! [[ -e $bin_path ]]; then
-    echo "$bin does not exist in home binary directory."
-    return 1
-  fi
 
   chmod u+x "$bin_path" || return 1
 }
@@ -50,45 +43,107 @@ trim_bin_name() {
 }
 
 expand_zip() {
-  local bin_path=$1
+  local package_path=$1
   shift
-  local ext=${bin_path##*.}
+
+  local pkg_dir
+  pkg_dir=$(dirname "$package_path")
+  local ext=${package_path##*.}
 
   if [[ $ext = 'zip' ]]; then
-    unzip "$bin_path" \
-      && rm "$bin_path"
+    unzip "$package_path" -d "$pkg_dir"
+    return 0
   fi
+  return 1
 }
 
-fetch_bin() {
+rename_bin() {
+  local package_path=$1
+  shift
+  local bin_name=$1
+  shift
+
+  local pkg_dir
+  pkg_dir=$(dirname "$package_path")
+  local bin_path=$pkg_dir/$bin_name
+
+  mv "$package_path" "$bin_path"
+}
+
+move_bin() {
+  local output_bin_path=$1
+  shift
+  local gbm_bin_dir=$1
+  shift
+
+  local output_dir
+  output_dir=$(dirname "$output_bin_path")
+  local bin_name
+  bin_name=$(basename "$output_bin_path")
+  local gbm_bin_path=$gbm_bin_dir/$bin_name
+
+  mv "$output_bin_path" "$gbm_bin_path" || return 1
+  rm -rf "$output_dir"
+}
+
+latest_release_url() {
   local repo=$1
-  shift
-  local bin_path=$1
-  shift
-  local os=$1
   shift
 
   local github_releases_url=https://api.github.com/repos/"${repo}"/releases/latest
+  echo "$github_releases_url"
+}
 
-  echo "Fetch $repo."
-  curl -sSL "$github_releases_url" \
+package_url() {
+  local releases_url=$1
+  shift
+  local os=$1
+  shift
+  
+  curl -sSL "$releases_url" \
     | grep "${os}[-_]amd64" \
     | grep 'browser_download_url' \
-    | grep -o 'https.*[^"]' \
-    | xargs curl -L -o "$bin_path"
+    | grep -o 'https.*[^"]'
+}
+
+fetch_package() {
+  local pkg_url=$1
+  shift
+  local output_dir=$1
+  shift
+
+  local file_name
+  file_name=$(basename "$pkg_url")
+  local output_path="$output_dir"/"$file_name"
+
+  curl -L -o "$output_path" "$pkg_url"
+}
+
+link_bin() {
+  local gbm_bin_path=$1
+  shift
+  local bin_name
+  bin_name=$(basename "$bin_path")
+  local bin_path=~/bin/$bin_name
+
+  ln -s "$gbm_bin_path" "$bin_path" || return 1
 }
 
 setup_gbm() {
+  local gbm_bin_dir=$1
+  local gbm_dir
+  gbm_dir=$(basename "$gbm_bin_dir")
+
   mkbin ~
-  mkbin ~/.cache/gbm
+  mkbin "$gbm_dir"
 }
 
 install() {
   local repo=$1
+  shift
+  local gbm_bin_dir=$1
+  shift
 
-  local bin
-  bin=$(trim_bin_name "$repo")
-  local bin_path=~/.cache/gbm/bin/"$bin"
   local os
   os=$(detect_os)
 
@@ -97,19 +152,39 @@ install() {
     return 1
   fi
 
-  fetch_bin "$repo" "$bin_path" "$os"  || return 1
-  add_execute_auth_bin "$bin" || return 1
-  expand_zip "$bin_path" || return 1
+  local bin
+  bin=$(trim_bin_name "$repo")
+  local bin_path=$gbm_bin_dir/"$bin"
+
+  local release_url
+  release_url=$(latest_release_url "$repo")
+  local pkg_url
+  pkg_url=$(package_url "$release_url" "$os")
+  local pkg_name
+  pkg_name=$(basename "$pkg_url")
+
+  local output_dir
+  output_dir=$(mktemp -d)
+  trap 'rm -rf $output_dir; exit 1' 1 2 3 15
+
+  local output_pkg=$output_dir/$pkg_name
+  local output_bin=$output_dir/$bin
+
+  fetch_package "$pkg_url" "$output_dir" || return 1
+  expand_zip "$output_pkg" \
+    || rename_bin "$output_pkg" "$bin" \
+    || return 1
+  move_bin "$output_bin" "$gbm_bin_dir" || return 1
+  add_execute_auth_bin "$bin_path" || return 1
+  link_bin "$bin_path" || return 1
 }
 
 link() {
-  local bin_dir=~/bin
-  local gbm_bin_dir=~/.cache/gbm/bin
+  local gbm_bin_dir=$1
+  shift
 
   for bin in "$gbm_bin_dir"/*; do
-    local bin_name
-    bin_name=$(basename "$bin")
-    ln -s "$bin" $bin_dir/"$bin_name"
+    link_bin "$bin"
   done
 }
 
@@ -125,17 +200,19 @@ EOS
 }
 
 gbm() {
-  setup_gbm
+  local GBM_BIN_DIR=~/.cache/gbm/bin
+
+  setup_gbm $GBM_BIN_DIR
 
   sub_command=$1
   shift
   case $sub_command in
     install)
-      install "$1" || return 1
-      link
+      local repo=$1
+      install "$repo" $GBM_BIN_DIR || return 1
       ;;
     link)
-      link
+      link $GBM_BIN_DIR
       ;;
     *)
       usage
