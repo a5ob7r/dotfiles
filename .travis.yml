@@ -6,9 +6,10 @@ service:
   - docker
 
 env:
-  - IMAGE_NAME: dotfiles
-  - TAG_NAME: test
-  - CONTAINER_NAME: dotfiles
+  global:
+    - IMAGE_NAME: dotfiles
+    - TAG_NAME: test
+    - CONTAINER_NAME: dotfiles
 
 before_install:
   - docker build -t ${IMAGE_NAME}:${TAG_NAME} test
