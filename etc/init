@@ -1,0 +1,4 @@
+#!/bin/sh
+
+etc/script/universal/install_fzf.sh
+etc/script/universal/install_go_bin_package.sh

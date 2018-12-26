@@ -12,6 +12,14 @@ else
   ALACRITTY = alacritty_linux.yml
 endif
 
+install: init link pluginstall
+
+init:
+	@etc/init
+
+pluginstall:
+	@etc/pluginstall
+
 link:
 	@$(foreach dotfile, $(DOTFILES), ln -sfv $(CURDIR)/$(dotfile) $(HOME)/$(dotfile);)
 	@$(foreach config, $(CONFIG_ALL), ln -sfv $(CURDIR)/$(config) $(HOME)/$(config);)

@@ -1,0 +1,4 @@
+#!/bin/sh
+
+zsh -ic exit
+volt get -l
