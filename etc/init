@@ -1,4 +1,8 @@
 #!/bin/sh
 
+mkdir -p ~/bin
+mkdir -p ~/.config
+mkdir -p ~/.cache
+
 etc/script/universal/install_fzf.sh
 etc/script/universal/install_go_bin_package.sh
