@@ -1,4 +1,6 @@
 # dotfiles
+[![Build Status](https://travis-ci.org/a5ob7r/dotfiles.svg?branch=master)](https://travis-ci.org/a5ob7r/dotfiles)
+
 ## Tools
 - [Zsh](https://github.com/zsh-users/zsh)
   - [zplugin](https://github.com/zdharma/zplugin) - zsh plugin manager

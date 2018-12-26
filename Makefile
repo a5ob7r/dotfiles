@@ -1,6 +1,6 @@
 OSNAME=${shell uname}
 
-FINLTER := .config .git .DS_Store .gitignore
+FINLTER := .config .git .DS_Store .gitignore .travis.yml
 DOTFILES_RAW := $(wildcard .??*)
 DOTFILES := $(filter-out $(FINLTER), $(DOTFILES_RAW))
 
