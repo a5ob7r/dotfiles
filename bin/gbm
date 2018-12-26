@@ -131,11 +131,10 @@ link_bin() {
 
 setup_gbm() {
   local gbm_bin_dir=$1
-  local gbm_dir
-  gbm_dir=$(basename "$gbm_bin_dir")
+  shift
 
   mkbin ~
-  mkbin "$gbm_dir"
+  mkbin "$gbm_bin_dir"
 }
 
 install() {
