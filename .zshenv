@@ -1,10 +1,11 @@
-if [[ -z $TMUX ]]; then
+if [[ -z $DOTFILES ]]; then
   # when on no tmux,
   # define environment variables and execute processing needed only once
 
   # {{{ dotfiles
   # detect and define dotfiles directory path
-  export DOTFILES=$(dirname $(readlink ~/.zshenv))
+  DOTFILES=$(dirname "$(readlink ~/.zshenv)")
+  export DOTFILES
   # }}}
 
   # {{{ basic
@@ -52,7 +53,7 @@ if [[ -z $TMUX ]]; then
   export SPROMPT="zsh: correct: %F{red}%R%f -> %F{green}%r%f [No/Yes/Abort/Edit]? "
 
   # prevent adding duplication fpath
-  typeset -U fpath FPATH
+  typeset -U fpath
   # function path
   export fpath=( \
     $DOTFILES/zsh/compdefs(N-/) \
