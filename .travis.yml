@@ -1,0 +1,19 @@
+sudo: required
+
+language: c
+
+service:
+  - docker
+
+env:
+  - IMAGE_NAME: dotfiles
+  - TAG_NAME: test
+  - CONTAINER_NAME: dotfiles
+
+before_install:
+  - docker build -t ${IMAGE_NAME}:${TAG_NAME} test
+  - docker run -d --name ${CONTAINER_NAME} ${IMAGE_NAME}:${TAG_NAME}
+
+script:
+  - docker exec -i ${CONTAINER_NAME} \
+    bash -c 'curl https://raw.githubusercontent.com/a5ob7r/dotfiles/master/etc/install.sh | sh'
