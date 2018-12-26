@@ -83,7 +83,6 @@ move_bin() {
   local gbm_bin_path=$gbm_bin_dir/$bin_name
 
   mv "$output_bin_path" "$gbm_bin_path" || return 1
-  rm -rf "$output_dir"
 }
 
 latest_release_url() {
@@ -169,13 +168,15 @@ install() {
   local output_pkg=$output_dir/$pkg_name
   local output_bin=$output_dir/$bin
 
-  fetch_package "$pkg_url" "$output_dir" || return 1
-  expand_zip "$output_pkg" \
+  ( \
+    fetch_package "$pkg_url" "$output_dir" || exit 1; \
+    expand_zip "$output_pkg" \
     || rename_bin "$output_pkg" "$bin" \
-    || return 1
-  move_bin "$output_bin" "$gbm_bin_dir" || return 1
-  add_execute_auth_bin "$bin_path" || return 1
-  link_bin "$bin_path" || return 1
+    || exit 1; \
+    move_bin "$output_bin" "$gbm_bin_dir" || exit 1; \
+    add_execute_auth_bin "$bin_path" || exit 1; \
+    link_bin "$bin_path" || exit 1 \
+    ) || rm -rf "$output_dir"
 }
 
 link() {
