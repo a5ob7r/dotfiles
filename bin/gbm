@@ -1,5 +1,12 @@
 #!/usr/bin/env bash
 
+check_command() {
+  local cmd=$1
+  shift
+
+  type "$cmd" > /dev/null 2>&1
+}
+
 detect_os() {
   if [[ "$OSTYPE" = 'linux-gnu' ]]; then
     echo 'linux'
@@ -128,6 +135,17 @@ link_bin() {
   ln -s "$gbm_bin_path" "$bin_path" || return 1
 }
 
+check_requirements() {
+  local req_cmd=( \
+    unzip \
+    curl \
+    )
+
+  for cmd in "${req_cmd[@]}"; do
+    check_command "$cmd" || return 1
+  done
+}
+
 setup_gbm() {
   local gbm_bin_dir=$1
   shift
@@ -202,6 +220,7 @@ EOS
 gbm() {
   local GBM_BIN_DIR=~/.cache/gbm/bin
 
+  check_requirements || return 1
   setup_gbm $GBM_BIN_DIR
 
   sub_command=$1
