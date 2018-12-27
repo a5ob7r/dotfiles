@@ -2,3 +2,4 @@
 
 zsh -ic exit
 zsh -c "volt get -l"
+zsh -c '$TMUX_PLUGIN_MANAGER_PATH/tpm/bin/install_plugins all'
