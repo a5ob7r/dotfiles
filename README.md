@@ -32,5 +32,5 @@ $ git clone https://github.com/a5ob7r/dotfiles.git
 ```shell
 $ cd path/to/dotfiles
 
-$ make link
+$ make install
 ```
