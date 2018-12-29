@@ -20,7 +20,7 @@
     {
       "type": "git",
       "path": "github.com/kannokanno/previm",
-      "version": "03b472f166579f52496415a45ac43167888fe96d"
+      "version": "0ab24c135bc3828129a57fc239eb103841cbc5e4"
     },
     {
       "type": "git",
@@ -35,17 +35,17 @@
     {
       "type": "git",
       "path": "github.com/mattn/emmet-vim",
-      "version": "7a4bf3463ef1e2c08393218fc67a8729c00948a5"
+      "version": "e6fb10d22a9bd2a02c386c81486a065e71c6a92d"
     },
     {
       "type": "git",
       "path": "github.com/prabirshrestha/async.vim",
-      "version": "c5b236ffbe52b47f9afcb5cd785bf21a410f35de"
+      "version": "8eae0c4d5df9cadfdce2029823c599098b16fac3"
     },
     {
       "type": "git",
       "path": "github.com/prabirshrestha/vim-lsp",
-      "version": "8024ac55cda57ca73cbcb444bd0eefd63112ed66"
+      "version": "d6891ade6fb1f0d1780adc3ac1a8e99362075de4"
     },
     {
       "type": "git",
@@ -75,7 +75,7 @@
     {
       "type": "git",
       "path": "github.com/w0rp/ale",
-      "version": "f1ed654ca5318de5a24b37d882e55e04e4e566c8"
+      "version": "73ca1e71918a0b50b7bbcbed91857c3618ad93cc"
     },
     {
       "type": "git",
@@ -90,7 +90,7 @@
     {
       "type": "git",
       "path": "github.com/sheerun/vim-polyglot",
-      "version": "ec1c94306953b678bb36572897bd218fe6c76506"
+      "version": "c161994e9607399a7b365ab274592bfc4f100306"
     },
     {
       "type": "git",
@@ -105,7 +105,7 @@
     {
       "type": "git",
       "path": "github.com/tpope/vim-endwise",
-      "version": "f41ebc27b7042760c7812da9f33d5167b33a874e"
+      "version": "f67d022169bd04d3c000f47b1c03bfcbc4209470"
     },
     {
       "type": "git",
@@ -135,7 +135,7 @@
     {
       "type": "git",
       "path": "github.com/prabirshrestha/asyncomplete-tags.vim",
-      "version": "585a722f463dacb00ad11a2d2c7a0083f471ca39"
+      "version": "c3c575a62a34661134e9e9427fdcc46dc50a5069"
     },
     {
       "type": "git",
@@ -178,7 +178,8 @@
         "github.com/prabirshrestha/vim-lsp",
         "github.com/prabirshrestha/asyncomplete-lsp.vim",
         "github.com/tyru/open-browser.vim",
-        "github.com/prabirshrestha/asyncomplete-buffer.vim"
+        "github.com/prabirshrestha/asyncomplete-buffer.vim",
+        "github.com/mattn/emmet-vim"
       ]
     },
     {
