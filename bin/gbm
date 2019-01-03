@@ -11,7 +11,7 @@ detect_os() {
   if [[ "$OSTYPE" = 'linux-gnu' ]]; then
     echo 'linux'
     return 0
-  elif [[ "$OSTYPE" = 'darwin' ]]; then
+  elif [[ "$OSTYPE" =~ darwin* ]]; then
     echo 'darwin'
     return 0
   else
