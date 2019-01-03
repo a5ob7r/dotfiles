@@ -1,4 +1,4 @@
 #!/bin/sh
 
-zsh -ic exit
-zsh -c "volt get -l"
+# zsh -ic exit
+# zsh -c "volt get -l"
