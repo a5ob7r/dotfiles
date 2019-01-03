@@ -85,6 +85,8 @@ if [[ -z $DOTFILES ]]; then
     $path \
     )
   export PIPENV_VENV_IN_PROJECT=1
+  export SPACESHIP_CHAR_SYMBOL='❯'
+  export SPACESHIP_CHAR_SUFFIX=' '
   # }}}
 
   # {{{ local zshenv
