@@ -45,12 +45,12 @@
     {
       "type": "git",
       "path": "github.com/prabirshrestha/vim-lsp",
-      "version": "d6891ade6fb1f0d1780adc3ac1a8e99362075de4"
+      "version": "c72a3f481ee8fc5fab255711f8af54d3588c5d35"
     },
     {
       "type": "git",
       "path": "github.com/prabirshrestha/asyncomplete.vim",
-      "version": "b5dbe40222172b0901c06f1f90c597ef782b1b82"
+      "version": "d18e753d1168b4d9e0ef9fe16a1ccaf93b28fc50"
     },
     {
       "type": "git",
@@ -75,7 +75,7 @@
     {
       "type": "git",
       "path": "github.com/w0rp/ale",
-      "version": "73ca1e71918a0b50b7bbcbed91857c3618ad93cc"
+      "version": "0fcd5e79a9be71027df6d7e77034d530fa9bf959"
     },
     {
       "type": "git",
@@ -95,7 +95,7 @@
     {
       "type": "git",
       "path": "github.com/mechatroner/rainbow_csv",
-      "version": "654c54169b5ddec7a4f70f8c11bc69e5b00f96e5"
+      "version": "eccb05436a22a8de0bf083f08fd66cae8ad84af7"
     },
     {
       "type": "git",
