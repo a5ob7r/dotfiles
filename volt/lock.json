@@ -146,6 +146,11 @@
       "type": "git",
       "path": "github.com/tyru/open-browser.vim",
       "version": "b900ff9d39bb36891704bd0fe76737ee3a7ac2b9"
+    },
+    {
+      "type": "git",
+      "path": "github.com/lervag/vimtex",
+      "version": "cf6ac500f45d7cce4a52d6bdb4ecbec811922fbc"
     }
   ],
   "profiles": [
@@ -179,7 +184,8 @@
         "github.com/prabirshrestha/asyncomplete-lsp.vim",
         "github.com/tyru/open-browser.vim",
         "github.com/prabirshrestha/asyncomplete-buffer.vim",
-        "github.com/mattn/emmet-vim"
+        "github.com/mattn/emmet-vim",
+        "github.com/lervag/vimtex"
       ]
     },
     {
