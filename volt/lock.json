@@ -10,7 +10,7 @@
     {
       "type": "git",
       "path": "github.com/scrooloose/nerdtree",
-      "version": "72c3656799289d4635520c28e17f737066ce19d6"
+      "version": "8cc154d4b0cf28f73815050b9782e6ac5a4d733d"
     },
     {
       "type": "git",
@@ -20,7 +20,7 @@
     {
       "type": "git",
       "path": "github.com/kannokanno/previm",
-      "version": "23f3aab49119a32b893863d2fb0bcd4099c2210d"
+      "version": "425886c3afbde7b374754f54df7851dc0d71721a"
     },
     {
       "type": "git",
@@ -35,22 +35,22 @@
     {
       "type": "git",
       "path": "github.com/mattn/emmet-vim",
-      "version": "19e3240bf31030e38406700f5dcaa593e3d6b102"
+      "version": "d698f1658770ca5fa58c87e80421c8d65bbe9065"
     },
     {
       "type": "git",
       "path": "github.com/prabirshrestha/async.vim",
-      "version": "ff9177ccaea51dba67a37a6b58b623e6a2a2c610"
+      "version": "8da445be74394e58ea0837d4ffabc081287da1fd"
     },
     {
       "type": "git",
       "path": "github.com/prabirshrestha/vim-lsp",
-      "version": "c39e2633b9c0e7f9fcd683fba3804654e5c845f0"
+      "version": "d961852dcdc094217eeda9b8b37409ea82258abc"
     },
     {
       "type": "git",
       "path": "github.com/prabirshrestha/asyncomplete.vim",
-      "version": "e42e8bf729d55e95f39b6852d2a46b75241e8833"
+      "version": "2ffa939cb7cd424b595b5ea25470a621767436b3"
     },
     {
       "type": "git",
@@ -65,7 +65,7 @@
     {
       "type": "git",
       "path": "github.com/airblade/vim-gitgutter",
-      "version": "faa1e953deae2da2b0df45f71a8ce8d931766c28"
+      "version": "fd834e48eed21cc3c3ab66779a2296a16f41cbca"
     },
     {
       "type": "git",
@@ -75,7 +75,7 @@
     {
       "type": "git",
       "path": "github.com/w0rp/ale",
-      "version": "f12d312aa4aa49c4698056933030cd5adb60b489"
+      "version": "bf196ba17c9e261e4e3a9dba64260c6d0b2c8af9"
     },
     {
       "type": "git",
@@ -140,7 +140,7 @@
     {
       "type": "git",
       "path": "github.com/prabirshrestha/asyncomplete-buffer.vim",
-      "version": "68fdc6e2b82faea914ec24c1780145d8be62bf9c"
+      "version": "9cea33127be464b53eb779646a49104d1191d3eb"
     },
     {
       "type": "git",
@@ -150,7 +150,7 @@
     {
       "type": "git",
       "path": "github.com/lervag/vimtex",
-      "version": "03840a26ce31b644cc8c5a47c3162180a31e3eb7"
+      "version": "40fa6720797011e0901618cb14cd02ba684747b3"
     }
   ],
   "profiles": [
