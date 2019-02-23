@@ -23,7 +23,7 @@ set lazyredraw
 set list
 set listchars=tab:▸\ ,eol:↲,extends:❯,precedes:❮
 set modeline
-set number
+" set number
 set scrolloff=4
 set shiftwidth=2
 set showbreak=>>
