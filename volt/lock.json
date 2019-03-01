@@ -163,7 +163,6 @@
       "repos_path": [
         "github.com/KeitaNakamura/neodark.vim",
         "github.com/scrooloose/nerdtree",
-        "github.com/vivien/vim-linux-coding-style",
         "github.com/kannokanno/previm",
         "github.com/junegunn/fzf.vim",
         "github.com/itchyny/lightline.vim",
