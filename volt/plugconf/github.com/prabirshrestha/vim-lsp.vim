@@ -13,6 +13,13 @@ function! s:on_load_post()
           \ 'whitelist': ['python'],
           \ })
   endif
+  if executable('clangd')
+    au User lsp_setup call lsp#register_server({
+          \ 'name': 'clangd',
+          \ 'cmd': {server_info->['clangd']},
+          \ 'whitelist': ['c', 'cpp', 'objc', 'objcpp'],
+          \ })
+  endif
 endfunction
 
 function! s:loaded_on()
