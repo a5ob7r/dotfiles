@@ -151,6 +151,16 @@
       "type": "git",
       "path": "github.com/lervag/vimtex",
       "version": "40fa6720797011e0901618cb14cd02ba684747b3"
+    },
+    {
+      "type": "git",
+      "path": "github.com/SirVer/ultisnips",
+      "version": "6fdc3647f72e0a1f321ea6bd092ecd01f7c187ba"
+    },
+    {
+      "type": "git",
+      "path": "github.com/honza/vim-snippets",
+      "version": "08f95628717ebca76e60643e76a84904a4520051"
     }
   ],
   "profiles": [
@@ -184,7 +194,9 @@
         "github.com/tyru/open-browser.vim",
         "github.com/prabirshrestha/asyncomplete-buffer.vim",
         "github.com/mattn/emmet-vim",
-        "github.com/lervag/vimtex"
+        "github.com/lervag/vimtex",
+        "github.com/SirVer/ultisnips",
+        "github.com/honza/vim-snippets"
       ]
     },
     {
