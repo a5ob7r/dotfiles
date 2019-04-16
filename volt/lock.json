@@ -35,7 +35,7 @@
     {
       "type": "git",
       "path": "github.com/mattn/emmet-vim",
-      "version": "d698f1658770ca5fa58c87e80421c8d65bbe9065"
+      "version": "ae7d31f29080ad18073dda3530582dacb18475e6"
     },
     {
       "type": "git",
@@ -45,17 +45,17 @@
     {
       "type": "git",
       "path": "github.com/prabirshrestha/vim-lsp",
-      "version": "ee1dd1638a69930fb49be7f7e4e17c9bdb16de63"
+      "version": "357a074c851ec04d9d21640a77bd9aaa25f1140a"
     },
     {
       "type": "git",
       "path": "github.com/prabirshrestha/asyncomplete.vim",
-      "version": "f4a5b881c86e8a6a7701db023c0631417851815d"
+      "version": "db0cd8a0c23a19be55f1ea988bd6449998d55c28"
     },
     {
       "type": "git",
       "path": "github.com/prabirshrestha/asyncomplete-lsp.vim",
-      "version": "9e45b9f8f4310924cc4bdc989b0e4d2e10cedf85"
+      "version": "05389e93a81aa4262355452ebdac66ae2a1939fb"
     },
     {
       "type": "git",
@@ -75,7 +75,7 @@
     {
       "type": "git",
       "path": "github.com/w0rp/ale",
-      "version": "435a072181d38ad05d92dfe9dcaa7f14d16de792"
+      "version": "3a010f68b8c6e18bfa19fe6cc1e5d23a6e6484b4"
     },
     {
       "type": "git",
@@ -150,7 +150,7 @@
     {
       "type": "git",
       "path": "github.com/lervag/vimtex",
-      "version": "068ef61e6e9364093272edc4f0cf997a349c0a98"
+      "version": "51892b2b592331ce05b9b95e342cf5312b4f210b"
     },
     {
       "type": "git",
@@ -160,7 +160,7 @@
     {
       "type": "git",
       "path": "github.com/honza/vim-snippets",
-      "version": "4214407a5eda0d49ad591e41b6eb91f4682fa81f"
+      "version": "1ba4a66c11d8fd4309656bc2994d683580d54de3"
     }
   ],
   "profiles": [
