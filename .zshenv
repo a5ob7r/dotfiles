@@ -88,8 +88,8 @@ if [[ -z $DOTFILES ]]; then
   export SPACESHIP_CHAR_SYMBOL='❯'
   export SPACESHIP_CHAR_SUFFIX=' '
   # }}}
-
-  # {{{ local zshenv
-  [[ -f ~/.zshenv.local ]] && source ~/.zshenv.local
-  # }}}
 fi
+
+# {{{ local zshenv
+[[ -f ~/.zshenv.local ]] && source ~/.zshenv.local
+# }}}
