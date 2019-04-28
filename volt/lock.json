@@ -10,7 +10,7 @@
     {
       "type": "git",
       "path": "github.com/scrooloose/nerdtree",
-      "version": "7513f256aa1d59b6a749cefe5ac505375b1b8a6a"
+      "version": "3c0633578281463638235597d8208612544606ae"
     },
     {
       "type": "git",
@@ -45,7 +45,7 @@
     {
       "type": "git",
       "path": "github.com/prabirshrestha/vim-lsp",
-      "version": "357a074c851ec04d9d21640a77bd9aaa25f1140a"
+      "version": "fe5057641cadba27caa26df74efa896e4255308e"
     },
     {
       "type": "git",
@@ -75,7 +75,7 @@
     {
       "type": "git",
       "path": "github.com/w0rp/ale",
-      "version": "3a010f68b8c6e18bfa19fe6cc1e5d23a6e6484b4"
+      "version": "737ed31de5be0c50502d820421726b8a707d1a58"
     },
     {
       "type": "git",
@@ -90,12 +90,12 @@
     {
       "type": "git",
       "path": "github.com/sheerun/vim-polyglot",
-      "version": "a55b6aa3aa797c989a4979a13a5bd2ae11cfd4a5"
+      "version": "9fd5c11a20f88525088c8635a3bc6a25ec4c05c7"
     },
     {
       "type": "git",
       "path": "github.com/mechatroner/rainbow_csv",
-      "version": "9c6209360e30c1f5771ee288a9694281916ad4df"
+      "version": "e5fe12db5bef2253bd159836d5d2c422a5b66546"
     },
     {
       "type": "git",
@@ -150,7 +150,7 @@
     {
       "type": "git",
       "path": "github.com/lervag/vimtex",
-      "version": "51892b2b592331ce05b9b95e342cf5312b4f210b"
+      "version": "2e1687bd66c58fc37d47447c411f89895d8db4cd"
     },
     {
       "type": "git",
@@ -160,7 +160,7 @@
     {
       "type": "git",
       "path": "github.com/honza/vim-snippets",
-      "version": "1ba4a66c11d8fd4309656bc2994d683580d54de3"
+      "version": "a79d5b062427a4acfd665b2f5498e7052ebc29e5"
     }
   ],
   "profiles": [
