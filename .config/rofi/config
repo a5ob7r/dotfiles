@@ -1,0 +1,5 @@
+rofi.modi: window,run
+rofi.show-icons: true
+rofi.sidebar-mode: true
+rofi.matching: fuzzy
+rofi.hide-scrollbar: true
