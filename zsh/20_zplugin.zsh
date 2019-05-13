@@ -14,7 +14,8 @@ zplugin light 'zsh-users/zsh-autosuggestions'
 
 zplugin light 'zdharma/fast-syntax-highlighting'
 
-zplugin light 'denysdovhan/spaceship-prompt'
+zplugin ice pick"async.zsh" src"pure.zsh"
+zplugin light 'sindresorhus/pure'
 
 zplugin light 'b4b4r07/enhancd'
 
