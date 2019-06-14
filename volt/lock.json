@@ -10,7 +10,7 @@
     {
       "type": "git",
       "path": "github.com/scrooloose/nerdtree",
-      "version": "67fa9b3116948466234978aa6287649f98e666bd"
+      "version": "12dea6ccb2381a2b6b8ae0bf17b4078699bbfec3"
     },
     {
       "type": "git",
@@ -25,7 +25,7 @@
     {
       "type": "git",
       "path": "github.com/junegunn/fzf.vim",
-      "version": "5c87ab86c0e7b0ec8a5edd39a4ce5500bb9e9333"
+      "version": "91ed5f4b39b6e4a2ca50be1c8cec7e1148145fab"
     },
     {
       "type": "git",
@@ -35,7 +35,7 @@
     {
       "type": "git",
       "path": "github.com/mattn/emmet-vim",
-      "version": "0414b53a23c1da180370bf1228b8553fc5022e3f"
+      "version": "24fbb0aef7004e183e377c6c244a5dd8845ef07c"
     },
     {
       "type": "git",
@@ -45,12 +45,12 @@
     {
       "type": "git",
       "path": "github.com/prabirshrestha/vim-lsp",
-      "version": "21d51ffb832aead80d3ba54274db9524d882dd6a"
+      "version": "69f31d5bf27eac0ef4b804d0e517d6e85856b44a"
     },
     {
       "type": "git",
       "path": "github.com/prabirshrestha/asyncomplete.vim",
-      "version": "b65b77bd753ae75bedf31f9153fdd9d2bd4711be"
+      "version": "bffa8b62dd7025f400891182136148773d42f075"
     },
     {
       "type": "git",
@@ -60,12 +60,12 @@
     {
       "type": "git",
       "path": "github.com/itchyny/lightline.vim",
-      "version": "bb0b4013611e11200d2ae5a65e8804bbd930a770"
+      "version": "80c242c3c5394fd5143b5d7e2741989ba04ae46a"
     },
     {
       "type": "git",
       "path": "github.com/airblade/vim-gitgutter",
-      "version": "a7650790ea3d495cef3e529fbfe464e1b5171f50"
+      "version": "07b60b584ea603693d24a72207de58a446e0b5ec"
     },
     {
       "type": "git",
@@ -75,7 +75,7 @@
     {
       "type": "git",
       "path": "github.com/w0rp/ale",
-      "version": "27146ade32d6686fefde27de76b65bcdf353eab5"
+      "version": "6e28eec243c4df3cf3b67bac9f87fdd30c846cbd"
     },
     {
       "type": "git",
@@ -90,7 +90,7 @@
     {
       "type": "git",
       "path": "github.com/sheerun/vim-polyglot",
-      "version": "aebef2c2e76b88384b1121c237c965e8cf8b3bcb"
+      "version": "2edc785a5e21cf41960223b09bba8efc9276e777"
     },
     {
       "type": "git",
@@ -150,7 +150,7 @@
     {
       "type": "git",
       "path": "github.com/lervag/vimtex",
-      "version": "1a1c1cae8cf247e463f695cc633cabd3f5c14a0f"
+      "version": "7ed563bc2ab1ee75396b243dd62cfc404933f63a"
     },
     {
       "type": "git",
@@ -160,7 +160,7 @@
     {
       "type": "git",
       "path": "github.com/honza/vim-snippets",
-      "version": "91ef2dcf1e75d06fd04ceafc144c8cf5d1b4f46a"
+      "version": "a11cf5b47fcb9de72b5c8694a4e2fe2dca8c0ae7"
     }
   ],
   "profiles": [
