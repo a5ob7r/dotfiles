@@ -5,12 +5,12 @@
     {
       "type": "git",
       "path": "github.com/KeitaNakamura/neodark.vim",
-      "version": "e95e924081f95ec18d9b6d7239a445db982669e8"
+      "version": "eeafb097ad5d9aa9db4ba43b8556306da9e3329f"
     },
     {
       "type": "git",
       "path": "github.com/scrooloose/nerdtree",
-      "version": "12dea6ccb2381a2b6b8ae0bf17b4078699bbfec3"
+      "version": "33fe2fdf16a95c12e8284364c780ed405dbaad17"
     },
     {
       "type": "git",
@@ -35,7 +35,7 @@
     {
       "type": "git",
       "path": "github.com/mattn/emmet-vim",
-      "version": "24fbb0aef7004e183e377c6c244a5dd8845ef07c"
+      "version": "5a7c7930c675220121e62d8eecfdbee653e95bac"
     },
     {
       "type": "git",
@@ -45,7 +45,7 @@
     {
       "type": "git",
       "path": "github.com/prabirshrestha/vim-lsp",
-      "version": "69f31d5bf27eac0ef4b804d0e517d6e85856b44a"
+      "version": "e0f832443b81184536588767716f2ae93ebe2346"
     },
     {
       "type": "git",
@@ -65,7 +65,7 @@
     {
       "type": "git",
       "path": "github.com/airblade/vim-gitgutter",
-      "version": "07b60b584ea603693d24a72207de58a446e0b5ec"
+      "version": "8aac968f1a617cc1c346707242af181e6b1f467e"
     },
     {
       "type": "git",
@@ -75,7 +75,7 @@
     {
       "type": "git",
       "path": "github.com/w0rp/ale",
-      "version": "6e28eec243c4df3cf3b67bac9f87fdd30c846cbd"
+      "version": "9ad8fd6a1bdff5f0c80cf921df5628d1d322cf82"
     },
     {
       "type": "git",
@@ -90,7 +90,7 @@
     {
       "type": "git",
       "path": "github.com/sheerun/vim-polyglot",
-      "version": "2edc785a5e21cf41960223b09bba8efc9276e777"
+      "version": "d52700284984ada048ce325404dfa25237271ba1"
     },
     {
       "type": "git",
@@ -125,7 +125,7 @@
     {
       "type": "git",
       "path": "github.com/prabirshrestha/asyncomplete-file.vim",
-      "version": "99707aad551d0863268323febacd038aa66074ad"
+      "version": "88da0ad9381bd389e666841e991607535e0c585d"
     },
     {
       "type": "git",
@@ -140,7 +140,7 @@
     {
       "type": "git",
       "path": "github.com/prabirshrestha/asyncomplete-buffer.vim",
-      "version": "9cea33127be464b53eb779646a49104d1191d3eb"
+      "version": "b8f00ea28c29d776148b3380df8f739b67696f68"
     },
     {
       "type": "git",
@@ -150,7 +150,7 @@
     {
       "type": "git",
       "path": "github.com/lervag/vimtex",
-      "version": "7ed563bc2ab1ee75396b243dd62cfc404933f63a"
+      "version": "c7cbc9d662c0520e769faddb2d952f4992c83049"
     },
     {
       "type": "git",
