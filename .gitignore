@@ -4,7 +4,8 @@
 
 /volt/repos
 
-/tmux/powerline.conf
+/.tmux/powerline.conf
+/.tmux/plugins
 
 *.zwc
 
