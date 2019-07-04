@@ -25,6 +25,9 @@ unlink:
 tests:
 	@test/test.sh
 
+lint:
+	@bash -c 'shopt -s globstar; shellcheck -a -x **/*.zsh .zshrc .zshenv .zprofile etc/**/*.sh .bash_profile .bashrc'
+
 powerline-conf:
 	@etc/script/universal/link_powerline_conf.sh
 
