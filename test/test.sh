@@ -13,7 +13,6 @@ readonly COMMANDS=( \
   volt \
   ghq \
   memo \
-  anyenv \
 )
 
 readonly CONFIG_FILE_PATH=( \
