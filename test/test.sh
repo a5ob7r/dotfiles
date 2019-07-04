@@ -92,8 +92,14 @@ check_configures() {
 }
 
 main() {
-  check_installed_commands
-  check_configures
+  local is_all_test_pass=true
+
+  check_installed_commands || is_all_test_pass=false
+  check_configures || is_all_test_pass=false
+
+  if ! $is_all_test_pass; then
+    return 1;
+  fi
 }
 
 main
