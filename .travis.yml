@@ -1,18 +1,19 @@
-sudo: required
+language: shell
 
-language: c
+sudo: false
 
-service:
-  - docker
-
-env:
-  global:
-    - IMAGE_NAME: dotfiles
-    - TAG_NAME: test
-    - CONTAINER_NAME: dotfiles
+addons:
+  apt:
+    update: true
+    packages:
+      - git
+      - tig
+      - ctags
+      - bash
+      - vim
+      - zsh
+      - tmux
 
 install:
-  - docker build -t ${IMAGE_NAME}:${TAG_NAME} test
+  - make install
 
-script:
-  - docker run --name ${CONTAINER_NAME} ${IMAGE_NAME}:${TAG_NAME} bash -c "curl https://raw.githubusercontent.com/a5ob7r/dotfiles/${TRAVIS_BRANCH}/etc/install.sh | sh"
