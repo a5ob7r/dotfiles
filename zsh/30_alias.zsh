@@ -1,3 +1,6 @@
+# shellcheck shell=bash
+# shellcheck disable=SC2154
+
 # define alias of colorful and detail ls
 if (( $+commands[exa] )); then
   alias ll='exa -1'

@@ -1,4 +1,8 @@
-for f in $DOTFILES/zsh/*.zsh; do
+# shellcheck shell=bash
+# shellcheck disable=SC1090
+
+
+for f in "$DOTFILES"/zsh/*.zsh; do
   source "$f"
 done
 

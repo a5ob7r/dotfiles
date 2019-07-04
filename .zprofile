@@ -1,3 +1,7 @@
+# shellcheck shell=bash
+# shellcheck disable=SC1090
+# shellcheck disable=SC2154
+
 is_tmux_runnning() { [[ -n "$TMUX" ]]; }
 is_ssh_running() { [[ -n "$SSH_CONECTION" ]]; }
 
@@ -19,7 +23,7 @@ tmux_automatically_attach_session() {
   # detached session exists
   tmux list-sessions
   echo -n "Tmux: attach? (y/N/num) "
-  read
+  read -r
   if [[ "$REPLY" =~ ^[Yy]$ ]] || [[ "$REPLY" == '' ]]; then
     exec tmux attach-session
   elif [[ "$REPLY" =~ ^[0-9]+$ ]]; then
@@ -28,13 +32,6 @@ tmux_automatically_attach_session() {
     echo "Error: Invalid input"
     return 1
   fi
-
-  if [[ $? -eq 0 ]]; then
-    echo "$(tmux -V) attached session"
-    return 0
-  fi
-
-  return 1
 }
 
 [[ -f ~/.zprofile.local ]] && source ~/.zprofile.local

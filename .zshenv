@@ -1,3 +1,7 @@
+# shellcheck shell=bash
+# shellcheck disable=SC1036
+# shellcheck disable=SC1090
+
 if [[ -z $DOTFILES ]]; then
   # when on no tmux,
   # define environment variables and execute processing needed only once
@@ -23,7 +27,7 @@ if [[ -z $DOTFILES ]]; then
     ~/bin(N-/) \
     ~/.local/bin(N-/) \
     /usr/local/bin(N-/) \
-    $path \
+    "$path" \
     )
   # }}}
 
@@ -56,8 +60,8 @@ if [[ -z $DOTFILES ]]; then
   typeset -U fpath
   # function path
   export fpath=( \
-    $DOTFILES/zsh/compdefs(N-/) \
-    $fpath \
+    "$DOTFILES"/zsh/compdefs(N-/) \
+    "$fpath" \
     )
   # }}}
 
@@ -81,8 +85,8 @@ if [[ -z $DOTFILES ]]; then
   export VOLTPATH=$DOTFILES/volt
   export GOPATH=~/go
   export path=( \
-    $GOPATH/bin(N-/) \
-    $path \
+    "$GOPATH"/bin(N-/) \
+    "${path[@]}" \
     )
   export PIPENV_VENV_IN_PROJECT=1
   export SPACESHIP_CHAR_SYMBOL='❯'

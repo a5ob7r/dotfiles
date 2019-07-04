@@ -1,9 +1,13 @@
+# shellcheck shell=bash
+# shellcheck disable=SC1090
+# shellcheck disable=SC2154
+
 zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z} r:|[._-]=*'
 zstyle ':completion:*' verbose yes
 zstyle ':completion:*' completer _expand _complete _match _approximate _list
 zstyle ':completion:*' group-name ''
 zstyle ':completion:*' list-separator '->'
-zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}
+zstyle ':completion:*' list-colors "${(s.:.)LS_COLORS}"
 zstyle ':completion:*' use-cache true
 zstyle ':completion:*:messages' format '%F{yellow}%d%f'
 zstyle ':completion:*:warnings' format '%F{red}No matches for:%f %F{yellow}%d%f'

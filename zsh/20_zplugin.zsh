@@ -1,3 +1,6 @@
+# shellcheck shell=bash
+# shellcheck disable=SC1090
+
 ! [[ -d ~/.zplugin ]] && \
   sh -c "$(curl -fsSL https://raw.githubusercontent.com/zdharma/zplugin/master/doc/install.sh)"
 

@@ -12,5 +12,5 @@ fi
 
 bundle config --global path vendor/bundle
 bundle config --global bin vendor/bin
-bundle config --global jobs `nproc`
+bundle config --global jobs "$(nproc)"
 bundle config --global disable_shared_gems true

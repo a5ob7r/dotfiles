@@ -1,3 +1,5 @@
+# shellcheck shell=bash
+
 setopt correct
 setopt emacs
 setopt extended_glob
