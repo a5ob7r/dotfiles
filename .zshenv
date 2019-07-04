@@ -55,14 +55,6 @@ if [[ -z $DOTFILES ]]; then
 
   # spelling correction prompt
   export SPROMPT="zsh: correct: %F{red}%R%f -> %F{green}%r%f [No/Yes/Abort/Edit]? "
-
-  # prevent adding duplication fpath
-  typeset -U fpath
-  # function path
-  export fpath=( \
-    "$DOTFILES"/zsh/compdefs(N-/) \
-    "$fpath" \
-    )
   # }}}
 
   # {{{ fzf
