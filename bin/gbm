@@ -184,13 +184,14 @@ install() {
   trap 'rm -rf $output_dir; exit 1' 1 2 3 15
 
   local output_pkg=$output_dir/$pkg_name
-  local output_bin=$output_dir/$bin
+  local output_bin
 
   ( \
     fetch_package "$pkg_url" "$output_dir" || exit 1; \
     expand_zip "$output_pkg" \
     || rename_bin "$output_pkg" "$bin" \
     || exit 1; \
+    output_bin=$(find "$output_dir" -type f -name "$bin"); \
     move_bin "$output_bin" "$gbm_bin_dir" || exit 1; \
     add_execute_auth_bin "$bin_path" || exit 1; \
     link_bin "$bin_path" || exit 1 \
