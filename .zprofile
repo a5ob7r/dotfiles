@@ -37,4 +37,6 @@ tmux_automatically_attach_session() {
   return 1
 }
 
+[[ -f ~/.zprofile.local ]] && source ~/.zprofile.local
+
 tmux_automatically_attach_session
