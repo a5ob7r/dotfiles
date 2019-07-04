@@ -6,7 +6,7 @@ DOTFILES := $(filter-out $(FINLTER), $(DOTFILES_RAW))
 
 CONFIG_ALL := $(wildcard .config/*)
 
-install: init link pluginstall
+install: init link pluginstall tests
 
 init:
 	@etc/init
@@ -21,6 +21,9 @@ link:
 unlink:
 	@$(foreach dotfile, $(DOTFILES), unlink $(HOME)/$(dotfile);)
 	@$(foreach config, $(CONFIG_ALL), unlink $(HOME)/$(config);)
+
+tests:
+	@test/test.sh
 
 powerline-conf:
 	@etc/script/universal/link_powerline_conf.sh
