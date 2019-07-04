@@ -20,7 +20,7 @@
     {
       "type": "git",
       "path": "github.com/airblade/vim-gitgutter",
-      "version": "8aac968f1a617cc1c346707242af181e6b1f467e"
+      "version": "91471746fe687ee867877508dfd809460dab5698"
     },
     {
       "type": "git",
@@ -55,12 +55,12 @@
     {
       "type": "git",
       "path": "github.com/lervag/vimtex",
-      "version": "c7cbc9d662c0520e769faddb2d952f4992c83049"
+      "version": "bd545a734a6f825615e0274b825d3bd7b6218ab9"
     },
     {
       "type": "git",
       "path": "github.com/mattn/emmet-vim",
-      "version": "5a7c7930c675220121e62d8eecfdbee653e95bac"
+      "version": "15ef997d4d683afb4b1ee641d47980972445b61f"
     },
     {
       "type": "git",
@@ -70,7 +70,7 @@
     {
       "type": "git",
       "path": "github.com/mechatroner/rainbow_csv",
-      "version": "9bfe572bdb7303424afaaef656c1502cd634bceb"
+      "version": "0272e60c9b3e54a8f00de86381e6b08e3412a7b4"
     },
     {
       "type": "git",
@@ -100,7 +100,7 @@
     {
       "type": "git",
       "path": "github.com/prabirshrestha/asyncomplete-tags.vim",
-      "version": "c3c575a62a34661134e9e9427fdcc46dc50a5069"
+      "version": "95c773cc90245494dc406f94b9c79098b776cb60"
     },
     {
       "type": "git",
@@ -110,7 +110,7 @@
     {
       "type": "git",
       "path": "github.com/prabirshrestha/vim-lsp",
-      "version": "e0f832443b81184536588767716f2ae93ebe2346"
+      "version": "d542bbc5a3b0b2d78552a11f4edfee1c55fc3796"
     },
     {
       "type": "git",
@@ -130,12 +130,12 @@
     {
       "type": "git",
       "path": "github.com/scrooloose/nerdtree",
-      "version": "33fe2fdf16a95c12e8284364c780ed405dbaad17"
+      "version": "62b78de3674de8e3d294ab2a5e6ce98d1ad35f20"
     },
     {
       "type": "git",
       "path": "github.com/sheerun/vim-polyglot",
-      "version": "d52700284984ada048ce325404dfa25237271ba1"
+      "version": "3ddca5da461ebfaa82104f82e3cbf19d1c326ade"
     },
     {
       "type": "git",
@@ -165,7 +165,7 @@
     {
       "type": "git",
       "path": "github.com/w0rp/ale",
-      "version": "9ad8fd6a1bdff5f0c80cf921df5628d1d322cf82"
+      "version": "a5240009ba5ff22daad95c306f7dec372d46bda0"
     }
   ],
   "profiles": [
