@@ -45,6 +45,7 @@ function! s:depends()
   " e.g. return ['github.com/tyru/open-browser.vim']
 
   return [
-        \ 'github.com/maximbaz/lightline-ale.vim'
+        \ 'github.com/KeitaNakamura/neodark.vim',
+        \ 'github.com/itchyny/vim-gitbranch',
         \ ]
 endfunction
