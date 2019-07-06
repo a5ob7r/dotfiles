@@ -59,6 +59,11 @@
     },
     {
       "type": "git",
+      "path": "github.com/liuchengxu/vista.vim",
+      "version": "31d770c601a291d1e2a334bcdd016b8d73e8d310"
+    },
+    {
+      "type": "git",
       "path": "github.com/mattn/emmet-vim",
       "version": "15ef997d4d683afb4b1ee641d47980972445b61f"
     },
@@ -193,6 +198,7 @@
         "github.com/junegunn/fzf.vim",
         "github.com/kannokanno/previm",
         "github.com/lervag/vimtex",
+        "github.com/liuchengxu/vista.vim",
         "github.com/mattn/emmet-vim",
         "github.com/maximbaz/lightline-ale",
         "github.com/mechatroner/rainbow_csv",
