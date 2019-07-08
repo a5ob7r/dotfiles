@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/usr/bin/env bash
 
 if ! type bundle > /dev/null 2>&1; then
   cat << EOS

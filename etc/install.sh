@@ -3,7 +3,7 @@
 DOTFILES=~/src/github.com/a5ob7r/dotfiles
 DOTFILES_REMOTE='https://github.com/a5ob7r/dotfiles.git'
 
-if ! type git > /dev/null 2>&1; then
+if ! command -v git > /dev/null 2>&1; then
   echo 'Not found git.'
   echo 'Please install git.'
   exit 1

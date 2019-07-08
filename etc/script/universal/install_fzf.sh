@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/usr/bin/env bash
 
 install_fzf() {
   if type fzf > /dev/null 2>&1; then
