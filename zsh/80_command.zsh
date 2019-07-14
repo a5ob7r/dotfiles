@@ -28,7 +28,7 @@ fdkrm() {
 }
 
 zshtimes() {
-  for _ in $(seq 1 10); do time zsh -i -c exit; done
+  for _ in $(seq 1 10); do sleep 0.1; time zsh -i -c exit; done
 }
 
 zshcompiles() {
