@@ -1,4 +1,4 @@
-source tmux.lib.sh
+source ~/.tmux/tmux.lib.sh
 
 # {{{ default shell
 tmux set -g default-command "$SHELL"

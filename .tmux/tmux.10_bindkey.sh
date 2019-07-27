@@ -1,4 +1,4 @@
-source tmux.lib.sh
+source ~/.tmux/tmux.lib.sh
 
 # {{{ prefix key
 TMUX_PREFIX_KEY='C-q'
