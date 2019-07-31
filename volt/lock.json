@@ -20,7 +20,7 @@
     {
       "type": "git",
       "path": "github.com/airblade/vim-gitgutter",
-      "version": "91471746fe687ee867877508dfd809460dab5698"
+      "version": "c75c83df531881008f8cf903eab7cd68bc19ff7a"
     },
     {
       "type": "git",
@@ -35,7 +35,7 @@
     {
       "type": "git",
       "path": "github.com/itchyny/lightline.vim",
-      "version": "bc82a1c7b6d8517d4e9224a254968e0f0b334fdf"
+      "version": "1afe1e9bd5726550014d78ee244499d65beeb686"
     },
     {
       "type": "git",
@@ -55,17 +55,17 @@
     {
       "type": "git",
       "path": "github.com/lervag/vimtex",
-      "version": "34e26cdd7affc666022363c0ead59cffff5b094c"
+      "version": "81be490dc681be9333b9582bacd34e0009266da3"
     },
     {
       "type": "git",
       "path": "github.com/liuchengxu/vista.vim",
-      "version": "1b37a698d7255d403fb385f2e2934166168ee3c1"
+      "version": "df51110bc3fdfb692ef2587d7a25723e7983dd66"
     },
     {
       "type": "git",
       "path": "github.com/mattn/emmet-vim",
-      "version": "15ef997d4d683afb4b1ee641d47980972445b61f"
+      "version": "461700696ea317722c4a8d92a31a7267cdcc0bfb"
     },
     {
       "type": "git",
@@ -75,7 +75,7 @@
     {
       "type": "git",
       "path": "github.com/mechatroner/rainbow_csv",
-      "version": "6d1df475cda371fb695f700e03e1d540de2f36cd"
+      "version": "2efe199d46383a3aa2a05f0b4c32cbdade235722"
     },
     {
       "type": "git",
@@ -115,7 +115,7 @@
     {
       "type": "git",
       "path": "github.com/prabirshrestha/vim-lsp",
-      "version": "55e6cd174980c69062683d110ee1f0dffd6c7730"
+      "version": "e829ca02c2aee08c3b87cc80f79b252ea5a9ae7a"
     },
     {
       "type": "git",
@@ -170,7 +170,7 @@
     {
       "type": "git",
       "path": "github.com/w0rp/ale",
-      "version": "aae6d30b1ec135e37ec3bea1885d161c6174572b"
+      "version": "3ae01ba24967a37e5a41626673422be53e188026"
     }
   ],
   "profiles": [
