@@ -2,10 +2,7 @@
 
 install_formula() {
   brew update
-
-  while read -r formula; do
-    brew install "$formula"
-  done < ./formulas
+  brew bundle install -v
 }
 
 # check brew is installed
