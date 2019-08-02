@@ -43,4 +43,7 @@ if (( $+commands[pipenv])); then
 fi
 
 alias cdh='cd ~'
+alias ..='cd ../'
+alias ...='cd ../../'
+alias ....='cd ../../../'
 alias shinit='exec $SHELL -l'
