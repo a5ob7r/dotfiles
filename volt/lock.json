@@ -171,6 +171,11 @@
       "type": "git",
       "path": "github.com/w0rp/ale",
       "version": "3ae01ba24967a37e5a41626673422be53e188026"
+    },
+    {
+      "type": "git",
+      "path": "github.com/yami-beta/asyncomplete-omni.vim",
+      "version": "4ea03f5f8320ae46557d040912e16790b6722983"
     }
   ],
   "profiles": [
@@ -216,7 +221,8 @@
         "github.com/tpope/vim-endwise",
         "github.com/tpope/vim-surround",
         "github.com/tyru/open-browser.vim",
-        "github.com/w0rp/ale"
+        "github.com/w0rp/ale",
+        "github.com/yami-beta/asyncomplete-omni.vim"
       ]
     },
     {
