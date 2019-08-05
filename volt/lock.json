@@ -35,7 +35,7 @@
     {
       "type": "git",
       "path": "github.com/itchyny/lightline.vim",
-      "version": "1afe1e9bd5726550014d78ee244499d65beeb686"
+      "version": "d589eb55305043955e65df8f326580f06e4533c9"
     },
     {
       "type": "git",
@@ -55,7 +55,7 @@
     {
       "type": "git",
       "path": "github.com/lervag/vimtex",
-      "version": "81be490dc681be9333b9582bacd34e0009266da3"
+      "version": "b933bf2c9754de679099034526718a6bf5c4b69d"
     },
     {
       "type": "git",
@@ -170,7 +170,7 @@
     {
       "type": "git",
       "path": "github.com/w0rp/ale",
-      "version": "3ae01ba24967a37e5a41626673422be53e188026"
+      "version": "dd1e1025b8a9b13cb7966bf2baa3e6b42a862857"
     },
     {
       "type": "git",
