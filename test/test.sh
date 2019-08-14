@@ -1,5 +1,10 @@
 #!/usr/bin/env bash
 
+set -Ceuo pipefail
+
+export LC_ALL=C
+export LANG=C
+
 readonly COMMANDS=( \
   make \
   git \
@@ -31,7 +36,7 @@ readonly CONFIG_FILE_PATH=( \
 )
 
 check_installed_commands() {
-  local not_founds=()
+  declare -a not_founds
 
   echo -e ":: \e[1mChecking installed commands...\e[m"
 
@@ -46,9 +51,7 @@ check_installed_commands() {
   done
 
   echo
-  if [[ ${#not_founds[@]} -eq 0 ]]; then
-    echo -e "All commands are installed.\n"
-  else
+  if [[ -v not_founds ]]; then
     echo -e "\e[31mCommands below are not installed.\e[m"
 
     for cmd in "${not_founds[@]}"; do
@@ -57,6 +60,8 @@ check_installed_commands() {
 
     echo -e "\nPlease install commands above.\n"
     return 1;
+  else
+    echo -e "All commands are installed.\n"
   fi
 }
 
