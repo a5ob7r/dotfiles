@@ -1,5 +1,21 @@
-#!/bin/sh
+#!/usr/bin/env bash
 
-pip3 install --user powerline-status
-pip3 install --user python-language-server
-pip3 install --user pipenv
+set -Ceuo pipefail
+
+export LC_ALL=C
+export LANG=C
+
+readonly PACKAGES=( \
+  pipenv \
+  python-language-server \
+  flake8 \
+  ipdb \
+  tmuxp \
+  kaggle \
+  youtube-dl \
+  # powerline-status \
+)
+
+for package in "${PACKAGES[@]}"; do
+  pip3 install --user "${package}"
+done
