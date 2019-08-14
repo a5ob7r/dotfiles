@@ -20,7 +20,7 @@
     {
       "type": "git",
       "path": "github.com/airblade/vim-gitgutter",
-      "version": "c75c83df531881008f8cf903eab7cd68bc19ff7a"
+      "version": "71bbe88525c0b36f4f3843a2a577442bbd7fd957"
     },
     {
       "type": "git",
@@ -30,12 +30,12 @@
     {
       "type": "git",
       "path": "github.com/honza/vim-snippets",
-      "version": "84ab7e118ca5fee5a67ce4c884c0c1d5c9308e21"
+      "version": "5dc42dbc6c4d9b5068ddde901b79c5e483c42114"
     },
     {
       "type": "git",
       "path": "github.com/itchyny/lightline.vim",
-      "version": "d589eb55305043955e65df8f326580f06e4533c9"
+      "version": "1f3da6f1bb78bfe0e6113d0812828329f3874b3e"
     },
     {
       "type": "git",
@@ -55,12 +55,12 @@
     {
       "type": "git",
       "path": "github.com/lervag/vimtex",
-      "version": "b933bf2c9754de679099034526718a6bf5c4b69d"
+      "version": "be0e917d41769dbe8d4f94993b625548131fd058"
     },
     {
       "type": "git",
       "path": "github.com/liuchengxu/vista.vim",
-      "version": "df51110bc3fdfb692ef2587d7a25723e7983dd66"
+      "version": "2662f45efdd5a83a471c2298dc59aa97b173700e"
     },
     {
       "type": "git",
@@ -75,7 +75,7 @@
     {
       "type": "git",
       "path": "github.com/mechatroner/rainbow_csv",
-      "version": "2efe199d46383a3aa2a05f0b4c32cbdade235722"
+      "version": "2ed48a402fc9520dc5fef8c17c1a7fc019e3c52f"
     },
     {
       "type": "git",
@@ -115,7 +115,7 @@
     {
       "type": "git",
       "path": "github.com/prabirshrestha/vim-lsp",
-      "version": "e829ca02c2aee08c3b87cc80f79b252ea5a9ae7a"
+      "version": "738e91f0af2a2a01dd421b8b356066ae1ceda93a"
     },
     {
       "type": "git",
@@ -135,7 +135,7 @@
     {
       "type": "git",
       "path": "github.com/scrooloose/nerdtree",
-      "version": "63c59208c1f9eef7068a944f5c3033bd1a348b97"
+      "version": "184fbb6ffea6dc69726b229a08153c9d08522386"
     },
     {
       "type": "git",
@@ -170,7 +170,7 @@
     {
       "type": "git",
       "path": "github.com/w0rp/ale",
-      "version": "dd1e1025b8a9b13cb7966bf2baa3e6b42a862857"
+      "version": "28c93ab1854ef41a46855401cc4addbaf7dfb9d4"
     },
     {
       "type": "git",
