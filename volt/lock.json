@@ -20,7 +20,7 @@
     {
       "type": "git",
       "path": "github.com/airblade/vim-gitgutter",
-      "version": "71bbe88525c0b36f4f3843a2a577442bbd7fd957"
+      "version": "53996f5cd118b7670dc4da30b8a8402983316a33"
     },
     {
       "type": "git",
@@ -35,7 +35,7 @@
     {
       "type": "git",
       "path": "github.com/itchyny/lightline.vim",
-      "version": "1f3da6f1bb78bfe0e6113d0812828329f3874b3e"
+      "version": "09c61dc3f650eccd2c165c36db8330496321aa50"
     },
     {
       "type": "git",
@@ -55,7 +55,7 @@
     {
       "type": "git",
       "path": "github.com/lervag/vimtex",
-      "version": "be0e917d41769dbe8d4f94993b625548131fd058"
+      "version": "866699bdae3696130159e7115954c64de8e7bdcd"
     },
     {
       "type": "git",
@@ -75,7 +75,7 @@
     {
       "type": "git",
       "path": "github.com/mechatroner/rainbow_csv",
-      "version": "2ed48a402fc9520dc5fef8c17c1a7fc019e3c52f"
+      "version": "db7a18cacc7bad56d28d658fedf34a854e59f828"
     },
     {
       "type": "git",
