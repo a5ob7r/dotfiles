@@ -54,4 +54,7 @@ fi
 # exec man by split window
 tmux bind m command-prompt -p "<manual by split-window horiz>" "split-window 'exec man %%'"
 tmux bind M command-prompt -p "<manual by split-window vert>" "split-window -h 'exec man %%'"
+
+# exec tig
+tmux bind g split-window -c "#{pane_current_path}" tig
 # }}}
