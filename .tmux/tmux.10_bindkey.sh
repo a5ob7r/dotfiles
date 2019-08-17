@@ -2,8 +2,7 @@ source ~/.tmux/tmux.lib.sh
 
 # {{{ prefix key
 TMUX_PREFIX_KEY='C-q'
-# tmux set -g prefix $TMUX_PREFIX_KEY
-tmux set -g prefix 'C-q'
+tmux set -g prefix $TMUX_PREFIX_KEY
 tmux bind $TMUX_PREFIX_KEY send-prefix
 tmux unbind 'C-b'
 # }}}
