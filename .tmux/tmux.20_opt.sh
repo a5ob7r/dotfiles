@@ -17,6 +17,12 @@ tmux set -g status-keys emacs
 tmux set -sg escape-time 0
 # }}}
 
+# {{{ status line
+if ! is_ssh_connection; then
+  tmux set -g status-position top
+fi
+# }}}
+
 # {{{ history
 tmux set -g history-file "$HOME/.tmux_history"
 tmux set -g history-limit 10000

@@ -9,3 +9,7 @@
 
   [[ "$(echo "${tmux_version} ${cond_expr}" | bc)" = 1 ]]
 }
+
+is_ssh_connection() {
+  [[ -n "$SSH_CONNECTION" ]]
+}
