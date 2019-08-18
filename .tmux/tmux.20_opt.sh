@@ -33,3 +33,7 @@ if is_tmux_version "> 2.4"; then
   tmux set -sg command-alias[0] e="split-window -c '#{pane_current_path}'"
 fi
 # }}}
+
+# {{{ others
+tmux setw -g aggressive-resize on
+# }}}
