@@ -13,6 +13,7 @@ readonly PACKAGES=( \
   tmuxp \
   kaggle \
   youtube-dl \
+  vim-vint \
   # powerline-status \
 )
 
