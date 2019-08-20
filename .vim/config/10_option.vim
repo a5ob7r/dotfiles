@@ -6,7 +6,7 @@ set backspace=indent,eol,start
 set breakindent
 set breakindentopt=shift:2,sbr
 set cindent
-set clipboard+=unnamed
+set clipboard=unnamed
 set cmdheight=2
 set colorcolumn=81
 set cursorline
