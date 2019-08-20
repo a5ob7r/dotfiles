@@ -9,6 +9,7 @@ set cindent
 set clipboard+=unnamed
 set cmdheight=2
 set colorcolumn=81
+set cursorline
 set display=lastline
 set encoding=utf-8
 set expandtab
