@@ -31,7 +31,7 @@ set showmatch
 set smartcase
 set softtabstop=2
 set tabstop=2
-"set termguicolors
+set termguicolors
 set ttyfast
 set updatetime=100
 set virtualedit+=onemore
