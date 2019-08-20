@@ -6,7 +6,6 @@ set backspace=indent,eol,start
 set breakindent
 set breakindentopt=shift:2,sbr
 set cindent
-set clipboard=unnamed
 set cmdheight=2
 set colorcolumn=81
 set cursorline
@@ -44,4 +43,10 @@ set wrapscan
 if executable("rg")
   set grepformat=%f:%l:%c:%m,%f:%l:%m
   set grepprg=rg\ --vimgrep\ --no-heading
+endif
+
+if has("osxdarwin")
+  set clipboard=unnamed
+else
+  set clipboard=unnamedplus
 endif
