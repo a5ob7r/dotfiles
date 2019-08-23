@@ -5,7 +5,7 @@
 
   # current tmux version
   local tmux_version
-  tmux_version=$(tmux -V | sed 's/[a-zA-z ]//g')
+  tmux_version=$(tmux -V | sed 's/[a-zA-z -]//g')
 
   [[ "$(echo "${tmux_version} ${cond_expr}" | bc)" = 1 ]]
 }
