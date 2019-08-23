@@ -12,7 +12,7 @@ tmux set -ga terminal-overrides ",xterm-256color:Tc"
 
 # {{{ operating style
 tmux set -g mouse on
-tmux setw -g mode-keys vi
+tmux set -wg mode-keys vi
 tmux set -g status-keys emacs
 tmux set -sg escape-time 0
 # }}}
@@ -35,5 +35,5 @@ fi
 # }}}
 
 # {{{ others
-tmux setw -g aggressive-resize on
+tmux set -wg aggressive-resize on
 # }}}
