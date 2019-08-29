@@ -20,7 +20,7 @@
     {
       "type": "git",
       "path": "github.com/airblade/vim-gitgutter",
-      "version": "53996f5cd118b7670dc4da30b8a8402983316a33"
+      "version": "88d396f1b49747fadbbde5c038a85067d94954e5"
     },
     {
       "type": "git",
@@ -35,7 +35,7 @@
     {
       "type": "git",
       "path": "github.com/itchyny/lightline.vim",
-      "version": "09c61dc3f650eccd2c165c36db8330496321aa50"
+      "version": "8b3aa1632c08784928458b2b85faf5c89feefccf"
     },
     {
       "type": "git",
@@ -50,22 +50,22 @@
     {
       "type": "git",
       "path": "github.com/kannokanno/previm",
-      "version": "0dd5bfc741992422b57c6841e3f6ac1bb03888ef"
+      "version": "5775e97de90d7fbcf8a231a08afbb400d9b64af1"
     },
     {
       "type": "git",
       "path": "github.com/lervag/vimtex",
-      "version": "866699bdae3696130159e7115954c64de8e7bdcd"
+      "version": "23a3b356ba1e90d4a9dbb085712376cab83ab19e"
     },
     {
       "type": "git",
       "path": "github.com/liuchengxu/vista.vim",
-      "version": "2662f45efdd5a83a471c2298dc59aa97b173700e"
+      "version": "5242727e529a5f885b25e74d8aa44d67b3881de3"
     },
     {
       "type": "git",
       "path": "github.com/mattn/emmet-vim",
-      "version": "461700696ea317722c4a8d92a31a7267cdcc0bfb"
+      "version": "10b3746ecb52064d44bbcb1fdf6b21cca551f30c"
     },
     {
       "type": "git",
@@ -75,7 +75,7 @@
     {
       "type": "git",
       "path": "github.com/mechatroner/rainbow_csv",
-      "version": "db7a18cacc7bad56d28d658fedf34a854e59f828"
+      "version": "e5c2935196f1e8b71b8b476973a0d52d26abe86c"
     },
     {
       "type": "git",
@@ -120,12 +120,12 @@
     {
       "type": "git",
       "path": "github.com/prabirshrestha/vim-lsp",
-      "version": "738e91f0af2a2a01dd421b8b356066ae1ceda93a"
+      "version": "2cb386d294f4b1b66eee729d11f6a6fe019831a1"
     },
     {
       "type": "git",
       "path": "github.com/rhysd/git-messenger.vim",
-      "version": "4bc69bd39946d3f2cb223011f449933452dc3d0f"
+      "version": "72975c9be9267689cd408a5ea6a02200502217d0"
     },
     {
       "type": "git",
@@ -140,7 +140,7 @@
     {
       "type": "git",
       "path": "github.com/scrooloose/nerdtree",
-      "version": "184fbb6ffea6dc69726b229a08153c9d08522386"
+      "version": "3d508aedce35e1d952d3ce92378ad27ea5960fa6"
     },
     {
       "type": "git",
@@ -175,7 +175,7 @@
     {
       "type": "git",
       "path": "github.com/w0rp/ale",
-      "version": "28c93ab1854ef41a46855401cc4addbaf7dfb9d4"
+      "version": "73812c3e41c1c7fcf1705811f35ac4c9ccec003e"
     },
     {
       "type": "git",
