@@ -60,7 +60,7 @@
     {
       "type": "git",
       "path": "github.com/liuchengxu/vista.vim",
-      "version": "5242727e529a5f885b25e74d8aa44d67b3881de3"
+      "version": "df66db6122d61f83658a1c9fb3ff8c6ebd7c93f6"
     },
     {
       "type": "git",
@@ -120,7 +120,7 @@
     {
       "type": "git",
       "path": "github.com/prabirshrestha/vim-lsp",
-      "version": "2cb386d294f4b1b66eee729d11f6a6fe019831a1"
+      "version": "96579bd0b39def9d3a939713bb1e6a58ceb5ccb4"
     },
     {
       "type": "git",
