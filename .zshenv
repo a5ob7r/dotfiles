@@ -75,7 +75,6 @@ unset -f init_anyenv
 # }}}
 
 # {{{ other
-export VOLTPATH=$DOTFILES/volt
 export GOPATH=~/go
 export path=( \
   "${GOPATH}"/bin(N-/) \
