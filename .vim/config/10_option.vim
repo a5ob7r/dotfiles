@@ -40,6 +40,9 @@ set wildmenu
 set wildmode=longest:full,full
 set wrapscan
 
+runtime macros/matchit.vim
+let b:match_ignorecase = 1
+
 if executable("rg")
   set grepformat=%f:%l:%c:%m,%f:%l:%m
   set grepprg=rg\ --vimgrep\ --no-heading
