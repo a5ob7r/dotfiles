@@ -182,83 +182,39 @@ font:
 # If `true`, bold text is drawn using the bright color variants.
 draw_bold_text_with_bright_colors: true
 
-# Colors (Tomorrow Night Bright)
-colors:
-  # Default colors
-  primary:
-    background: '0x16242c'
-    foreground: '0xc0c4cd'
+schemes:
+  oceanic_next: &oceanic_next
+    primary:
+      background: '0x16242c'
+      foreground: '0xc0c4cd'
 
-    # Bright and dim foreground colors
-    #
-    # The dimmed foreground color is calculated automatically if it is not present.
-    # If the bright foreground color is not set, or `draw_bold_text_with_bright_colors`
-    # is `false`, the normal foreground color will be used.
-    #dim_foreground: '0x9a9a9a'
-    #bright_foreground: '0xffffff'
+    cursor:
+      text: '0x16252b'
+      cursor: '0xc0c4cd'
 
-  # Cursor colors
-  #
-  # Colors which should be used to draw the terminal cursor. If these are unset,
-  # the cursor color will be the inverse of the cell color.
-  cursor:
-    text: '0x16252b'
-    cursor: '0xc0c4cd'
-  
-  # Selection colors
-  #
-  # Colors which should be used to draw the selection area. If selection
-  # background is unset, selection color will be the inverse of the cell colors.
-  # If only text is unset the cell text color will remain the same.
-  #selection:
-  #  text: '0xeaeaea'
-  #  background: '0x404040'
+    normal:
+      black:   '0x16252b'
+      red:     '0xec5e66'
+      green:   '0x99c793'
+      yellow:  '0xfac862'
+      blue:    '0x6699cb'
+      magenta: '0xc593c4'
+      cyan:    '0x5fb3b2'
+      white:   '0xfefefe'
 
-  # Normal colors
-  normal:
-    black:   '0x16252b'
-    red:     '0xec5e66'
-    green:   '0x99c793'
-    yellow:  '0xfac862'
-    blue:    '0x6699cb'
-    magenta: '0xc593c4'
-    cyan:    '0x5fb3b2'
-    white:   '0xfefefe'
+    bright:
+      black:   '0x65727d'
+      red:     '0xec5e66'
+      green:   '0x99c793'
+      yellow:  '0xfac862'
+      blue:    '0x6699cb'
+      magenta: '0xc593c4'
+      cyan:    '0x5fb3b2'
+      white:   '0xfefefe'
 
-  # Bright colors
-  bright:
-    black:   '0x65727d'
-    red:     '0xec5e66'
-    green:   '0x99c793'
-    yellow:  '0xfac862'
-    blue:    '0x6699cb'
-    magenta: '0xc593c4'
-    cyan:    '0x5fb3b2'
-    white:   '0xfefefe'
 
-  # Dim colors
-  #
-  # If the dim colors are not set, they will be calculated automatically based
-  # on the `normal` colors.
-  #dim:
-  #  black:   '0x333333'
-  #  red:     '0xf2777a'
-  #  green:   '0x99cc99'
-  #  yellow:  '0xffcc66'
-  #  blue:    '0x6699cc'
-  #  magenta: '0xcc99cc'
-  #  cyan:    '0x66cccc'
-  #  white:   '0xdddddd'
-
-  # Indexed Colors
-  #
-  # The indexed colors include all colors from 16 to 256.
-  # When these are not set, they're filled with sensible defaults.
-  #
-  # Example:
-  #   `- { index: 16, color: '0xff00ff' }`
-  #
-  #indexed_colors: []
+# Colors
+colors: *oceanic_next
 
 # Visual Bell
 #
