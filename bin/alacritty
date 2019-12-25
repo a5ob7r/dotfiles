@@ -1,0 +1,14 @@
+#!/usr/bin/env bash
+#
+# An Alacritty wrapper script for tmux integration.
+#
+
+readonly ALACRITTY_COMMAND="/usr/local/bin/alacritty"
+
+[[ -n "${*}" ]] \
+  && exec "${ALACRITTY_COMMAND}" "${@}"
+
+tmux has-session \
+  && exec "${ALACRITTY_COMMAND}" -e tmux attach-session
+
+exec "${ALACRITTY_COMMAND}" -e tmux
