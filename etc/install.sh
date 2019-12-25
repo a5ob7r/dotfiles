@@ -1,16 +1,12 @@
 #!/bin/sh
 
-DOTFILES=~/src/github.com/a5ob7r/dotfiles
-DOTFILES_REMOTE='https://github.com/a5ob7r/dotfiles.git'
+set -Cue
 
-if ! command -v git > /dev/null 2>&1; then
-  echo 'Not found git.'
-  echo 'Please install git.'
-  exit 1
-fi
+readonly DOTFILES_LOCAL_PATH=~/src/github.com/a5ob7r/dotfiles
+readonly DOTFILES_REMOTE_URL='https://github.com/a5ob7r/dotfiles.git'
 
-git clone "$DOTFILES_REMOTE" "$DOTFILES"
+git clone "${DOTFILES_REMOTE_URL}" "${DOTFILES_LOCAL_PATH}"
 
-cd "$DOTFILES" || exit
+cd "${DOTFILES_LOCAL_PATH}"
 
 make install
