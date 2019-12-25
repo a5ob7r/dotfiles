@@ -7,7 +7,7 @@ export LANG=C
 
 readonly PACKAGES=( \
   pipenv \
-  python-language-server \
+  'python-language-server[all]' \
   flake8 \
   ipdb \
   tmuxp \
