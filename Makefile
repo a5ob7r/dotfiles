@@ -1,9 +1,6 @@
 OSNAME=${shell uname}
 
-FINLTER := .config .git .DS_Store .gitignore .travis.yml
-DOTFILES_RAW := $(wildcard .??*)
-DOTFILES := $(filter-out $(FINLTER), $(DOTFILES_RAW))
-
+CONFIGS_HOME := $(shell find home -mindepth 1 -maxdepth 1 -printf "%f\n")
 CONFIG_ALL := $(wildcard .config/*)
 
 install: init link pluginstall tests
@@ -15,11 +12,11 @@ pluginstall:
 	@etc/pluginstall
 
 link:
-	@$(foreach dotfile, $(DOTFILES), ln -sfv $(CURDIR)/$(dotfile) $(HOME)/$(dotfile);)
+	@$(foreach config, $(CONFIGS_HOME), ln -sfv $(CURDIR)/home/$(config) $(HOME)/$(config);)
 	@$(foreach config, $(CONFIG_ALL), ln -sfv $(CURDIR)/$(config) $(HOME)/$(config);)
 
 unlink:
-	@$(foreach dotfile, $(DOTFILES), unlink $(HOME)/$(dotfile);)
+	@$(foreach config, $(CONFIGS_HOME), unlink $(HOME)/$(config);)
 	@$(foreach config, $(CONFIG_ALL), unlink $(HOME)/$(config);)
 
 tests:
