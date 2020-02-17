@@ -49,7 +49,7 @@ URxvt.color7:       #ffffff
 URxvt.color15:      #ffffff
 ! }}}
 
-URxvt.font: xft:monospace-12
+URxvt.font: xft:monospace-16
 URxvt.scrollBar: false
 URxvt.pointerBlank: true
 URxvt.externalBorder: 0
