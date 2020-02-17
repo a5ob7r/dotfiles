@@ -39,8 +39,8 @@ schemes:
 # Colors
 colors: *oceanic_next
 
-#shell:
-#  program: /bin/bash
+shell:
+  program: zsh
 #  args:
 #    - --login
 
