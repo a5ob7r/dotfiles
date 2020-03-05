@@ -26,8 +26,4 @@ lint:
 	@bash -c 'shopt -s globstar; shellcheck -x etc/**/*.sh .bash_profile .bashrc'
 
 powerline-conf:
-	@etc/script/universal/link_powerline_conf.sh
-
-brew:
-	@etc/script/macos/install_brew.sh
-	@etc/script/macos/install_formula.sh
+	@etc/link_powerline_conf.sh
