@@ -1,6 +1,6 @@
 OSNAME=${shell uname}
 
-CONFIGS_HOME := $(shell find home -mindepth 1 -maxdepth 1 -printf "%f\n")
+CONFIGS_HOME := $(shell find home -mindepth 1 -maxdepth 1 -exec basename {} \;)
 CONFIG_ALL := $(wildcard .config/*)
 
 install: init link pluginstall tests
