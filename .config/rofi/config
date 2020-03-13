@@ -3,4 +3,4 @@ rofi.show-icons: true
 rofi.sidebar-mode: true
 rofi.matching: fuzzy
 rofi.hide-scrollbar: true
-rofi.font: Monospace 18
+rofi.font: Monospace 20
