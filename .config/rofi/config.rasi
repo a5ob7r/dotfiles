@@ -1,0 +1,10 @@
+configuration {
+  modi: "window,run";
+  font: "Monospace 20";
+  show-icons: true;
+  sidebar-mode: true;
+  matching: "fuzzy";
+  hide-scrollbar: true;
+}
+
+/* vim: set ft=css : */
