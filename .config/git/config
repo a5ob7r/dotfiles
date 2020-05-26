@@ -8,9 +8,9 @@
 [difftool]
 	prompt = false
 [pager]
-	log  = diff-highlight | less
-	show = diff-highlight | less
-	diff = diff-highlight | less
+	log  = diff-highlight-wrapper | less
+	show = diff-highlight-wrapper | less
+	diff = diff-highlight-wrapper | less
 [ghq]
 	root = ~/src
 [alias]
