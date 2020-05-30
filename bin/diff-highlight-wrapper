@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 # Avoid error when diff-highlight does not found
 
-if type diff-highlight >/dev/null; then
+if type diff-highlight 2>&1 >/dev/null; then
   cat - | diff-highlight
 else
   cat -
