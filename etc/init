@@ -1,8 +1,0 @@
-#!/bin/sh
-
-mkdir -p ~/bin
-mkdir -p ~/.config
-mkdir -p ~/.cache
-
-etc/install_fzf.sh
-etc/install_go_bin_package.sh
