@@ -1,5 +1,12 @@
 # dotfiles
 
+## Another dotfiles
+
+- Zsh: https://github.com/a5ob7r/zsh-config
+- Vim: https://github.com/a5ob7r/vim-config
+- Tmux: https://github.com/a5ob7r/tmux-config
+- xmonad: https://github.com/a5ob7r/xmonad-config
+
 ## Usage
 
 ### Use Installer Script
