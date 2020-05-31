@@ -1,0 +1,236 @@
+#!/usr/bin/env bash
+#
+# Dotfiles installer or uninstaller
+#
+
+# Set useful shell options
+set -Cueo pipefail
+
+readonly FILENAME="$(basename "${0}")"
+readonly FILEPATH="$(realpath "${0}")"
+readonly DIRPATH=$(cd "$(dirname "${FILEPATH}")" && pwd)
+
+if [[ -t 1 || -t 2 ]]; then
+  # Colorize output escaping when to strout or strerr
+  readonly TEXTRED="\e[31;1m"
+  readonly TEXTYELLOW="\e[33;1m"
+  readonly TEXTRESET="\e[m"
+else
+  # Un colorize output
+  readonly TEXTRED=""
+  readonly TEXTYELLOW=""
+  readonly TEXTRESET=""
+fi
+
+# Warning helper
+warning() {
+  echo -e "${TEXTYELLOW}${FILENAME}: [WARNING] ${*}${TEXTRESET}" >&2
+}
+
+# Error helper
+error() {
+  echo -e "${TEXTRED}${FILENAME}: [ERROR] ${*}${TEXTRESET}" >&2
+  exit 1
+}
+
+cd "${DIRPATH}" || error "Couldn't cd to script directory."
+
+usage() {
+  cat <<EOF
+Usage:
+  ${FILENAME} <SUBCOMMAND>
+  ${FILENAME} -h
+
+Dotfiles installer or uninstaller
+
+Subcommands
+  init         Initialize setup
+  deploy       Deploy dotfiles
+  undeploy     Remove deployed dotfiles
+
+Options:
+  -h, --help   Show this messages
+
+EOF
+}
+
+usage_short() {
+  cat <<EOF
+Usage: ${FILENAME} <SUBCOMMAND>
+Try '${FILENAME} --help' for more information.
+
+EOF
+}
+
+readonly BIN_SRCPATH="${DIRPATH}/bin"
+readonly BIN_DSTPATH=~/bin
+readonly CONFIG_SRCPATH="${DIRPATH}/.config"
+readonly CONFIG_DSTPATH=~/.config
+readonly HOME_CONFIG_SRCPATH="${DIRPATH}/home"
+readonly HOME_CONFIG_DSTPATH=~
+
+#######################################
+# List files in a directory.
+# Global:
+#   None
+# Arguments:
+#   SRC_DIRPATH: Source directory path.
+# Return:
+#   File list in source directory.
+#######################################
+list_files() {
+  local -r SRC_DIRPATH="${1}"
+
+  find "${SRC_DIRPATH}" -mindepth 1 -maxdepth 1
+}
+
+#######################################
+# Make symbolik links from files in source directory to destination directory.
+# Global:
+#   None
+# Arguments:
+#   SRC_DIRPATH: Source directory path.
+#   DST_DIRPATH: Destination directory path.
+# Return:
+#   None
+#######################################
+links() {
+  local -r SRC_DIRPATH="${1}"
+  local -r DST_DIRPATH="${2}"
+
+  [[ -d "${SRC_DIRPATH}" ]] || error "No such source directory: ${SRC_DIRPATH}"
+  [[ -d "${DST_DIRPATH}" ]] || error "No such destination directory: ${DST_DIRPATH}"
+
+  for SRCPATH in $(list_files "${SRC_DIRPATH}"); do
+    local SRCNAME
+    local LINKPATH
+
+    SRCNAME="$(basename "${SRCPATH}")"
+    LINKPATH="${DST_DIRPATH}/${SRCNAME}"
+
+    if [[ -a "${LINKPATH}" ]]; then
+      warning "Skip linking from ${SRCPATH} to ${LINKPATH} because ${SRCNAME} already exists in ${DST_DIRPATH}."
+    else
+      ln -sv "${SRCPATH}" "${LINKPATH}"
+    fi
+  done
+}
+
+#######################################
+# Remove symbolic links from destination directory.
+# Global:
+#   None
+# Arguments:
+#   SRC_DIRPATH: Source directory path.
+#   DST_DIRPATH: Destination directory path.
+# Return:
+#   None
+#######################################
+unlinks() {
+  local -r SRC_DIRPATH="${1}"
+  local -r DST_DIRPATH="${2}"
+
+  [[ -d "${SRC_DIRPATH}" ]] || error "No source directory: ${SRC_DIRPATH}."
+  [[ -d "${DST_DIRPATH}" ]] || error "No destination directory: ${DST_DIRPATH}."
+
+  for SRCPATH in $(list_files "${SRC_DIRPATH}"); do
+    local SRCNAME
+    local LINKPATH
+
+    SRCNAME="$(basename "${SRCPATH}")"
+    LINKPATH="${DST_DIRPATH}/${SRCNAME}"
+
+    if [[ -h "${LINKPATH}" ]]; then
+      unlink "${LINKPATH}" && echo "unlink: ${LINKPATH}"
+    else
+      warning "Skip unlinking ${LINKPATH} because no the link."
+    fi
+  done
+}
+
+deploy_bins() {
+  links "${BIN_SRCPATH}" "${BIN_DSTPATH}"
+}
+
+deploy_configs() {
+  links "${CONFIG_SRCPATH}" "${CONFIG_DSTPATH}"
+}
+
+deploy_home_configs() {
+  links "${HOME_CONFIG_SRCPATH}" "${HOME_CONFIG_DSTPATH}"
+}
+
+undeploy_bins() {
+  unlinks "${BIN_SRCPATH}" "${BIN_DSTPATH}"
+}
+
+undeploy_configs() {
+  unlinks "${CONFIG_SRCPATH}" "${CONFIG_DSTPATH}"
+}
+
+undeploy_home_configs() {
+  unlinks "${HOME_CONFIG_SRCPATH}" "${HOME_CONFIG_DSTPATH}"
+}
+
+deploy() {
+  deploy_bins
+  deploy_configs
+  deploy_home_configs
+}
+
+undeploy() {
+  undeploy_bins
+  undeploy_configs
+  undeploy_home_configs
+}
+
+init() {
+  mkdir -vp \
+    ~/bin \
+    ~/.config \
+    ~/.cache \
+    ~/.local/share
+}
+
+main() {
+  case "${1}" in
+    init )
+      init
+      ;;
+    deploy )
+      deploy
+      ;;
+    undeploy )
+      undeploy
+      ;;
+    * )
+      error "Invalid subcommand"
+      ;;
+  esac
+}
+
+# Argument array
+declare -a ARGS=()
+
+# Parse arguments
+while [[ $# -gt 0 ]]; do
+  case ${1} in
+    --debug )
+      set -x
+      shift
+      ;;
+    -h | --help )
+      usage
+      exit 0
+      ;;
+    -* )
+      error "Invalid option: '${1}'\n\n$(usage_short)"
+      ;;
+    * )
+      ARGS+=("${1}")
+      shift
+      ;;
+  esac
+done
+
+main "${ARGS[@]}"
