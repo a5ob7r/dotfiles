@@ -23,3 +23,5 @@
 	sw = switch
 [core]
 	commentChar = auto
+[pull]
+	ff = only
