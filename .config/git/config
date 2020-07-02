@@ -21,7 +21,13 @@
 	ph = push
 	br = branch
 	sw = switch
+	c = commit
 [core]
 	commentChar = auto
 [pull]
 	ff = only
+	rebase = false
+[commit]
+	verbose = true
+[fetch]
+	prune = true
