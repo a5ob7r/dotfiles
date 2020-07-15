@@ -41,10 +41,5 @@ schemes:
 # Colors
 colors: *oceanic_next
 
-shell:
-  program: zsh
-#  args:
-#    - --login
-
 mouse:
   hide_when_typing: true
