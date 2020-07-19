@@ -1,9 +1,50 @@
-#!/usr/bin/env bash
+#!/usr/bin/env zsh
 #
 # An Alacritty wrapper script for tmux integration.
 #
 
-readonly ALACRITTY_COMMAND="/usr/local/bin/alacritty"
+readonly FILEPATH="${0:a}"
+
+#######################################
+# Show all command full paths on `path`
+# Global:
+#   path: `path`
+# Arguments:
+#   COMMAND: a command name
+# Return:
+#   all command full paths
+#######################################
+all_fullpaths_on_path() {
+  local -r COMMAND="${1}"
+
+  for p in ${path}; do
+    local FP="${p}/${COMMAND}"
+    [[ -x "${FP}" ]] && echo "${FP}"
+  done
+  return 0
+}
+
+#######################################
+# Get an alacritty binary path not this script. It may cause infinity loop by
+# call `alacritty` in this script when this script's name is `alacritty`.
+# Global:
+#   FILEPATH: A full path of this script.
+# Arguments:
+#   None
+# Return:
+#   An alacritty binary path.
+#######################################
+alacritty_binary() {
+  all_fullpaths_on_path alacritty \
+    | while read -r p; do
+        [[ "${p}" == "${FILEPATH}" ]] && continue
+        echo "${p}" && return 0
+      done
+}
+
+alacritty_binary
+
+readonly ALACRITTY_COMMAND="$(alacritty_binary)"
 
 [[ -n "${*}" ]] \
   && exec "${ALACRITTY_COMMAND}" "${@}"
