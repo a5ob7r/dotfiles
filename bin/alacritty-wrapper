@@ -42,8 +42,6 @@ alacritty_binary() {
       done
 }
 
-alacritty_binary
-
 readonly ALACRITTY_COMMAND="$(alacritty_binary)"
 
 [[ -n "${*}" ]] \
