@@ -1,0 +1,9 @@
+git@github.com:a5ob7r/tmux-config.git
+git@github.com:a5ob7r/vim-config.git
+git@github.com:a5ob7r/xmonad-config.git
+git@github.com:a5ob7r/zsh-config.git
+git@github.com:alacritty/alacritty.git
+git@github.com:tmux/tmux.git
+git@github.com:vim/vim.git
+https://aur.archlinux.org/yay.git
+https://git.suckless.org/st
