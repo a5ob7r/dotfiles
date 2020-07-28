@@ -3,6 +3,9 @@
 # An Alacritty wrapper script for tmux integration.
 #
 
+# Set useful shell options
+set -Cueo pipefail
+
 readonly FILEPATH="${0:a}"
 
 #######################################
@@ -43,11 +46,12 @@ alacritty_binary() {
 }
 
 readonly ALACRITTY_COMMAND="$(alacritty_binary)"
+readonly ALACRITTY_TMUX="${ALACRITTY_COMMAND} -e tmux new-session -A"
 
 [[ -n "${*}" ]] \
   && exec "${ALACRITTY_COMMAND}" "${@}"
 
-tmux has-session \
-  && exec "${ALACRITTY_COMMAND}" -e tmux attach-session
+pgrep -fx "${ALACRITTY_TMUX}" > /dev/null 2>&1 \
+  || exec ${(z)ALACRITTY_TMUX}
 
-exec "${ALACRITTY_COMMAND}" -e tmux
+exec "${ALACRITTY_COMMAND}"
