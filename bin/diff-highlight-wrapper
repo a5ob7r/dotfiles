@@ -1,7 +1,13 @@
 #!/usr/bin/env bash
 # Avoid error when diff-highlight does not found
 
-if type diff-highlight >/dev/null 2>&1; then
+has() {
+  type "${1}" > /dev/null 2>&1
+}
+
+if has diff-so-fancy; then
+  cat - | diff-so-fancy
+elif has diff-highlight; then
   cat - | diff-highlight
 else
   cat -
