@@ -20,7 +20,7 @@
 	c = commit
 [core]
 	commentChar = auto
-	pager = diff-highlight-wrapper | less --tabs=4 -RFX
+	pager = diff-highlight-stub | less --tabs=4 -RFX
 [pull]
 	ff = only
 	rebase = false
