@@ -1,0 +1,6 @@
+#!/usr/bin/pulseaudio -nF
+
+.include /etc/pulse/default.pa
+
+### Enable Echo/Noise-Cancelation
+load-module module-echo-cancel
