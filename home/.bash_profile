@@ -1,4 +1,1 @@
-# shellcheck disable=SC1090
-# shellcheck disable=SC2148
-
-[[ -f ~/.bashrc ]] && source ~/.bashrc
+source ~/.bashrc 2>/dev/null
