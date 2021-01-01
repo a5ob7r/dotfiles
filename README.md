@@ -20,7 +20,6 @@ I separate some tool configs as another repositories.
 - etc/* : Utility scripts to setup this repository.
 - home/* : Configs, deployed to ~/.
 - misc/* : Template of configs which are difficult to manage with git directly.
-- test/* : Test utility for this repository.
 
 ## Usage
 
