@@ -18,6 +18,8 @@
 	br = branch --verbose
 	sw = switch
 	c = commit
+	tohead = switch -d origin/HEAD
+	h = tohead
 [core]
 	commentChar = auto
 	pager = diff-highlight-stub | less --tabs=4 -RFX
