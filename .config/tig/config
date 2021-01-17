@@ -11,3 +11,5 @@ set main-view = id:false \
 
 bind status C !git commit -v
 bind main C !git sw -d %(commit)
+
+color cursor black white bold
