@@ -11,3 +11,5 @@ bind status C !git commit -v
 bind main C !git sw -d %(commit)
 
 color cursor black white bold
+color title-focus black white bold
+color title-blur black white bold
