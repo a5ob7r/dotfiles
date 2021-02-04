@@ -81,7 +81,8 @@ readonly HOME_CONFIG_DSTPATH=~
 list_files() {
   local -r SRC_DIRPATH="${1}"
 
-  find "${SRC_DIRPATH}" -mindepth 1 -maxdepth 1
+  # But ignore backup files.
+  find "${SRC_DIRPATH}" -mindepth 1 -maxdepth 1 | grep -v '~$'
 }
 
 #######################################
