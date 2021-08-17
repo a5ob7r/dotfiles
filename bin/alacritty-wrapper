@@ -1,57 +1,46 @@
-#!/usr/bin/env zsh
+#!/usr/bin/env bash
 #
 # An Alacritty wrapper script for tmux integration.
 #
 
-# Set useful shell options
+# Set useful shell options.
 set -Cueo pipefail
 
-readonly FILEPATH="${0:a}"
+readonly self="${BASH_SOURCE[0]}"
 
-#######################################
-# Show all command full paths on `path`
-# Global:
-#   path: `path`
-# Arguments:
-#   COMMAND: a command name
-# Return:
-#   all command full paths
-#######################################
-all_fullpaths_on_path() {
-  local -r COMMAND="${1}"
+# All commands on $PATH.
+function allpaths () {
+  builtin type -ap "$1"
+}
 
-  for p in ${path}; do
-    local FP="${p}/${COMMAND}"
-    [[ -x "${FP}" ]] && echo "${FP}"
+# A full path indicates alacritty executable to avoid infinity loop even if
+# this script name is `alacritty`.
+function alacritty () {
+  local p
+
+  allpaths alacritty | while read -r p; do
+    if [[ "$p" != "$self" ]]; then
+      echo "$p"
+      return 0
+    fi
   done
-  return 0
 }
 
-#######################################
-# Get an alacritty binary path not this script. It may cause infinity loop by
-# call `alacritty` in this script when this script's name is `alacritty`.
-# Global:
-#   FILEPATH: A full path of this script.
-# Arguments:
-#   None
-# Return:
-#   An alacritty binary path.
-#######################################
-alacritty_binary() {
-  all_fullpaths_on_path alacritty \
-    | while read -r p; do
-        [[ "${p}" == "${FILEPATH}" ]] && continue
-        echo "${p}" && return 0
-      done
+# Whether or not has been already existed a process which has same pattern
+# completely.
+function has_process () {
+  command pgrep --full --exact --uid "$UID" "$1" &>/dev/null
 }
 
-readonly ALACRITTY_COMMAND="$(alacritty_binary)"
-readonly ALACRITTY_TMUX="${ALACRITTY_COMMAND} -e tmux new-session -A"
+# main
 
-[[ -n "${*}" ]] \
-  && exec "${ALACRITTY_COMMAND}" "${@}"
+readonly path="$(alacritty)"
+readonly -a args=( -e tmux new-session -A )
 
-pgrep -fx "${ALACRITTY_TMUX}" > /dev/null 2>&1 \
-  || exec ${(z)ALACRITTY_TMUX}
-
-exec "${ALACRITTY_COMMAND}"
+if (( $# )); then
+  exec "$path" "$@"
+elif ! has_process "${path} ${args[*]}"; then
+  exec "$path" "${args[@]}"
+else
+  exec "$path"
+fi
