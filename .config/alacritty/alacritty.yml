@@ -1,5 +1,5 @@
 # NOTE: Appropriate font configs depend on local environment (OS, display
-# size/resolution, installed fonts) deeply so no the configs should on this
+# size/resolution, installed fonts) deeply so no the configs should be on this
 # shared config file and add `font` entries to local config file.
 import:
   - ~/.alacritty.local.yml
