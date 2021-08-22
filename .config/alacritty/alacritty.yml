@@ -1,3 +1,6 @@
+# NOTE: Appropriate font configs depend on local environment (OS, display
+# size/resolution, installed fonts) deeply so no the configs should on this
+# shared config file and add `font` entries to local config file.
 import:
   - ~/.alacritty.local.yml
 
@@ -10,9 +13,6 @@ window:
 colors:
   # This enables since c24d7dfd0d2d8849f0398d7cb1a65d6562ee7a0d (v0.10.0-dev).
   transparent_background_colors: true
-
-font:
-  size: 10
 
 # NOTE: For compatibility until v0.9.0.
 background_opacity: 0.90
