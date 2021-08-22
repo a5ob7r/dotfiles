@@ -1,3 +1,6 @@
+import:
+  - ~/.alacritty.local.yml
+
 window:
   dynamic_padding: true
 
