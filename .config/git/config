@@ -13,7 +13,7 @@
 	co = checkout
 	mg = merge --verbose
 	f = fetch --verbose
-	glog = log --pretty='format:%C(yellow)%h %C(green)%cd %C(reset)%s %C(red)%d %C(cyan)[%an]' --date=format:'%c' --graph
+	glog = log --pretty='format:%C(yellow)%h %C(reset)%s %C(green)%cr %C(cyan)[%an]%C(red)%d' --graph
 	ph = push --verbose
 	br = branch --verbose
 	sw = switch
