@@ -5,50 +5,47 @@ Xft.hinting: 1
 Xft.antialias: 1
 Xft.rgba: rgb
 
-*.foreground: white
-*.background: black
-
 ! {{{ Colorscheme
 ! Oceanic-next
 ! special
-URxvt.foreground:   #b3b8c3
-URxvt.background:   #121b21
-URxvt.cursorColor:  #b3b8c3
+*.foreground:   #b3b8c3
+*.background:   #121b21
+*.cursorColor:  #b3b8c3
 
 ! black
-URxvt.color0:       #121c21
-URxvt.color8:       #52606b
+*.color0:       #121c21
+*.color8:       #52606b
 
 ! red
-URxvt.color1:       #e44754
-URxvt.color9:       #e44754
+*.color1:       #e44754
+*.color9:       #e44754
 
 ! green
-URxvt.color2:       #89bd82
-URxvt.color10:      #89bd82
+*.color2:       #89bd82
+*.color10:      #89bd82
 
 ! yellow
-URxvt.color3:       #f7bd51
-URxvt.color11:      #f7bd51
+*.color3:       #f7bd51
+*.color11:      #f7bd51
 
 ! blue
-URxvt.color4:       #5486c0
-URxvt.color12:      #5486c0
+*.color4:       #5486c0
+*.color12:      #5486c0
 
 ! magenta
-URxvt.color5:       #b77eb8
-URxvt.color13:      #b77eb8
+*.color5:       #b77eb8
+*.color13:      #b77eb8
 
 ! cyan
-URxvt.color6:       #50a5a4
-URxvt.color14:      #50a5a4
+*.color6:       #50a5a4
+*.color14:      #50a5a4
 
 ! white
-URxvt.color7:       #ffffff
-URxvt.color15:      #ffffff
+*.color7:       #ffffff
+*.color15:      #ffffff
 ! }}}
 
-URxvt.font: xft:monospace-24
+*.font: xft:monospace-24
 URxvt.scrollBar: false
 URxvt.pointerBlank: true
 URxvt.externalBorder: 0
