@@ -14,9 +14,6 @@ colors:
   # This enables since c24d7dfd0d2d8849f0398d7cb1a65d6562ee7a0d (v0.10.0-dev).
   transparent_background_colors: true
 
-# NOTE: For compatibility until v0.9.0.
-background_opacity: 0.90
-
 mouse:
   hide_when_typing: true
 
