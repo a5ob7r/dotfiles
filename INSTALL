@@ -1,237 +1,261 @@
 #!/usr/bin/env bash
 #
-# Dotfiles installer or uninstaller
+# Dotfiles installer and uninstaller
 #
 
-# Set useful shell options
+# Set useful shell options.
 set -Cueo pipefail
 
-readonly FILENAME="$(basename "${0}")"
-readonly FILEPATH="$(realpath "${0}")"
-readonly DIRPATH=$(cd "$(dirname "${FILEPATH}")" && pwd)
+shopt -s extglob
+shopt -s nullglob
 
-if [[ -t 1 || -t 2 ]]; then
-  # Colorize output escaping when to strout or strerr
-  readonly TEXTRED="\e[31;1m"
-  readonly TEXTYELLOW="\e[33;1m"
-  readonly TEXTRESET="\e[m"
-else
-  # Un colorize output
-  readonly TEXTRED=""
-  readonly TEXTYELLOW=""
-  readonly TEXTRESET=""
+readonly filepath="$(realpath "$0")"
+readonly self="${filepath##*/}"
+readonly parent="${filepath%/*}"
+
+function warning () {
+  if [[ -t 2 ]]; then
+    local -r prefix='\033[33m'
+    local -r suffix='\033[0m'
+  else
+    local -r prefix=
+    local -r suffix=
+  fi
+
+  echo -e "${prefix}${*}${suffix}" >&2
+}
+
+function error () {
+  if [[ -t 2 ]]; then
+    local -r prefix='\033[31m'
+    local -r suffix='\033[0m'
+  else
+    local -r prefix=
+    local -r suffix=
+  fi
+
+  echo -e "${prefix}${*}${suffix}" >&2
+}
+
+if ! cd "$parent"; then
+  error 'Fail to change directory to script parent.'
+  exit 1
 fi
 
-# Warning helper
-warning() {
-  echo -e "${TEXTYELLOW}${FILENAME}: [WARNING] ${*}${TEXTRESET}" >&2
-}
+function help () {
+  echo -e -n "
+Descriptions:
+  Dotfiles installer and uninstaller
 
-# Error helper
-error() {
-  echo -e "${TEXTRED}${FILENAME}: [ERROR] ${*}${TEXTRESET}" >&2
-  exit 1
-}
-
-cd "${DIRPATH}" || error "Couldn't cd to script directory."
-
-usage() {
-  cat <<EOF
 Usage:
-  ${FILENAME} <SUBCOMMAND>
-  ${FILENAME} -h
+  $self <SUBCOMMAND>
 
-Dotfiles installer or uninstaller
-
-Subcommands
+Subcommands:
   init         Initialize setup
   deploy       Deploy dotfiles
   undeploy     Remove deployed dotfiles
 
 Options:
-  -h, --help   Show this messages
-
-EOF
+  -h, --help   Show this messages and exit.
+"
 }
 
-usage_short() {
-  cat <<EOF
-Usage: ${FILENAME} <SUBCOMMAND>
-Try '${FILENAME} --help' for more information.
+readonly bin_srcpath="${parent}/bin"
+readonly bin_dstpath=~/bin
+readonly config_srcpath="${parent}/.config"
+readonly config_dstpath=~/.config
+readonly home_config_srcpath="${parent}/home"
+readonly home_config_dstpath=~
 
-EOF
+# List files in a directory which is specified as an argument. Each files are
+# preceded by the directory path.
+function list_files () {
+  local src="${1%%*(/)}"
+
+  if [[ ! -d "$src" ]]; then
+    warning "$src is not directory."
+    return 1
+  fi
+
+  local GLOBIGNORE="$src/*~"
+  printf '%s\n' "$src"/*
 }
 
-readonly BIN_SRCPATH="${DIRPATH}/bin"
-readonly BIN_DSTPATH=~/bin
-readonly CONFIG_SRCPATH="${DIRPATH}/.config"
-readonly CONFIG_DSTPATH=~/.config
-readonly HOME_CONFIG_SRCPATH="${DIRPATH}/home"
-readonly HOME_CONFIG_DSTPATH=~
+# Make symbolik links from files in source directory to in destination
+# directory.
+function links () {
+  local -r src_dir="${1%%*(/)}"
+  local -r dst_dir="${2%%*(/)}"
 
-#######################################
-# List files in a directory.
-# Global:
-#   None
-# Arguments:
-#   SRC_DIRPATH: Source directory path.
-# Return:
-#   File list in source directory.
-#######################################
-list_files() {
-  local -r SRC_DIRPATH="${1}"
+  # validations
+  if [[ ! "$src_dir" =~ ^/ ]]; then
+    error "Source directory is not absolute path '$src_dir'"
+    return 1
+  fi
 
-  # But ignore backup files.
-  find "${SRC_DIRPATH}" -mindepth 1 -maxdepth 1 | grep -v '~$'
-}
+  if [[ ! -d "$src_dir" ]]; then
+    error "No such source directory '$src_dir'"
+    return 1
+  fi
 
-#######################################
-# Make symbolik links from files in source directory to destination directory.
-# Global:
-#   None
-# Arguments:
-#   SRC_DIRPATH: Source directory path.
-#   DST_DIRPATH: Destination directory path.
-# Return:
-#   None
-#######################################
-links() {
-  local -r SRC_DIRPATH="${1}"
-  local -r DST_DIRPATH="${2}"
+  if [[ ! "$dst_dir" =~ ^/ ]]; then
+    error "Destination directory is not absolute path '$dst_dir'"
+    return 1
+  fi
 
-  [[ -d "${SRC_DIRPATH}" ]] || error "No such source directory: ${SRC_DIRPATH}"
-  [[ -d "${DST_DIRPATH}" ]] || error "No such destination directory: ${DST_DIRPATH}"
+  if [[ ! -d "$dst_dir" ]]; then
+    error "No such destination directory '$dst_dir'"
+    return 1
+  fi
 
-  for SRCPATH in $(list_files "${SRC_DIRPATH}"); do
-    local SRCNAME
-    local LINKPATH
+  list_files "$src_dir" | while read -r -d $'\n' link_src; do
+    local f_base="${link_src##*/}"
+    local link_dst="${dst_dir}/${f_base}"
 
-    SRCNAME="$(basename "${SRCPATH}")"
-    LINKPATH="${DST_DIRPATH}/${SRCNAME}"
-
-    if [[ -a "${LINKPATH}" ]]; then
-      warning "Skip linking from ${SRCPATH} to ${LINKPATH} because ${SRCNAME} already exists in ${DST_DIRPATH}."
+    if [[ -a "${link_dst}" ]]; then
+      warning "Skip linking from ${link_src} to ${link_dst} because ${f_base} has already existed in ${dst_dir}."
     else
-      ln -sv "${SRCPATH}" "${LINKPATH}"
+      command ln -sv "$link_src" "$link_dst"
     fi
   done
 }
 
-#######################################
+function has_same_resolved_path () {
+  local p1 p2
+  p1="$(realpath "$1")"
+  p2="$(realpath "$2")"
+
+  [[ "$p1" == "$p2" ]]
+}
+
 # Remove symbolic links from destination directory.
-# Global:
-#   None
-# Arguments:
-#   SRC_DIRPATH: Source directory path.
-#   DST_DIRPATH: Destination directory path.
-# Return:
-#   None
-#######################################
-unlinks() {
-  local -r SRC_DIRPATH="${1}"
-  local -r DST_DIRPATH="${2}"
+function unlinks () {
+  local -r src_dir="${1%%*(/)}"
+  local -r dst_dir="${2%%*(/)}"
 
-  [[ -d "${SRC_DIRPATH}" ]] || error "No source directory: ${SRC_DIRPATH}."
-  [[ -d "${DST_DIRPATH}" ]] || error "No destination directory: ${DST_DIRPATH}."
+  # validations
+  if [[ ! "$src_dir" =~ ^/ ]]; then
+    error "Source directory is not absolute path '$src_dir'"
+    return 1
+  fi
 
-  for SRCPATH in $(list_files "${SRC_DIRPATH}"); do
-    local SRCNAME
-    local LINKPATH
+  if [[ ! -d "$src_dir" ]]; then
+    error "No such source directory '$src_dir'"
+    return 1
+  fi
 
-    SRCNAME="$(basename "${SRCPATH}")"
-    LINKPATH="${DST_DIRPATH}/${SRCNAME}"
+  if [[ ! "$dst_dir" =~ ^/ ]]; then
+    error "Destination directory is not absolute path '$dst_dir'"
+    return 1
+  fi
 
-    if [[ -h "${LINKPATH}" ]]; then
-      unlink "${LINKPATH}" && echo "unlink: ${LINKPATH}"
-    else
-      warning "Skip unlinking ${LINKPATH} because no the link."
+  if [[ ! -d "$dst_dir" ]]; then
+    error "No such destination directory '$dst_dir'"
+    return 1
+  fi
+
+  list_files "$src_dir" | while read -r -d $'\n' link_src; do
+    local f_base="${link_src##*/}"
+    local link_dst="${dst_dir}/${f_base}"
+
+    if [[ ! -h "$link_dst" ]]; then
+      warning "Skip unlinking $link_dst because no such link."
+      continue
     fi
+
+    if ! has_same_resolved_path "$link_src" "$link_dst"; then
+      warning "Skip unlinking $link_dst because the link is not under control of this repository."
+      continue
+    fi
+
+    command unlink "$link_dst" && echo "unlink: $link_dst"
   done
 }
 
-deploy_bins() {
-  links "${BIN_SRCPATH}" "${BIN_DSTPATH}"
+function deploy_bins () {
+  links "$bin_srcpath" "$bin_dstpath"
 }
 
-deploy_configs() {
-  links "${CONFIG_SRCPATH}" "${CONFIG_DSTPATH}"
+function deploy_configs () {
+  links "$config_srcpath" "$config_dstpath"
 }
 
-deploy_home_configs() {
-  links "${HOME_CONFIG_SRCPATH}" "${HOME_CONFIG_DSTPATH}"
+function deploy_home_configs () {
+  links "$home_config_srcpath" "$home_config_dstpath"
 }
 
-undeploy_bins() {
-  unlinks "${BIN_SRCPATH}" "${BIN_DSTPATH}"
+function undeploy_bins () {
+  unlinks "$bin_srcpath" "$bin_dstpath"
 }
 
-undeploy_configs() {
-  unlinks "${CONFIG_SRCPATH}" "${CONFIG_DSTPATH}"
+function undeploy_configs () {
+  unlinks "$config_srcpath" "$config_dstpath"
 }
 
-undeploy_home_configs() {
-  unlinks "${HOME_CONFIG_SRCPATH}" "${HOME_CONFIG_DSTPATH}"
+function undeploy_home_configs () {
+  unlinks "$home_config_srcpath" "$home_config_dstpath"
 }
 
-deploy() {
+function deploy () {
   deploy_bins
   deploy_configs
   deploy_home_configs
 }
 
-undeploy() {
+function undeploy () {
   undeploy_bins
   undeploy_configs
   undeploy_home_configs
 }
 
-init() {
+function init () {
   mkdir -vp \
     ~/bin \
     ~/.config \
     ~/.cache \
-    ~/.local/share
+    ~/.local/share \
+    ;
 }
 
-main() {
-  case "${1}" in
-    init )
-      init
-      ;;
-    deploy )
-      deploy
-      ;;
-    undeploy )
-      undeploy
-      ;;
-    * )
-      error "Invalid subcommand"
-      ;;
-  esac
-}
+# main
 
 # Argument array
-declare -a ARGS=()
+declare -a args=()
 
 # Parse arguments
-while [[ $# -gt 0 ]]; do
-  case ${1} in
+while (( $# )); do
+  case "$1" in
     --debug )
       set -x
       shift
       ;;
     -h | --help )
-      usage
+      help
       exit 0
       ;;
     -* )
-      error "Invalid option: '${1}'\n\n$(usage_short)"
+      error "Invalid option '$1'"
+      exit 1
       ;;
     * )
-      ARGS+=("${1}")
+      args+=("$1")
       shift
       ;;
   esac
 done
 
-main "${ARGS[@]}"
+case "${args[0]}" in
+  init )
+    init
+    ;;
+  deploy )
+    deploy
+    ;;
+  undeploy )
+    undeploy
+    ;;
+  * )
+    error "Invalid subcommand '${args[0]}'"
+    exit 1
+    ;;
+esac
