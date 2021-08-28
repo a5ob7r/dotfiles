@@ -45,7 +45,7 @@ fi
 function help () {
   echo -e -n "
 Descriptions:
-  Dotfiles installer and uninstaller
+  Dotfiles installer and uninstaller with extra.
 
 Usage:
   $self <SUBCOMMAND>
@@ -54,6 +54,13 @@ Subcommands:
   init         Initialize setup
   deploy       Deploy dotfiles
   undeploy     Remove deployed dotfiles
+  rust         Install rust tool chain
+  haskell      Install haskell tool chain
+  lscolor      Install ls color config
+  python-packages
+               Install python packages with pip
+  haskell-packages
+               Install haskell packages with cabal
 
 Options:
   -h, --help   Show this messages and exit.
@@ -217,6 +224,42 @@ function init () {
     ;
 }
 
+function rust () {
+  # https://rustup.rs/
+  curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
+}
+
+function haskell () {
+  # https://www.haskell.org/ghcup/
+  curl --proto '=https' --tlsv1.2 -sSf https://get-ghcup.haskell.org | sh
+}
+
+function lscolor () {
+  curl -sL https://raw.githubusercontent.com/trapd00r/LS_COLORS/master/LS_COLORS > ~/.dircolors
+}
+
+function python-packages () {
+  local -ar packages=(
+    pipenv
+    'python-language-server[all]'
+    flake8
+    ipdb
+    tmuxp
+    kaggle
+    youtube-dl
+    vim-vint
+    # powerline-status
+  )
+
+  pip3 install --user "${packages[@]}"
+}
+
+function haskell-packages () {
+  cabal install ShellCheck
+  cabal install xmonad xmonad-contrib
+  cabal install xmobar --flags="all_extensions"
+}
+
 # main
 
 # Argument array
@@ -253,6 +296,21 @@ case "${args[0]}" in
     ;;
   undeploy )
     undeploy
+    ;;
+  rust )
+    rust
+    ;;
+  haskell )
+    haskell
+    ;;
+  lscolor )
+    lscolor
+    ;;
+  python-packages )
+    python-packages
+    ;;
+  haskell-packages )
+    haskell-packages
     ;;
   * )
     error "Invalid subcommand '${args[0]}'"

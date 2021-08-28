@@ -17,7 +17,6 @@ I separate some tool configs as another repositories.
 
 - .config/* : Configs, deployed to ~/.config/.
 - bin/* : Utility scripts, deployed to ~/bin/.
-- etc/* : Utility scripts to setup this repository.
 - home/* : Configs, deployed to ~/.
 - misc/* : Template of configs which are difficult to manage with git directly.
 
