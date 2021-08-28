@@ -37,6 +37,31 @@ function error () {
   echo -e "${prefix}${*}${suffix}" >&2
 }
 
+function is_linux () {
+  [[ "$OSTYPE" =~ ^linux ]]
+}
+
+function is_macos () {
+  [[ "$OSTYPE" =~ ^darwin ]]
+}
+
+function has () {
+  type "$1" &>/dev/null
+}
+
+function has_commands () {
+  local all=0
+
+  for cmd; do
+    if ! has "$cmd"; then
+      errror "'$cmd is not found on command line."
+      all=1
+    fi
+  done
+
+  return "$all"
+}
+
 if ! cd "$parent"; then
   error 'Fail to change directory to script parent.'
   exit 1
@@ -61,6 +86,7 @@ Subcommands:
                Install python packages with pip
   haskell-packages
                Install haskell packages with cabal
+  ghq-binary   Install ghq binary from GitHub release
 
 Options:
   -h, --help   Show this messages and exit.
@@ -260,6 +286,47 @@ function haskell-packages () {
   cabal install xmobar --flags="all_extensions"
 }
 
+function install_ghq () {
+  if ! has_commands curl bsdtar grep; then
+    return 1
+  fi
+
+  local zipfile
+
+  if is_linux; then
+    zipfile='ghq_linux_amd64.zip'
+  elif is_macos; then
+    zipfile='ghq_darwin_amd64.zip'
+  else
+    error 'This OS is not neither Linux nor macOS, so no prebuild binary on GitHub release.'
+    return 1
+  fi
+
+  # So bad looking but for compatibility until Bash v4.2. Wanna use lastpipe
+  # option.
+  local asset_url
+  asset_url="$( \
+    curl -L -H "Accept: application/vnd.github.v3+json" 'https://api.github.com/repos/x-motemen/ghq/releases/latest' \
+      | grep -E -o "https://.*${zipfile}" \
+  )"
+
+  if [[ -z "$asset_url" ]]; then
+    error 'The asset url is empty.'
+    return 1
+  fi
+
+  if [[ ! -d ~/bin ]]; then
+    warning 'No ~/bin directory exists, so create it to deploy ghq binary.'
+    mkdir ~/bin
+  fi
+
+  curl -L "$asset_url" | bsdtar -x -f - --include '*/ghq' --strip-components 1 -C ~/bin
+
+  if [[ ! -x ~/bin/ghq ]]; then
+    chmod -v +x ~/bin/ghq
+  fi
+}
+
 # main
 
 # Argument array
@@ -311,6 +378,9 @@ case "${args[0]}" in
     ;;
   haskell-packages )
     haskell-packages
+    ;;
+  ghq-binary )
+    install_ghq
     ;;
   * )
     error "Invalid subcommand '${args[0]}'"
