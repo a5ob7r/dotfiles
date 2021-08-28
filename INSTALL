@@ -68,7 +68,7 @@ if ! cd "$parent"; then
 fi
 
 function help () {
-  echo -e -n "
+  echo -e -n "\
 Descriptions:
   Dotfiles installer and uninstaller with extra.
 
