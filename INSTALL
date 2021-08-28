@@ -37,6 +37,27 @@ function error () {
   echo -e "${prefix}${*}${suffix}" >&2
 }
 
+# Useful ln to create symlink. Pass basename contained destination path
+# explicitly.
+#
+# Good.
+# $ symln /path/to/conf ~/.conf
+#
+# Bad.
+# $ symln /path/to/conf ~
+function symln () {
+  local src="$1" dst="$2"
+
+  if [[ -d "$dst" ]]; then
+    error "It is a directory: '$dst'"
+    return 1
+  fi
+
+  mkdir -p "${dst%/*}"
+
+  ln -sv "$src" "$dst"
+}
+
 function is_linux () {
   [[ "$OSTYPE" =~ ^linux ]]
 }
@@ -87,6 +108,11 @@ Subcommands:
   haskell-packages
                Install haskell packages with cabal
   ghq-binary   Install ghq binary from GitHub release
+  zsh-config   Install zsh config
+  tmux-config  Install tmux config
+  vim-config   Install vim config
+  xmonad-config
+               Install xmonad config
 
 Options:
   -h, --help   Show this messages and exit.
@@ -327,6 +353,78 @@ function install_ghq () {
   fi
 }
 
+function zsh-config () {
+  local -r url='https://github.com/a5ob7r/zsh-config.git'
+
+  if ! has_commands git; then
+    return 1
+  fi
+
+  if has ghq; then
+    ghq get "$url"
+    local path
+    path="$(ghq list --exact --full-path github.com/a5ob7r/zsh-config)"
+    symln "${path}/.zshrc" ~/.zshrc
+  else
+    git clone "$url" ~/zsh-config
+    symln ~/zsh-config/.zshrc ~/.zshrc
+  fi
+}
+
+function tmux-config () {
+  local -r url='https://github.com/a5ob7r/tmux-config.git'
+
+  if ! has_commands git; then
+    return 1
+  fi
+
+  if has ghq; then
+    ghq get "$url"
+    local path
+    path="$(ghq list --exact --full-path github.com/a5ob7r/tmux-config)"
+    symln "${path}" ~/.config/tmux
+  else
+    git clone "$url" ~/tmux-config
+    symln ~/tmux-config ~/.config/tmux
+  fi
+}
+
+function vim-config () {
+  local -r url='https://github.com/a5ob7r/vim-config.git'
+
+  if ! has_commands git; then
+    return 1
+  fi
+
+  if has ghq; then
+    ghq get "$url"
+    local path
+    path="$(ghq list --exact --full-path github.com/a5ob7r/vim-config)"
+    symln "${path}" ~/.vim
+  else
+    git clone "$url" ~/vim-config
+    symln ~/vim-config ~/.vim
+  fi
+}
+
+function xmonad-config () {
+  local -r url='https://github.com/a5ob7r/xmonad-config.git'
+
+  if ! has_commands git; then
+    return 1
+  fi
+
+  if has ghq; then
+    ghq get "$url"
+    local path
+    path="$(ghq list --exact --full-path github.com/a5ob7r/xmonad-config)"
+    symln "${path}" ~/.xmonad
+  else
+    git clone "$url" ~/xmonad-config
+    symln ~/xmonad-config ~/.xmonad
+  fi
+}
+
 # main
 
 # Argument array
@@ -386,6 +484,18 @@ case "${args[0]}" in
     ;;
   ghq-binary )
     install_ghq
+    ;;
+  zsh-config )
+    zsh-config
+    ;;
+  tmux-config )
+    tmux-config
+    ;;
+  vim-config )
+    vim-config
+    ;;
+  xmonad-config )
+    xmonad-config
     ;;
   * )
     error "Invalid subcommand '${args[0]}'"
