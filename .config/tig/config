@@ -1,4 +1,3 @@
-set diff-highlight = true
 set ignore-case = true
 set refresh-mode = auto
 
@@ -13,3 +12,5 @@ bind main C !git sw -d %(commit)
 color cursor black white bold
 color title-focus black white bold
 color title-blur black white bold
+
+source ~/.local.tigrc
