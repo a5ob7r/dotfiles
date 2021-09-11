@@ -2,7 +2,7 @@
 # size/resolution, installed fonts) deeply so no the configs should be on this
 # shared config file and add `font` entries to local config file.
 import:
-  - ~/.alacritty.local.yml
+  - ~/.local.alacritty.yml
 
 window:
   dynamic_padding: true
