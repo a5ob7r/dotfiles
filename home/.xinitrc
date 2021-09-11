@@ -1,7 +1,7 @@
 readonly USERRECOURCES=~/.Xresources
-readonly USERRECOURCES_LOCAL=~/.Xresources.local
+readonly USERRECOURCES_LOCAL=~/.local.Xresources
 readonly SYSXINITRCS=/etc/X11/xinit/xinitrc.d
-readonly USERXINITRC_LOCAL=~/.xinitrc.local
+readonly USERXINITRC_LOCAL=~/.local.xinitrc
 
 if [ -f "${USERRECOURCES}" ]; then
   xrdb -merge "${USERRECOURCES}"
