@@ -22,6 +22,8 @@
 	h = tohead
 [core]
 	commentChar = auto
+	# NOTE: This is for staging/unstading files, which contains multibyte character in its path, on gina.vim.
+	quotepath = false
 [pull]
 	ff = only
 	rebase = false
