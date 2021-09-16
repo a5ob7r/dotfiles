@@ -1,0 +1,16 @@
+# Add a line below to your shell profile such as bashrc, zshrc and etc. to
+# enable this rc. See CONFIGURATION FILES section on rg(1) for more detail.
+#
+#   export RIPGREP_CONFIG_PATH=~/.ripgreprc
+#
+--follow
+--hidden
+--smart-case
+--glob
+!.git/*
+--glob
+!.svn/*
+--glob
+!.hg/*
+--glob
+!.bzr/*
