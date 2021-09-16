@@ -6,7 +6,7 @@
 # Set useful shell options.
 set -Cueo pipefail
 
-readonly self="${BASH_SOURCE[0]}"
+readonly selfpath="${BASH_SOURCE[0]}"
 
 # All commands on $PATH.
 function allpaths () {
@@ -19,7 +19,7 @@ function alacritty () {
   local p
 
   allpaths alacritty | while read -r p; do
-    if [[ "$p" != "$self" ]]; then
+    if [[ "$p" != "$selfpath" ]]; then
       echo "$p"
       return 0
     fi
@@ -34,13 +34,15 @@ function has_process () {
 
 # main
 
-readonly path="$(alacritty)"
+declare bin_path
+bin_path="$(alacritty)"
+
 readonly -a args=( -e tmux new-session -A )
 
 if (( $# )); then
-  exec "$path" "$@"
-elif ! has_process "${path} ${args[*]}"; then
-  exec "$path" "${args[@]}"
+  exec "$bin_path" "$@"
+elif ! has_process "${bin_path} ${args[*]}"; then
+  exec "$bin_path" "${args[@]}"
 else
-  exec "$path"
+  exec "$bin_path"
 fi
