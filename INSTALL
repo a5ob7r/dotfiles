@@ -155,7 +155,7 @@ function list_files () {
     return 1
   fi
 
-  local GLOBIGNORE="$src/*~"
+  local GLOBIGNORE="$src/*~:$src/*.sw[a-z]"
   printf '%s\n' "$src"/*
 }
 
