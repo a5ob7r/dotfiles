@@ -20,6 +20,12 @@ mouse:
 hints:
   enabled:
     # URI
+    #
+    # NOTE: This is almost same except tail exclutions of \u0020(space) and
+    # \u0024($) for vim's config like `set listchars=eol:$`. The config appends
+    # dollar character to each lines end. But Alacritty can't understand it and
+    # causes incorrect URI recognition. For instance, `https://example.com/` is
+    # recognized as `https://example.com/$`.
     - regex: "(ipfs:|ipns:|magnet:|mailto:|gemini:|gopher:|https:|http:|news:|file:|git:|ssh:|ftp:)\
               [^\u0000-\u001F\u007F-\u009F<>\"\\s{-}\\^⟨⟩`]+[^\u0020\u0024]"
       command: xdg-open
