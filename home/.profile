@@ -1,5 +1,11 @@
 #!/bin/sh
 
+xsource () {
+  if [ -f "$1" ]; then
+    source "$1"
+  fi
+}
+
 has () {
   type "$1" > /dev/null
 }
@@ -80,3 +86,5 @@ if has rg; then
   export FZF_DEFAULT_COMMAND='rg --files --hidden --follow --glob "!.git/*"'
   export SKIM_DEFAULT_COMMAND=$FZF_DEFAULT_COMMAND
 fi
+
+xsource ~/.local.profile
