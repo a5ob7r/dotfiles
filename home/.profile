@@ -87,4 +87,14 @@ if has rg; then
   export SKIM_DEFAULT_COMMAND=$FZF_DEFAULT_COMMAND
 fi
 
+if has delta; then
+  export GIT_PAGER=delta
+elif has less; then
+  if has diff-so-fancy; then
+    export GIT_PAGER='diff-so-fancy | less'
+  elif has diff-highlight; then
+    export GIT_PAGER='diff-highlight | less'
+  fi
+fi
+
 xsource ~/.local.profile
