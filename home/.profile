@@ -83,7 +83,9 @@ export FZF_DEFAULT_OPTS='--reverse --height=40% --min-height=12'
 export SKIM_DEFAULT_OPTIONS=$FZF_DEFAULT_OPTS
 
 if has rg; then
-  export FZF_DEFAULT_COMMAND='rg --files --hidden --follow --glob "!.git/*"'
+  # NOTE: Use config file which is spacified with RIPGREP_CONFIG_PATH to config
+  # general options for rg.
+  export FZF_DEFAULT_COMMAND='rg --files'
   export SKIM_DEFAULT_COMMAND=$FZF_DEFAULT_COMMAND
 fi
 
