@@ -17,7 +17,15 @@ path () {
   echo "${PATH//:/$'\n'}"
 }
 
+xsource () {
+  if [[ -f "$1" ]]; then
+    source "$1"
+  fi
+}
+
 alias quit=exit
 alias q=quit
 alias g=git
 alias v=vim
+
+xsource ~/.local.bashrc
