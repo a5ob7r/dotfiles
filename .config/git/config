@@ -22,6 +22,7 @@
 	h = tohead
 	update = remote update
 	u = update
+	rb = rebase
 [core]
 	commentChar = auto
 	# NOTE: This is for staging/unstading files, which contains multibyte character in its path, on gina.vim.
