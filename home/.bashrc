@@ -1,4 +1,4 @@
-PS1='\n\[\e[0;36m\]\w\[\e[m\] (j: \j) (s: $?)\n\[\e[$((( $? )) && echo "0;31" || echo "0;32")m\]\$\[\e[m\] '
+PS1='\n\[\e[0;36m\]\w\[\e[m\] (j: \j) (s: $?) (l: $SHLVL)\n\[\e[$((( $? )) && echo "0;31" || echo "0;32")m\]\$\[\e[m\] '
 
 if [[ -t 0 ]]; then
   stty stop undef
