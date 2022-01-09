@@ -1,0 +1,7 @@
+# ~/.cargo/config
+
+[alias]
+o = "outdated"
+
+[build]
+rustflags = ["-C", "target-cpu=native"]

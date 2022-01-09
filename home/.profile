@@ -75,8 +75,6 @@ export LESS='-ij10FMRX'
 
 export PIPENV_VENV_IN_PROJECT=1
 
-export RUSTFLAGS='-C target-cpu=native'
-
 export RIPGREP_CONFIG_PATH=~/.ripgreprc
 
 export FZF_DEFAULT_OPTS='--reverse --height=40% --min-height=12'
