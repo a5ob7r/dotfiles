@@ -1,0 +1,20 @@
+#!/usr/bin/env bash
+
+readonly url='https://dictionary.cambridge.org/dictionary/english'
+
+# Open command layer.
+opener() {
+  case "$OSTYPE" in
+    darwin* )
+      echo open
+      ;;
+    * )
+      # TODO: For wayland compositers.
+      echo xdg-open
+      ;;
+  esac
+}
+
+word="$1"
+
+"$(opener)" "$url/$word"
