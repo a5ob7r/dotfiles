@@ -23,9 +23,5 @@ xsource () {
   fi
 }
 
-alias quit=exit
-alias q=quit
-alias g=git
-alias v=vim
-
+xsource ~/.aliases
 xsource ~/.local.bashrc

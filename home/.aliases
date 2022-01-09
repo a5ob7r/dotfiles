@@ -1,0 +1,27 @@
+#!/bin/sh
+
+alias rmf='command rm -frv'
+alias rr=rmf
+
+alias g=git
+alias v=vim
+alias m=man
+
+alias ..='cd ../'
+alias ...='cd ../../'
+alias ....='cd ../../../'
+alias .....='cd ../../../../'
+
+alias quit=exit
+alias q=quit
+alias qq=q
+alias qqq=q
+alias :q=q
+
+alias shinit='exec "$SHELL"'
+alias path='echo "$PATH" | tr ":" "\n"'
+
+alias cg=cargo
+alias cgs='cg +stable'
+alias cgb='cg +beta'
+alias cgn='cg +nightly'
