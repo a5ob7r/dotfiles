@@ -23,5 +23,7 @@ xsource () {
   fi
 }
 
+HISTSIZE=5000000
+
 xsource ~/.aliases
 xsource ~/.local.bashrc
