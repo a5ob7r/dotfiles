@@ -2,7 +2,8 @@
 
 xsource () {
   if [ -f "$1" ]; then
-    source "$1"
+    # shellcheck disable=SC1090
+    . "$1"
   fi
 }
 
@@ -63,14 +64,6 @@ if has vim; then
   export MANPAGER='vim +MANPAGER -c "set nolist nomodifiable nowrite | nnoremap <buffer> <silent> q :quit<CR>" --not-a-term -'
 fi
 
-export LESS_TERMCAP_mb=$'\033[01;31m'      # Begins blinking.
-export LESS_TERMCAP_md=$'\033[01;31m'      # Begins bold.
-export LESS_TERMCAP_me=$'\033[0m'          # Ends mode.
-export LESS_TERMCAP_se=$'\033[0m'          # Ends standout-mode.
-export LESS_TERMCAP_so=$'\033[00;47;30m'   # Begins standout-mode.
-export LESS_TERMCAP_ue=$'\033[0m'          # Ends underline.
-export LESS_TERMCAP_us=$'\033[01;32m'      # Begins underline.
-
 export LESS='-ij10FMRX'
 
 export PIPENV_VENV_IN_PROJECT=1
@@ -78,13 +71,13 @@ export PIPENV_VENV_IN_PROJECT=1
 export RIPGREP_CONFIG_PATH=~/.ripgreprc
 
 export FZF_DEFAULT_OPTS='--reverse --height=40% --min-height=12'
-export SKIM_DEFAULT_OPTIONS=$FZF_DEFAULT_OPTS
+export SKIM_DEFAULT_OPTIONS="$FZF_DEFAULT_OPTS"
 
 if has rg; then
   # NOTE: Use config file which is spacified with RIPGREP_CONFIG_PATH to config
   # general options for rg.
   export FZF_DEFAULT_COMMAND='rg --files'
-  export SKIM_DEFAULT_COMMAND=$FZF_DEFAULT_COMMAND
+  export SKIM_DEFAULT_COMMAND="$FZF_DEFAULT_COMMAND"
 fi
 
 if has delta; then

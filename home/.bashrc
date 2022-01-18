@@ -1,3 +1,5 @@
+#!/bin/bash
+
 PS1='\n\[\e[0;36m\]\w\[\e[m\] (j: \j) (s: $?) (l: $SHLVL)\n\[\e[$((( $? )) && echo "0;31" || echo "0;32")m\]\$\[\e[m\] '
 
 if [[ -t 0 ]]; then
@@ -19,6 +21,7 @@ path () {
 
 xsource () {
   if [[ -f $1 ]]; then
+    # shellcheck disable=1090
     source "$1"
   fi
 }

@@ -6,7 +6,10 @@ readonly SYSXINITRCS=/etc/X11/xinit/xinitrc.d
 readonly USERXINITRC_LOCAL=~/.local.xinitrc
 
 xsource () {
-  [ -r "$1" ] && . "$1"
+  if [ -r "$1" ]; then
+    # shellcheck disable=SC1090
+    . "$1"
+  fi
 }
 
 if [ -f "$USERRECOURCES" ]; then

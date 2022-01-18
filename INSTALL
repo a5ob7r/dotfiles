@@ -38,7 +38,9 @@ error () {
   if [[ -d "$1" ]]; then
     (cd -P "$1" && pwd)
   elif [[ "$1" != */* ]]; then
-    echo "$(pwd -P)/$1"
+    local path
+    path="$(pwd -P)"
+    echo "$path/$1"
   elif [[ -h "$1" ]]; then
     readlink "$1"
   else
