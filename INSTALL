@@ -9,7 +9,7 @@ set -Cueo pipefail
 shopt -s extglob
 shopt -s nullglob
 
-function warning () {
+warning () {
   if [[ -t 2 ]]; then
     local -r prefix='\033[33m'
     local -r suffix='\033[0m'
@@ -21,7 +21,7 @@ function warning () {
   echo -e "${prefix}${*}${suffix}" >&2
 }
 
-function error () {
+error () {
   if [[ -t 2 ]]; then
     local -r prefix='\033[31m'
     local -r suffix='\033[0m'
@@ -34,7 +34,7 @@ function error () {
 }
 
 # Bare portable realpath.
-function ::realpath () {
+::realpath () {
   if [[ -d "$1" ]]; then
     (cd -P "$1" && pwd)
   elif [[ "$1" != */* ]]; then
@@ -64,7 +64,7 @@ self="${0##*/}"
 #
 # Bad.
 # $ symln /path/to/conf ~
-function symln () {
+symln () {
   local src="$1" dst="$2"
 
   if [[ -d "$dst" ]]; then
@@ -77,19 +77,19 @@ function symln () {
   ln -sv "$src" "$dst"
 }
 
-function is_linux () {
+is_linux () {
   [[ "$OSTYPE" =~ ^linux ]]
 }
 
-function is_macos () {
+is_macos () {
   [[ "$OSTYPE" =~ ^darwin ]]
 }
 
-function has () {
+has () {
   type "$1" &>/dev/null
 }
 
-function has_commands () {
+has_commands () {
   local all=0
 
   for cmd; do
@@ -107,7 +107,7 @@ if ! cd "$parent"; then
   exit 1
 fi
 
-function help () {
+help () {
   echo -e -n "\
 Descriptions:
   Dotfiles installer and uninstaller with extra.
@@ -147,7 +147,7 @@ readonly home_config_dstpath=~
 
 # List files in a directory which is specified as an argument. Each files are
 # preceded by the directory path.
-function list_files () {
+list_files () {
   local src="${1%%*(/)}"
 
   if [[ ! -d "$src" ]]; then
@@ -161,7 +161,7 @@ function list_files () {
 
 # Make symbolik links from files in source directory to in destination
 # directory.
-function links () {
+links () {
   local -r src_dir="${1%%*(/)}"
   local -r dst_dir="${2%%*(/)}"
 
@@ -198,7 +198,7 @@ function links () {
   done
 }
 
-function has_same_resolved_path () {
+has_same_resolved_path () {
   local p1 p2
   p1="$(::realpath "$1")"
   p2="$(::realpath "$2")"
@@ -207,7 +207,7 @@ function has_same_resolved_path () {
 }
 
 # Remove symbolic links from destination directory.
-function unlinks () {
+unlinks () {
   local -r src_dir="${1%%*(/)}"
   local -r dst_dir="${2%%*(/)}"
 
@@ -250,43 +250,43 @@ function unlinks () {
   done
 }
 
-function deploy_bins () {
+deploy_bins () {
   links "$bin_srcpath" "$bin_dstpath"
 }
 
-function deploy_configs () {
+deploy_configs () {
   links "$config_srcpath" "$config_dstpath"
 }
 
-function deploy_home_configs () {
+deploy_home_configs () {
   links "$home_config_srcpath" "$home_config_dstpath"
 }
 
-function undeploy_bins () {
+undeploy_bins () {
   unlinks "$bin_srcpath" "$bin_dstpath"
 }
 
-function undeploy_configs () {
+undeploy_configs () {
   unlinks "$config_srcpath" "$config_dstpath"
 }
 
-function undeploy_home_configs () {
+undeploy_home_configs () {
   unlinks "$home_config_srcpath" "$home_config_dstpath"
 }
 
-function deploy () {
+deploy () {
   deploy_bins
   deploy_configs
   deploy_home_configs
 }
 
-function undeploy () {
+undeploy () {
   undeploy_bins
   undeploy_configs
   undeploy_home_configs
 }
 
-function init () {
+init () {
   mkdir -vp \
     ~/bin \
     ~/.config \
@@ -295,21 +295,21 @@ function init () {
     ;
 }
 
-function rust () {
+rust () {
   # https://rustup.rs/
   curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
 }
 
-function haskell () {
+haskell () {
   # https://www.haskell.org/ghcup/
   curl --proto '=https' --tlsv1.2 -sSf https://get-ghcup.haskell.org | sh
 }
 
-function lscolor () {
+lscolor () {
   curl -sL https://raw.githubusercontent.com/trapd00r/LS_COLORS/master/LS_COLORS > ~/.dircolors
 }
 
-function python-packages () {
+python-packages () {
   local -ar packages=(
     pipenv
     'python-language-server[all]'
@@ -325,7 +325,7 @@ function python-packages () {
   pip3 install --user "${packages[@]}"
 }
 
-function haskell-packages () {
+haskell-packages () {
   cabal install --overwrite-policy=always ShellCheck
 
   cabal install --overwrite-policy=always --lib xmonad xmonad-contrib X11
@@ -333,7 +333,7 @@ function haskell-packages () {
   cabal install --overwrite-policy=always xmobar --flags="all_extensions"
 }
 
-function install_ghq () {
+install_ghq () {
   if ! has_commands curl bsdtar grep; then
     return 1
   fi
@@ -374,7 +374,7 @@ function install_ghq () {
   fi
 }
 
-function zsh-config () {
+zsh-config () {
   local -r url='https://github.com/a5ob7r/zsh-config.git'
 
   if ! has_commands git; then
@@ -392,7 +392,7 @@ function zsh-config () {
   fi
 }
 
-function tmux-config () {
+tmux-config () {
   local -r url='https://github.com/a5ob7r/tmux-config.git'
 
   if ! has_commands git; then
@@ -410,7 +410,7 @@ function tmux-config () {
   fi
 }
 
-function vim-config () {
+vim-config () {
   local -r url='https://github.com/a5ob7r/vim-config.git'
 
   if ! has_commands git; then
@@ -428,7 +428,7 @@ function vim-config () {
   fi
 }
 
-function xmonad-config () {
+xmonad-config () {
   local -r url='https://github.com/a5ob7r/xmonad-config.git'
 
   if ! has_commands git; then
