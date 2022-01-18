@@ -326,9 +326,11 @@ function python-packages () {
 }
 
 function haskell-packages () {
-  cabal install ShellCheck
-  cabal install xmonad xmonad-contrib
-  cabal install xmobar --flags="all_extensions"
+  cabal install --overwrite-policy=always ShellCheck
+
+  cabal install --overwrite-policy=always --lib xmonad xmonad-contrib X11
+  cabal install --overwrite-policy=always xmonad
+  cabal install --overwrite-policy=always xmobar --flags="all_extensions"
 }
 
 function install_ghq () {
