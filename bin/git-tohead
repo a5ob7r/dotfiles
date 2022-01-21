@@ -1,0 +1,60 @@
+#!/bin/bash
+# If a remote `upstream` exists, switch to the commit of a master(or main)
+# branch of it. If no exists, switch to the commit of a master(or main) branch
+# of origin. If no exists, cause an error and exit.
+#
+# NOTE: Assume `git` executable has already been installed.
+
+set -Cueo pipefail
+
+wrap () {
+  local -r left="$1"
+  local -r right="$2"
+
+  echo -n -e "$left"
+  while read -r; do
+    echo -e "$REPLY"
+  done
+  echo -n -e "$right"
+}
+
+error () {
+  wrap '\033[31m' '\033[m' <<<"$*"
+}
+
+usage () {
+  echo -n -e "\
+usage: git tohead
+"
+}
+
+while (( $# )); do
+  case "$1" in
+    -h | --help )
+      usage
+      exit 0
+      ;;
+    * )
+      error "An unknown option: $1"
+      exit 1
+      ;;
+  esac
+done
+
+# This uses sort to decide a `head` commit as a little hack. The priority is
+# following.
+#
+# 1. upstream/master
+# 2. upstream/main
+# 3. origin/master
+# 4. origin/main
+command git branch -r -l origin/main origin/master upstream/main upstream/master --sort=-refname | {
+  read -r BRANCH
+
+  if [[ -n $BRANCH ]]; then
+    command git switch -d "$BRANCH"
+  else
+    error 'Not found appropriate head commit.'
+    exit 1
+  fi
+}
