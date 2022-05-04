@@ -26,8 +26,7 @@ hints:
     # dollar character to each lines end. But Alacritty can't understand it and
     # causes incorrect URI recognition. For instance, `https://example.com/` is
     # recognized as `https://example.com/$`.
-    - regex: "(ipfs:|ipns:|magnet:|mailto:|gemini:|gopher:|https:|http:|news:|file:|git:|ssh:|ftp:)\
-              [^\u0000-\u001F\u007F-\u009F<>\"\\s{-}\\^⟨⟩`]+[^\u0020\u0024]"
+    - regex: "(ipfs:|ipns:|magnet:|mailto:|gemini:|gopher:|https:|http:|news:|file:|git:|ssh:|ftp:)[^\u0000-\u001F\u007F-\u009F<>\"\\s{-}\\^⟨⟩`]+[^\u0020\u0024]"
       command: xdg-open
       post_processing: true
       mouse:
