@@ -25,6 +25,7 @@ prepend_path () {
 }
 
 prepend_path ~/.node_modules/bin
+prepend_path ~/.deno/bin
 prepend_path ~/.local/bin
 prepend_path ~/.cargo/bin
 prepend_path ~/.ghcup/bin
