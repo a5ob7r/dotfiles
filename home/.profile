@@ -31,7 +31,6 @@ prepend_path ~/.cargo/bin
 prepend_path ~/.ghcup/bin
 prepend_path ~/.cabal/bin
 prepend_path ~/bin
-export PATH
 
 export EDITOR=vim
 export VISUAL=vim
