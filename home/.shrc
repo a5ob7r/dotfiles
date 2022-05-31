@@ -1,0 +1,80 @@
+#!/bin/sh
+#
+# ~/.shrc
+#
+# This file is a configuration of ash-ish shells, and is a shared configuration
+# between POSIX-compatible shells such as bash or zsh. So this file should be
+# written in POSIX-compatible.
+#
+# Source this file in each shell configurations, or set this file's path in
+# ENV, which is an environment variable. For example set as below.
+#
+# $ export ENV=~/.shrc
+#
+
+xsource_posix () {
+  if [ -r "$1" ]; then
+    # Can't track source files because they're specified dynamically by users
+    # with the argument.
+    # shellcheck disable=SC1090
+    . "$1"
+  fi
+}
+
+# Define the alias only if the same shell function isn't defined.
+xalias () {
+  case "$(type "${1%%=*}" 2>/dev/null)" in
+    # bash/ksh
+    # dash
+    # zsh
+    *" is a function" | *" is a shell function" | *" is a shell function from "* )
+      ;;
+    * )
+      alias "$1"
+      ;;
+  esac
+}
+
+path () {
+  echo "$PATH" | tr : '\n'
+}
+
+shinit () {
+  exec "$SHELL" "$@"
+}
+
+xalias rmf='command rm -frv'
+xalias rr=rmf
+
+xalias g=git
+xalias v=vim
+xalias m=man
+
+xalias ..='cd ../'
+xalias ...='cd ../../'
+xalias ....='cd ../../../'
+xalias .....='cd ../../../../'
+
+xalias quit=exit
+xalias q=quit
+xalias qq=q
+xalias qqq=q
+xalias :q=q
+
+xalias cg=cargo
+xalias cgs='cg +stable'
+xalias cgb='cg +beta'
+xalias cgn='cg +nightly'
+
+if [ -t 0 ]; then
+  # Disable flow control to use CTRL-S and CTRL-Q for key bindings.
+  stty -ixon
+fi
+
+xsource_posix ~/.local.shrc
+
+# Maybe ksh doesn't read ~/.kshrc if ENV, which is an environment variable, is
+# defined. So need to read it manually.
+if [ -n "$KSH_VERSION" ]; then
+  xsource_posix ~/.kshrc
+fi

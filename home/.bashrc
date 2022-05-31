@@ -1,9 +1,26 @@
 #!/bin/bash
+#
+# ~/.bashrc
+#
 
-if [[ -t 0 ]]; then
-  stty stop undef
-  stty start undef
-fi
+###############################################################################
+#
+# Load a shared configuration between shells.
+#
+
+xsource () {
+  if [[ -r $1 ]]; then
+    # shellcheck disable=1090
+    source "$1"
+  fi
+}
+
+xsource ~/.shrc
+
+###############################################################################
+#
+# Bash-specific configurations.
+#
 
 has () {
   type "$1" &>/dev/null
@@ -15,13 +32,6 @@ stdswap () {
 
 path () {
   echo "${PATH//:/$'\n'}"
-}
-
-xsource () {
-  if [[ -f $1 ]]; then
-    # shellcheck disable=1090
-    source "$1"
-  fi
 }
 
 # NOTE: This function must be executed on the head of 'PROMPT_COMMAND' to
@@ -95,5 +105,4 @@ prompt_command () {
 PROMPT_COMMAND=prompt_command
 HISTSIZE=5000000
 
-xsource ~/.aliases
 xsource ~/.local.bashrc

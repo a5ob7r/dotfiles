@@ -32,6 +32,7 @@ prepend_path ~/.ghcup/bin
 prepend_path ~/.cabal/bin
 prepend_path ~/bin
 
+export ENV=~/.shrc
 export EDITOR=vim
 export VISUAL=vim
 export PAGER=less
