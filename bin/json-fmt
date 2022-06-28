@@ -1,0 +1,130 @@
+#!/bin/bash
+#
+# A JSON formatter using jq.
+#
+
+set -eu
+
+error () {
+  echo -e "$*" >&2
+}
+
+declare color=auto
+declare -i indent=2
+declare mode=stdout
+declare -a arguments=()
+
+while (( $# )); do
+  case "$1" in
+    -- )
+      arguments+=("$@")
+      shift $#
+      ;;
+    -h | --help )
+      echo -n -e "\
+Descriptions:
+  A JSON formatter using jq.
+
+Usages:
+  json-fmt [OPTIONS...] [FILE...]
+
+Options:
+  --color=WHEN     Color output: Valid WHEN is 'auto' (by default), 'always' or
+                   'never'.
+  --mode=MODE      Operation mode: Valid MODE is 'stdout' (by default),
+                   'inplace' or 'check'.
+  --indent=SIZE    Indent size. Valid range of SIZE is -1 to 7, according to jq.
+                   Default is 2.
+  -h, --help       Show this message and exit.
+"
+      exit 0
+      ;;
+    --color )
+      color=always
+      shift
+      ;;
+    --color=* )
+      color=${1#--color=}
+      shift
+
+      case "$color" in
+        always | never | auto )
+          ;;
+        * )
+          error "An invalid value: $color."
+          exit 1
+          ;;
+      esac
+      ;;
+    --indent=* )
+      indent=${1#--indent=}
+      shift
+      ;;
+    --mode=* )
+      mode=${1#--mode=}
+      shift
+
+      case "$mode" in
+        stdout | inplace | check )
+          ;;
+        * )
+          error "An invalid argument: $mode."
+          exit 1
+          ;;
+      esac
+      ;;
+    -* )
+      error "An unknown option: $1"
+      exit 1
+      ;;
+    * )
+      arguments+=("$1")
+      shift
+      ;;
+  esac
+done
+
+# main
+
+for f in "${arguments[@]}"; do
+  if ! [[ -f $f && -r $f ]]; then
+    error "This file is not a regular file or not readable: $f."
+    exit 1
+  fi
+
+  if [[ $mode == inplace && ! -w $f ]]; then
+    error "This file is not writable: $f."
+    exit 1
+  fi
+
+  case "$mode" in
+    stdout )
+      case "$color" in
+        always )
+          jq --color-output --indent "$indent" . "$f"
+          ;;
+        never )
+          jq --monochrome-output --indent "$indent" . "$f"
+          ;;
+        auto )
+          jq --indent "$indent" . "$f"
+          ;;
+        * )
+          error "Unreachable: $LINENO."
+          exit 1
+          ;;
+      esac
+      ;;
+    inplace )
+      formatted=$(jq --indent "$indent" . "$f")
+      echo "$formatted" >"$f"
+      ;;
+    check )
+      diff --color="$color" "$f" <(jq --indent "$indent" . "$f" || true)
+      ;;
+    * )
+      error "Unreachable: $LINENO."
+      exit 1
+      ;;
+  esac
+done
