@@ -1,0 +1,9 @@
+{
+  "comment": "This file is a configuration one for era (https://github.com/kyoheiu/era).",
+  "interval": 120,
+  "frequency": 40,
+  "rain1": "|",
+  "rain2": ".",
+  "timecolor": "#eeeeee",
+  "raincolor": "#72c7d1"
+}
