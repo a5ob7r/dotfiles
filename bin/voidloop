@@ -1,0 +1,71 @@
+#!/bin/sh
+
+set -eu
+
+VERSION=0.0.0
+
+n=1
+limited=1
+
+while [ $# -gt 0 ]; do
+  case "$1" in
+    --version )
+      echo "$VERSION"
+      exit 0
+      ;;
+    -h | --help )
+      echo "\
+Descriptions:
+  Run a number of void loop to raise CPU usage.
+
+Usages:
+  voidloop <number_of_loops>
+
+  <number_of_loops> must be a positive decimal. If no argument, this command
+  assumes that it is 1 by default. The maximum of <number_of_loops> is 64 to
+  prevent an unintentional invocation of a lot of void loops. To unlock this
+  limitation, use '--unlimited' option. If multiple arguments are passed, the
+  last one is only valid.
+
+Options:
+  --unlimited   Unlock the uppper limit of void loops.
+  -h, --help    Show this message and exit.
+  --version     Show version info and exit."
+      exit 0
+      ;;
+    --unlimited )
+      limited=0
+      shift
+      ;;
+    * )
+      n=$1
+      shift
+      ;;
+  esac
+done
+
+i=0
+pids=''
+
+while :; do
+  if [ "$limited" -ge 1 ] && [ "$i" -ge 64 ] || [ "$i" -ge "$n" ]; then
+    break
+  else
+    if ! [ "$?" -eq 1 ]; then
+      echo "voidloop: The argument isn't probably a positive decimal: $n." >&2
+      exit 1
+    fi
+  fi
+
+  i=$(( i + 1 ))
+
+  while :; do :; done &
+  pids="$pids $!"
+done
+
+if [ -n "$pids" ]; then
+  trap 'kill $pids' EXIT INT QUIT TERM HUP
+fi
+
+echo 'Type CTRL-C to exit void loops.'
+wait
