@@ -23,8 +23,8 @@ I separate some tool configs as another repositories.
 ## Usage
 
 ```sh
-$ git clone https://github.com/a5ob7r/dotfiles.git
-$ cd dotfiles
+$ git clone https://github.com/a5ob7r/dotfiles.git ~/src/github.com/a5ob7r/dotfiles
+$ cd ~/src/github.com/a5ob7r/dotfiles
 $ ./INSTALL init
 $ ./INSTALL deploy
 ```
