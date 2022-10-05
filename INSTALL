@@ -96,7 +96,7 @@ has_commands () {
 
   for cmd; do
     if ! has "$cmd"; then
-      errror "'$cmd is not found on command line."
+      error "'$cmd is not found on command line."
       all=1
     fi
   done
