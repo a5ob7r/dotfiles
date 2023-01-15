@@ -28,6 +28,7 @@ hints:
     # recognized as `https://example.com/$`.
     - regex: "(ipfs:|ipns:|magnet:|mailto:|gemini:|gopher:|https:|http:|news:|file:|git:|ssh:|ftp:)[^\u0000-\u001F\u007F-\u009F<>\"\\s{-}\\^⟨⟩`]+[^\u0020\u0024]"
       command: xdg-open
+      hyperlinks: true
       post_processing: true
       mouse:
         enabled: true
