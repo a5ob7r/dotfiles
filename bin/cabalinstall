@@ -1,0 +1,14 @@
+#!/bin/sh
+#
+# A simple shorthand for "cabal install".
+#
+
+cabal install \
+  --overwrite-policy=always \
+  --jobs \
+  --enable-optimization=2 \
+  --enable-split-sections \
+  --enable-executable-static \
+  --enable-executable-stripping \
+  "$@" \
+  ;
