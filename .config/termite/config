@@ -1,5 +1,9 @@
+# Termite is obsoleted by Alacritty.
+#
+# https://github.com/thestinger/termite
+
 [options]
-font = Monospace 15
+font = Monospace 42
 fullscreen = true
 mouse_autohide = true
 scrollback_lines = 10000
