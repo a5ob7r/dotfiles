@@ -61,7 +61,7 @@
  *
  * font: see http://freedesktop.org/software/fontconfig/fontconfig-user.html
  */
-static char *font = "Monospace:pixelsize=58:antialias=true:autohint=false";
+static char *font = "Monospace:pixelsize=32:antialias=true:autohint=false";
 static int borderpx = 10;
 
 /*
