@@ -1,11 +1,6 @@
 #!/bin/bash
-# If a remote `upstream` exists, switch to the commit of a master(or main)
-# branch of it. If no exists, switch to the commit of a master(or main) branch
-# of origin. If no exists, cause an error and exit.
-#
-# NOTE: Assume `git` executable has already been installed.
 
-set -Cueo pipefail
+set -euo pipefail
 
 wrap () {
   local -r left="$1"
@@ -22,16 +17,38 @@ error () {
   wrap '\033[31m' '\033[m' <<<"$*"
 }
 
-usage () {
-  echo -n -e "\
-usage: git tohead
-"
+is_upstream_configured () {
+  git remote | grep -q '^upstream$'
+}
+
+is_upstream_head_configured () {
+  git branch -r -l upstream/HEAD | read -r
+}
+
+configure_upstream_head () {
+  git remote set-head upstream -a
+}
+
+to_origin_head () {
+  git switch -d origin/HEAD
+}
+
+to_upstream_head () {
+  git switch -d upstream/HEAD
 }
 
 while (( $# )); do
   case "$1" in
     -h | --help )
-      usage
+  echo -n "\
+Descriptions:
+  Detach to HEAD in upstream, otherwise in origin as fallback. If upstream is
+  configured but no HEAD configuration in the repository, this command tries to
+  configure it automatically.
+
+Usage:
+  git tohead
+"
       exit 0
       ;;
     * )
@@ -41,20 +58,22 @@ while (( $# )); do
   esac
 done
 
-# This uses sort to decide a `head` commit as a little hack. The priority is
-# following.
-#
-# 1. upstream/master
-# 2. upstream/main
-# 3. origin/master
-# 4. origin/main
-command git branch -r -l origin/main origin/master upstream/main upstream/master --sort=-refname | {
-  read -r BRANCH
+if ! is_upstream_configured; then
+  to_origin_head
+  exit
+fi
 
-  if [[ -n $BRANCH ]]; then
-    command git switch -d "$BRANCH"
-  else
-    error 'Not found appropriate head commit.'
-    exit 1
-  fi
-}
+if is_upstream_head_configured; then
+  to_upstream_head
+  exit
+fi
+
+configure_upstream_head
+
+if is_upstream_head_configured; then
+  to_upstream_head
+else
+  to_origin_head
+fi
+
+# vim: expandtab tabstop=2 shiftwidth=2 foldmethod=marker:
