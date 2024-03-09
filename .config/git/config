@@ -14,7 +14,7 @@
 	co = checkout
 	mg = merge --verbose
 	f = fetch --verbose
-	glog = log --pretty='format:%C(yellow)%h %C(reset)%s %C(green)%cr %C(cyan)[%an]%C(red)%d' --graph
+	glog = log --pretty=gina --graph
 	ph = push --verbose
 	br = branch --verbose
 	sw = switch
@@ -50,3 +50,6 @@
 	first-run = false
 [include]
 	path = ~/.local.gitconfig
+[pretty]
+	# The format used in ":Gina log" (https://github.com/lambdalisue/gina.vim).
+	gina = format:%C(yellow)%h %C(reset)%s %C(green)%cr %C(cyan)[%an]%C(red)%d
