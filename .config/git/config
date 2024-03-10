@@ -53,3 +53,5 @@
 [pretty]
 	# The format used in ":Gina log" (https://github.com/lambdalisue/gina.vim).
 	gina = format:%C(yellow)%h %C(reset)%s %C(green)%cr %C(cyan)[%an]%C(red)%d
+[push]
+	autoSetupRemote = true
