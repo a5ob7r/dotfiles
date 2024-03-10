@@ -2,19 +2,12 @@
 
 set -euo pipefail
 
-wrap () {
-  local -r left="$1"
-  local -r right="$2"
-
-  echo -n -e "$left"
-  while read -r; do
-    echo -e "$REPLY"
-  done
-  echo -n -e "$right"
-}
-
 error () {
-  wrap '\033[31m' '\033[m' <<<"$*"
+  if [[ -t 2 ]]; then
+    echo -e "\033[31m${*}\033[m"
+  else
+    echo -e "$*"
+  fi >&2
 }
 
 is_upstream_configured () {
