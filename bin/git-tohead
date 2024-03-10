@@ -25,6 +25,14 @@ is_upstream_head_configured () {
   git branch -r -l upstream/HEAD | read -r
 }
 
+update_upstream () {
+  git remote update upstream
+}
+
+update_origin () {
+  git remote update origin
+}
+
 configure_upstream_head () {
   git remote set-head upstream -a
 }
@@ -37,6 +45,8 @@ to_upstream_head () {
   git switch -d upstream/HEAD
 }
 
+declare -i o_update=0
+
 while (( $# )); do
   case "$1" in
     -h | --help )
@@ -48,8 +58,16 @@ Descriptions:
 
 Usage:
   git tohead
+
+Options:
+  -u, --update    Update the remote before detach to remote HEAD.
 "
       exit 0
+      ;;
+    -u | --update )
+      shift
+
+      o_update=1
       ;;
     * )
       error "An unknown option: $1"
@@ -57,6 +75,14 @@ Usage:
       ;;
   esac
 done
+
+if (( o_update )); then
+  if is_upstream_configured; then
+    update_upstream
+  else
+    update_origin
+  fi
+fi
 
 if ! is_upstream_configured; then
   to_origin_head
