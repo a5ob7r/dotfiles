@@ -23,6 +23,7 @@
 	update = remote update
 	u = update
 	rb = rebase
+	changes = !git diff "$(git merge-base upstream/HEAD HEAD 2>/dev/null || git merge-base origin/HEAD HEAD)"
 [core]
 	commentChar = auto
 	# NOTE: This is for staging/unstading files, which contains multibyte character in its path, on gina.vim.
