@@ -62,7 +62,7 @@
  * font: see http://freedesktop.org/software/fontconfig/fontconfig-user.html
  */
 static char *font = "Monospace:pixelsize=32:antialias=true:autohint=false";
-static int borderpx = 10;
+static int borderpx = 2;
 
 /*
  * What program is execed by st depends of these precedence rules:
@@ -109,7 +109,7 @@ int allowwindowops = 0;
  * near minlatency, but it waits longer for slow updates to avoid partial draw.
  * low minlatency will tear/flicker more, as it can "detect" idle too early.
  */
-static double minlatency = 8;
+static double minlatency = 2;
 static double maxlatency = 33;
 
 /*
