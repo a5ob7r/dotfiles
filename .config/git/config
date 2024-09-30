@@ -1,8 +1,6 @@
 [user]
 	name = a5ob7r
 	email = 12132068+a5ob7r@users.noreply.github.com
-[color]
-	ui = true
 [diff]
 	tool = vimdiff
 	colorMoved = true
