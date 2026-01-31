@@ -24,7 +24,7 @@ xsource_posix () {
 # Define the alias only if the same shell function isn't defined.
 xalias () {
   case "$(type "${1%%=*}" 2>/dev/null)" in
-    # bash/ksh
+    # bash
     # dash
     # zsh
     *" is a function" | *" is a shell function" | *" is a shell function from "* )
@@ -72,9 +72,3 @@ if [ -t 0 ]; then
 fi
 
 xsource_posix ~/.local.shrc
-
-# Maybe ksh doesn't read ~/.kshrc if ENV, which is an environment variable, is
-# defined. So need to read it manually.
-if [ -n "$KSH_VERSION" ]; then
-  xsource_posix ~/.kshrc
-fi
