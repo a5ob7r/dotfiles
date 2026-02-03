@@ -140,10 +140,12 @@ Options:
 "
 }
 
+XDG_CONFIG_HOME=${XDG_CONFIG_HOME:-~/.config}
+
 readonly bin_srcpath="${parent}/bin"
 readonly bin_dstpath=~/bin
-readonly config_srcpath="${parent}/.config"
-readonly config_dstpath=~/.config
+readonly config_srcpath="${parent}/xdg_config_home"
+readonly config_dstpath=$XDG_CONFIG_HOME
 readonly home_config_srcpath="${parent}/home"
 readonly home_config_dstpath=~
 
