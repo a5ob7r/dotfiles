@@ -121,14 +121,6 @@ Subcommands:
   init         Initialize setup
   deploy       Deploy dotfiles
   undeploy     Remove deployed dotfiles
-  rust         Install rust tool chain
-  haskell      Install haskell tool chain
-  lscolor      Install ls color config
-  python-packages
-               Install python packages with pip
-  haskell-packages
-               Install haskell packages with cabal
-  ghq-binary   Install ghq binary from GitHub release
   zsh-config   Install zsh config
   tmux-config  Install tmux config
   vim-config   Install vim config
@@ -299,85 +291,6 @@ init () {
     ;
 }
 
-rust () {
-  # https://rustup.rs/
-  curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
-}
-
-haskell () {
-  # https://www.haskell.org/ghcup/
-  curl --proto '=https' --tlsv1.2 -sSf https://get-ghcup.haskell.org | sh
-}
-
-lscolor () {
-  curl -sL https://raw.githubusercontent.com/trapd00r/LS_COLORS/master/LS_COLORS > ~/.dircolors
-}
-
-python-packages () {
-  local -ar packages=(
-    pipenv
-    'python-language-server[all]'
-    flake8
-    ipdb
-    tmuxp
-    kaggle
-    youtube-dl
-    vim-vint
-    # powerline-status
-  )
-
-  pip3 install --user "${packages[@]}"
-}
-
-haskell-packages () {
-  cabal install --overwrite-policy=always ShellCheck
-
-  cabal install --overwrite-policy=always --lib xmonad xmonad-contrib X11
-  cabal install --overwrite-policy=always xmonad
-  cabal install --overwrite-policy=always xmobar --flags="all_extensions"
-}
-
-install_ghq () {
-  if ! has_commands curl bsdtar grep; then
-    return 1
-  fi
-
-  local zipfile
-
-  if is_linux; then
-    zipfile='ghq_linux_amd64.zip'
-  elif is_macos; then
-    zipfile='ghq_darwin_amd64.zip'
-  else
-    error 'This OS is not neither Linux nor macOS, so no prebuild binary on GitHub release.'
-    return 1
-  fi
-
-  # So bad looking but for compatibility until Bash v4.2. Wanna use lastpipe
-  # option.
-  local asset_url
-  asset_url="$( \
-    curl -L -H "Accept: application/vnd.github.v3+json" 'https://api.github.com/repos/x-motemen/ghq/releases/latest' \
-      | grep -E -o "https://.*${zipfile}" \
-  )"
-
-  if [[ -z "$asset_url" ]]; then
-    error 'The asset url is empty.'
-    return 1
-  fi
-
-  if [[ ! -d ~/bin ]]; then
-    warning 'No ~/bin directory exists, so create it to deploy ghq binary.'
-    mkdir ~/bin
-  fi
-
-  curl -L "$asset_url" | bsdtar -x -f - --include '*/ghq' --strip-components 1 -C ~/bin
-
-  if [[ ! -x ~/bin/ghq ]]; then
-    chmod -v +x ~/bin/ghq
-  fi
-}
-
 zsh-config () {
   local -r url='https://github.com/a5ob7r/zsh-config.git'
 
@@ -491,24 +404,6 @@ case "${args[0]}" in
     ;;
   undeploy )
     undeploy
-    ;;
-  rust )
-    rust
-    ;;
-  haskell )
-    haskell
-    ;;
-  lscolor )
-    lscolor
-    ;;
-  python-packages )
-    python-packages
-    ;;
-  haskell-packages )
-    haskell-packages
-    ;;
-  ghq-binary )
-    install_ghq
     ;;
   zsh-config )
     zsh-config
