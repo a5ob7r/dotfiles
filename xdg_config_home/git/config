@@ -58,3 +58,5 @@
 	gina = format:%C(yellow)%h %C(reset)%s %C(green)%cr %C(cyan)<%an>%C(red)%d
 [push]
 	autoSetupRemote = true
+
+# vim: set filetype=gitconfig :

@@ -101,3 +101,5 @@ Sessionx.vim
 tags
 # Persistent undo
 [._]*.un~
+
+# vim: set filetype=gitignore :
