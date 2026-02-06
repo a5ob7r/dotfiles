@@ -15,10 +15,11 @@ I separate some tool configs as another repositories.
 
 ## Strustures
 
-- .config/* : Configs, deployed to ~/.config/.
 - bin/* : Utility scripts, deployed to ~/bin/.
-- home/* : Configs, deployed to ~/.
-- misc/* : Template of configs which are difficult to manage with git directly.
+- home/* : Configurations, deployed to ~/.
+- packages/* : Package list, library list, etc.
+- templates/* : Templates of configuration which are preferred to copy and modify them for each environments rather than to use them directly.
+- xdg_config_home/* : Configurations, deployed to ${XDG_CONFIG_HOME:-~/.config/}.
 
 ## Usage
 
