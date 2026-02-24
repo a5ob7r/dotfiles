@@ -8,7 +8,6 @@ cabal install \
   --jobs \
   --enable-optimization=2 \
   --enable-split-sections \
-  --enable-executable-static \
   --enable-executable-stripping \
   "$@" \
   ;
