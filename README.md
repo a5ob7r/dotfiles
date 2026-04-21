@@ -8,7 +8,7 @@
 - templates/* : Templates of configuration which are preferred to copy and modify them for each environments rather than to use them directly.
 - xdg_config_home/* : Configurations, deployed to ${XDG_CONFIG_HOME:-~/.config/}.
 
-## Usage
+## Setup
 
 ```sh
 git clone https://github.com/a5ob7r/dotfiles.git ~/src/github.com/a5ob7r/dotfiles
