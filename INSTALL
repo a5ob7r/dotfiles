@@ -133,6 +133,8 @@ Options:
 }
 
 XDG_CONFIG_HOME=${XDG_CONFIG_HOME:-~/.config}
+XDG_CACHE_HOME=${XDG_CACHE_HOME:-~/.cache}
+XDG_DATA_HOME=${XDG_DATA_HOME:-~/.local/share}
 
 readonly bin_srcpath="${parent}/bin"
 readonly bin_dstpath=~/bin
@@ -285,9 +287,9 @@ undeploy () {
 init () {
   mkdir -vp \
     ~/bin \
-    ~/.config \
-    ~/.cache \
-    ~/.local/share \
+    "$XDG_CONFIG_HOME" \
+    "$XDG_CACHE_HOME" \
+    "$XDG_DATA_HOME" \
     ;
 }
 
@@ -320,10 +322,10 @@ tmux-config () {
     ghq get "$url"
     local path
     path="$(ghq list --exact --full-path github.com/a5ob7r/tmux-config)"
-    symln "${path}" ~/.config/tmux
+    symln "${path}" "$XDG_CONFIG_HOME/tmux"
   else
     git clone "$url" ~/tmux-config
-    symln ~/tmux-config ~/.config/tmux
+    symln ~/tmux-config "$XDG_CONFIG_HOME/tmux"
   fi
 }
 
