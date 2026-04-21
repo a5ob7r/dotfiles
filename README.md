@@ -13,7 +13,7 @@ I separate some tool configs as another repositories.
 - Tmux: https://github.com/a5ob7r/tmux-config
 - xmonad: https://github.com/a5ob7r/xmonad-config
 
-## Strustures
+## Structures
 
 - bin/* : Utility scripts, deployed to ~/bin/.
 - home/* : Configurations, deployed to ~/.
