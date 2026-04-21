@@ -1,12 +1,6 @@
 # My dotfiles
 
-My main OS is Arch Linux. So this dotfiles is for Linux mainly. Also, contains
-utility scripts and small configs only which I'm sure no need to separate them
-as another repository.
-
-## Another configs
-
-I separate some tool configs as another repositories.
+## Decoupled dotfiles
 
 - Zsh: https://github.com/a5ob7r/zsh-config
 - Vim: https://github.com/a5ob7r/vim-config
