@@ -18,8 +18,8 @@
 ## Usage
 
 ```sh
-$ git clone https://github.com/a5ob7r/dotfiles.git ~/src/github.com/a5ob7r/dotfiles
-$ cd ~/src/github.com/a5ob7r/dotfiles
-$ ./INSTALL init
-$ ./INSTALL deploy
+git clone https://github.com/a5ob7r/dotfiles.git ~/src/github.com/a5ob7r/dotfiles
+cd ~/src/github.com/a5ob7r/dotfiles
+./INSTALL init
+./INSTALL deploy
 ```
