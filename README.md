@@ -1,12 +1,5 @@
 # My dotfiles
 
-## Decoupled dotfiles
-
-- Zsh: https://github.com/a5ob7r/zsh-config
-- Vim: https://github.com/a5ob7r/vim-config
-- Tmux: https://github.com/a5ob7r/tmux-config
-- xmonad: https://github.com/a5ob7r/xmonad-config
-
 ## Structures
 
 - bin/* : Utility scripts, deployed to ~/bin/.
@@ -23,3 +16,10 @@ cd ~/src/github.com/a5ob7r/dotfiles
 ./INSTALL init
 ./INSTALL deploy
 ```
+
+## Decoupled dotfiles
+
+- Zsh: https://github.com/a5ob7r/zsh-config
+- Vim: https://github.com/a5ob7r/vim-config
+- Tmux: https://github.com/a5ob7r/tmux-config
+- xmonad: https://github.com/a5ob7r/xmonad-config
