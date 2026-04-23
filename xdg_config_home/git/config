@@ -5,6 +5,7 @@
 	tool = vimdiff
 	colorMoved = true
 	algorithm = histogram
+	noPrefix = true
 [difftool]
 	prompt = false
 [ghq]
