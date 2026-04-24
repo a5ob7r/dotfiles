@@ -30,6 +30,8 @@
 	current-merge-base = !git merge-base upstream/HEAD HEAD 2>/dev/null || git merge-base origin/HEAD HEAD
 	changes = !git diff "$(git current-merge-base)"
 	remotes = remote --verbose
+	stat = diff --stat
+	cstat = changes --stat
 [core]
 	# NOTE: This is for staging/unstading files, which contains multibyte character in its path, on gina.vim.
 	quotepath = false
