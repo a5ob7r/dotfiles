@@ -63,5 +63,7 @@
 	gina = format:%C(yellow)%h %C(reset)%s %C(green)%cr %C(cyan)<%an>%C(red)%d
 [push]
 	autoSetupRemote = true
+[merge]
+	conflictStyle = zdiff3
 
 # vim: set filetype=gitconfig :
