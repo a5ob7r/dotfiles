@@ -4,6 +4,7 @@
 [diff]
 	tool = vimdiff
 	colorMoved = true
+	colorMovedWS = allow-indentation-change
 	algorithm = histogram
 	noPrefix = true
 [difftool]
