@@ -27,7 +27,8 @@
 	uu = update upstream
 	rb = rebase
 	rv = revert
-	changes = !git diff "$(git merge-base upstream/HEAD HEAD 2>/dev/null || git merge-base origin/HEAD HEAD)"
+	current-merge-base = !git merge-base upstream/HEAD HEAD 2>/dev/null || git merge-base origin/HEAD HEAD
+	changes = !git diff "$(git current-merge-base)"
 	remotes = remote --verbose
 [core]
 	# NOTE: This is for staging/unstading files, which contains multibyte character in its path, on gina.vim.
