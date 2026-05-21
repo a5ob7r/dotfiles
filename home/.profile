@@ -69,7 +69,7 @@ export LESS='-ij10FMRX'
 
 export PIPENV_VENV_IN_PROJECT=1
 
-export RIPGREP_CONFIG_PATH=~/.ripgreprc
+export RIPGREP_CONFIG_PATH="$XDG_CONFIG_HOME/ripgreprc"
 
 export FZF_DEFAULT_OPTS='--reverse --height=40% --min-height=12'
 export SKIM_DEFAULT_OPTIONS="$FZF_DEFAULT_OPTS"
