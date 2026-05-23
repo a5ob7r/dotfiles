@@ -44,25 +44,8 @@ export XDG_DATA_HOME=~/.local/share
 export MANOPT='--nj'
 
 if has vim; then
-  # Maybe fail to open man page with vim as pager due to no filetype plugin
-  # of vim loaded. Then, there are two ways to resolve this problem.
-  #
-  # 1. Overwrite the environment variable `MANPAGER` with empty string.
-  #   e.g.
-  #   $ MANPAGER= man some_command
-  #
-  # 2. Config vimrc to load filetype plugin.
-  #   e.g.
-  #   "in vimrc
-  #   filetype plugin on
-  #
-  # NOTE: Supress `Vim: Reading from stdin...` message using `--not-a-term`.
-  # https://github.com/vim/vim/commit/234d16286a2733adedef56784c17415ae169b9ad
-  #
-  # NOTE: Maybe it is enough to pass `-M` option to vim instead of
-  # `-c "set nomodifiable | set nowrite"` in accordance with the document.
-  # But somehow no effect even if passes `-M`. Is this bug?
-  export MANPAGER='vim +MANPAGER -c "set nolist nomodifiable nowrite | nnoremap <buffer> <silent> q :quit<CR>" --not-a-term -'
+  # Require Vim 9.2 or later.
+  export MANPAGER='vim +MANPAGER +"nnoremap <buffer> <silent> q <Cmd>quit<CR>" --not-a-term -'
 fi
 
 export LESS='-ij10FMRX'
