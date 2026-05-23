@@ -188,7 +188,7 @@ links () {
     local f_base="${link_src##*/}"
     local link_dst="${dst_dir}/${f_base}"
 
-    if [[ -a "${link_dst}" ]]; then
+    if [[ -e "${link_dst}" ]]; then
       warning "Skip linking from ${link_src} to ${link_dst} because ${f_base} has already existed in ${dst_dir}."
     else
       command ln -sv "$link_src" "$link_dst"
