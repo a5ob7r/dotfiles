@@ -23,3 +23,8 @@ cd ~/src/github.com/a5ob7r/dotfiles
 - Vim: https://github.com/a5ob7r/vim-config
 - Tmux: https://github.com/a5ob7r/tmux-config
 - xmonad: https://github.com/a5ob7r/xmonad-config
+
+## Decoupled commands
+
+- pppath: https://github.com/a5ob7r/pppath
+- xunlink: https://github.com/a5ob7r/xunlink
