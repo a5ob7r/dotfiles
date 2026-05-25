@@ -55,12 +55,6 @@ xalias ...='cd ../../'
 xalias ....='cd ../../../'
 xalias .....='cd ../../../../'
 
-xalias quit=exit
-xalias q=quit
-xalias qq=q
-xalias qqq=q
-xalias :q=q
-
 xalias cg=cargo
 xalias cgs='cg +stable'
 xalias cgb='cg +beta'
