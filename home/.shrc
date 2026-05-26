@@ -21,20 +21,6 @@ xsource_posix () {
   fi
 }
 
-# Define the alias only if the same shell function isn't defined.
-xalias () {
-  case "$(type "${1%%=*}" 2>/dev/null)" in
-    # bash
-    # dash
-    # zsh
-    *" is a function" | *" is a shell function" | *" is a shell function from "* )
-      ;;
-    * )
-      alias "$1"
-      ;;
-  esac
-}
-
 path () {
   echo "$PATH" | tr : '\n'
 }
@@ -43,19 +29,19 @@ shinit () {
   exec "$SHELL" "$@"
 }
 
-xalias g=git
-xalias v=vim
-xalias m=man
+alias g=git
+alias v=vim
+alias m=man
 
-xalias ..='cd ../'
-xalias ...='cd ../../'
-xalias ....='cd ../../../'
-xalias .....='cd ../../../../'
+alias ..='cd ../'
+alias ...='cd ../../'
+alias ....='cd ../../../'
+alias .....='cd ../../../../'
 
-xalias cg=cargo
-xalias cgs='cg +stable'
-xalias cgb='cg +beta'
-xalias cgn='cg +nightly'
+alias cg=cargo
+alias cgs='cg +stable'
+alias cgb='cg +beta'
+alias cgn='cg +nightly'
 
 if [ -t 0 ]; then
   # Disable flow control to use CTRL-S and CTRL-Q for key bindings.
