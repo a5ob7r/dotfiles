@@ -43,9 +43,6 @@ shinit () {
   exec "$SHELL" "$@"
 }
 
-xalias rmf='command rm -frv'
-xalias rr=rmf
-
 xalias g=git
 xalias v=vim
 xalias m=man
