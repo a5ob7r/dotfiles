@@ -2,14 +2,12 @@
 #
 # ~/.shrc
 #
-# This file is a configuration of ash-ish shells, and is a shared configuration
-# between POSIX-compatible shells such as bash or zsh. So this file should be
-# written in POSIX-compatible.
-#
-# Source this file in each shell configurations, or set this file's path in
-# ENV, which is an environment variable. For example set as below.
-#
-# $ export ENV=~/.shrc
+# - A rcfile to share configurations between multiple shells
+#   - Supported shells
+#     - dash
+#     - bash
+#     - zsh
+# - Not a POSIX-compatible
 #
 
 xsource_posix () {
