@@ -10,13 +10,6 @@
 # - Not a POSIX-compatible
 #
 
-xsource () {
-  if [ -f "$1" ]; then
-    # shellcheck disable=SC1090
-    . "$1"
-  fi
-}
-
 has () {
   type "$1" > /dev/null
 }
@@ -91,4 +84,7 @@ elif has less; then
   fi
 fi
 
-xsource ~/.local.profile
+if [ -f ~/.local.profile ]; then
+  # shellcheck disable=SC1090
+  . ~/.local.profile
+fi
