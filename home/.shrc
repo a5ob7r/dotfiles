@@ -10,15 +10,6 @@
 # - Not a POSIX-compatible
 #
 
-xsource_posix () {
-  if [ -r "$1" ]; then
-    # Can't track source files because they're specified dynamically by users
-    # with the argument.
-    # shellcheck disable=SC1090
-    . "$1"
-  fi
-}
-
 path () {
   echo "$PATH" | tr : '\n'
 }
@@ -46,4 +37,7 @@ if [ -t 0 ]; then
   stty -ixon
 fi
 
-xsource_posix ~/.local.shrc
+if [ -r ~/.local.shrc ]; then
+  # shellcheck disable=SC1090
+  . ~/.local.shrc
+fi
