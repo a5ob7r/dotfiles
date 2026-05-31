@@ -27,6 +27,9 @@ alias ...='cd ../../'
 alias ....='cd ../../../'
 alias .....='cd ../../../../'
 
+alias dk=docker
+alias dkcp='docker compose'
+
 alias cg=cargo
 alias cgs='cg +stable'
 alias cgb='cg +beta'
