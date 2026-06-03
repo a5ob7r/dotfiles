@@ -84,7 +84,7 @@ elif has less; then
   fi
 fi
 
-if [ -f ~/.local.profile ]; then
+if [ -r ~/.local.profile ]; then
   # shellcheck disable=SC1090
   . ~/.local.profile
 fi
