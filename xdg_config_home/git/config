@@ -61,8 +61,6 @@
 	whitespace = red reverse
 [diff-so-fancy]
 	first-run = false
-[include]
-	path = ~/.local.gitconfig
 [pretty]
 	# The format used in ":Gina log" (https://github.com/lambdalisue/gina.vim).
 	gina = format:%C(yellow)%h %C(reset)%s %C(green)%cr %C(cyan)<%an>%C(red)%d
@@ -70,5 +68,7 @@
 	autoSetupRemote = true
 [merge]
 	conflictStyle = zdiff3
+[include]
+	path = ~/.local.gitconfig
 
 # vim: set filetype=gitconfig :
