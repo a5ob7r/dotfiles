@@ -84,6 +84,8 @@ elif has less; then
   fi
 fi
 
+export XMONAD_TERMINAL=st-direct
+
 if [ -r ~/.local.profile ]; then
   # shellcheck disable=SC1090
   . ~/.local.profile
