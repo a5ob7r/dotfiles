@@ -58,52 +58,6 @@ error () {
 parent="$(::realpath "${0%/*}")"
 self="${0##*/}"
 
-# Useful ln to create symlink. Pass basename contained destination path
-# explicitly.
-#
-# Good.
-# $ symln /path/to/conf ~/.conf
-#
-# Bad.
-# $ symln /path/to/conf ~
-symln () {
-  local src="$1" dst="$2"
-
-  if [[ -d "$dst" ]]; then
-    error "It is a directory: '$dst'"
-    return 1
-  fi
-
-  mkdir -p "${dst%/*}"
-
-  ln -sv "$src" "$dst"
-}
-
-is_linux () {
-  [[ "$OSTYPE" =~ ^linux ]]
-}
-
-is_macos () {
-  [[ "$OSTYPE" =~ ^darwin ]]
-}
-
-has () {
-  type "$1" &>/dev/null
-}
-
-has_commands () {
-  local all=0
-
-  for cmd; do
-    if ! has "$cmd"; then
-      error "'$cmd is not found on command line."
-      all=1
-    fi
-  done
-
-  return "$all"
-}
-
 if ! cd "$parent"; then
   error 'Fail to change directory to script parent.'
   exit 1
