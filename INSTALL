@@ -145,40 +145,16 @@ unlinks () {
   done
 }
 
-deploy_bins () {
+deploy () {
   links "$bin_srcpath" "$bin_dstpath"
-}
-
-deploy_configs () {
   links "$xdg_config_srcpath" "$xdg_config_dstpath"
-}
-
-deploy_home_configs () {
   links "$home_config_srcpath" "$home_config_dstpath"
 }
 
-undeploy_bins () {
-  unlinks "$bin_srcpath" "$bin_dstpath"
-}
-
-undeploy_configs () {
-  unlinks "$xdg_config_srcpath" "$xdg_config_dstpath"
-}
-
-undeploy_home_configs () {
-  unlinks "$home_config_srcpath" "$home_config_dstpath"
-}
-
-deploy () {
-  deploy_bins
-  deploy_configs
-  deploy_home_configs
-}
-
 undeploy () {
-  undeploy_bins
-  undeploy_configs
-  undeploy_home_configs
+  unlinks "$bin_srcpath" "$bin_dstpath"
+  unlinks "$xdg_config_srcpath" "$xdg_config_dstpath"
+  unlinks "$home_config_srcpath" "$home_config_dstpath"
 }
 
 init () {
