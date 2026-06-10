@@ -18,7 +18,6 @@ error () {
 }
 
 parent=$(cd "${0%/*}" && pwd)
-self="${0##*/}"
 
 if ! cd "$parent"; then
   error 'Fail to change directory to script parent.'
@@ -31,7 +30,7 @@ Descriptions:
   Dotfiles installer and uninstaller with extra.
 
 Usage:
-  $self <SUBCOMMAND>
+  INSTALL <SUBCOMMAND>
 
 Subcommands:
   init         Initialize setup
