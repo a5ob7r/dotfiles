@@ -166,12 +166,10 @@ init () {
     ;
 }
 
-# main
+if ! (( $# )); then
+  set -- --help
+fi
 
-# Argument array
-declare -a args=()
-
-# Parse arguments
 while (( $# )); do
   case "$1" in
     --debug )
@@ -182,34 +180,13 @@ while (( $# )); do
       help
       exit 0
       ;;
-    -* )
-      error "Invalid option '$1'"
-      exit 1
+    init | deploy | undeploy )
+      "$@"
+      exit 0
       ;;
     * )
-      args+=("$1")
-      shift
+      error "An invalid argument '$1'"
+      exit 1
       ;;
   esac
 done
-
-if ! (( ${#args[@]} )); then
-  help
-  exit 0
-fi
-
-case "${args[0]}" in
-  init )
-    init
-    ;;
-  deploy )
-    deploy
-    ;;
-  undeploy )
-    undeploy
-    ;;
-  * )
-    error "Invalid subcommand '${args[0]}'"
-    exit 1
-    ;;
-esac
