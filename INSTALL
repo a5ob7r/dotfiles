@@ -19,11 +19,6 @@ error () {
 
 parent=$(cd "${0%/*}" && pwd)
 
-if ! cd "$parent"; then
-  error 'Fail to change directory to script parent.'
-  exit 1
-fi
-
 help () {
   echo -e -n "\
 Descriptions:
