@@ -43,8 +43,8 @@ XDG_DATA_HOME=${XDG_DATA_HOME:-~/.local/share}
 
 readonly bin_srcpath="${parent}/bin"
 readonly bin_dstpath=~/bin
-readonly config_srcpath="${parent}/xdg_config_home"
-readonly config_dstpath=$XDG_CONFIG_HOME
+readonly xdg_config_srcpath="${parent}/xdg_config_home"
+readonly xdg_config_dstpath=$XDG_CONFIG_HOME
 readonly home_config_srcpath="${parent}/home"
 readonly home_config_dstpath=~
 
@@ -150,7 +150,7 @@ deploy_bins () {
 }
 
 deploy_configs () {
-  links "$config_srcpath" "$config_dstpath"
+  links "$xdg_config_srcpath" "$xdg_config_dstpath"
 }
 
 deploy_home_configs () {
@@ -162,7 +162,7 @@ undeploy_bins () {
 }
 
 undeploy_configs () {
-  unlinks "$config_srcpath" "$config_dstpath"
+  unlinks "$xdg_config_srcpath" "$xdg_config_dstpath"
 }
 
 undeploy_home_configs () {
