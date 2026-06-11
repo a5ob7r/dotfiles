@@ -11,11 +11,11 @@ XDG_DATA_HOME=${XDG_DATA_HOME:-~/.local/share}
 
 parent=$(cd "${0%/*}" && pwd)
 
-readonly bin_srcpath="${parent}/bin"
+readonly bin_srcpath=$parent/bin
 readonly bin_dstpath=~/bin
-readonly xdg_config_srcpath="${parent}/xdg_config_home"
+readonly xdg_config_srcpath=$parent/xdg_config_home
 readonly xdg_config_dstpath=$XDG_CONFIG_HOME
-readonly home_config_srcpath="${parent}/home"
+readonly home_config_srcpath=$parent/home
 readonly home_config_dstpath=~
 
 warning () {
@@ -38,11 +38,11 @@ links_to () {
     local dotfile_path=$1
     shift
 
-    local dotfile_basename="${dotfile_path##*/}"
-    local symbolic_link_destination_path="${destination_directory_path}/${dotfile_basename}"
+    local dotfile_basename=${dotfile_path##*/}
+    local symbolic_link_destination_path=$destination_directory_path/$dotfile_basename
 
-    if [[ -e "${symbolic_link_destination_path}" ]]; then
-      warning "Skip linking from ${dotfile_path} to ${symbolic_link_destination_path} because ${dotfile_basename} has already existed in ${destination_directory_path}."
+    if [[ -e $symbolic_link_destination_path ]]; then
+      warning "Skip linking from $dotfile_path to $symbolic_link_destination_path because $dotfile_basename has already existed in $destination_directory_path."
     else
       command ln -sv "$dotfile_path" "$symbolic_link_destination_path"
     fi
@@ -61,8 +61,8 @@ unlinks_from () {
     local dotfile_path=$1
     shift
 
-    local dotfile_basename="${dotfile_path##*/}"
-    local symbolic_link_destination_path="${destination_directory_path}/${dotfile_basename}"
+    local dotfile_basename=${dotfile_path##*/}
+    local symbolic_link_destination_path=$destination_directory_path/$dotfile_basename
 
     if [[ $dotfile_path -ef $symbolic_link_destination_path ]]; then
       command unlink "$symbolic_link_destination_path" && echo "unlink: $symbolic_link_destination_path"
