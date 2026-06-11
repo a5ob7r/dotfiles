@@ -28,11 +28,14 @@ readonly home_config_dstpath=~
 
 # Make symbolik links from files in source directory to in destination
 # directory.
-links () {
-  local -r src_dir=$1
-  local -r dst_dir=$2
+links_to () {
+  local -r dst_dir=$1
+  shift
 
-  for link_src in "$src_dir"/*; do
+  while (( $# )); do
+    local link_src=$1
+    shift
+
     local f_base="${link_src##*/}"
     local link_dst="${dst_dir}/${f_base}"
 
@@ -45,11 +48,14 @@ links () {
 }
 
 # Remove symbolic links from destination directory.
-unlinks () {
-  local -r src_dir=$1
-  local -r dst_dir=$2
+unlinks_from () {
+  local -r dst_dir=$1
+  shift
 
-  for link_src in "$src_dir"/*; do
+  while (( $# )); do
+    local link_src=$1
+    shift
+
     local f_base="${link_src##*/}"
     local link_dst="${dst_dir}/${f_base}"
 
@@ -62,15 +68,15 @@ unlinks () {
 }
 
 deploy () {
-  links "$bin_srcpath" "$bin_dstpath"
-  links "$xdg_config_srcpath" "$xdg_config_dstpath"
-  links "$home_config_srcpath" "$home_config_dstpath"
+  links_to "$bin_dstpath" "$bin_srcpath"/*
+  links_to "$xdg_config_dstpath" "$xdg_config_srcpath"/*
+  links_to "$home_config_dstpath" "$home_config_srcpath"/*
 }
 
 undeploy () {
-  unlinks "$bin_srcpath" "$bin_dstpath"
-  unlinks "$xdg_config_srcpath" "$xdg_config_dstpath"
-  unlinks "$home_config_srcpath" "$home_config_dstpath"
+  unlinks_from "$bin_dstpath" "$bin_srcpath"/*
+  unlinks_from "$xdg_config_dstpath" "$xdg_config_srcpath"/*
+  unlinks_from "$home_config_dstpath" "$home_config_srcpath"/*
 }
 
 init () {
