@@ -3,8 +3,7 @@
 # Dotfiles installer and uninstaller
 #
 
-# Set useful shell options.
-set -Cueo pipefail
+set -eu
 
 shopt -s dotglob
 shopt -s nullglob
