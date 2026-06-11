@@ -1,7 +1,4 @@
 #!/usr/bin/env bash
-#
-# Dotfiles installer and uninstaller
-#
 
 set -eu
 
