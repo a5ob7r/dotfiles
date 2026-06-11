@@ -6,7 +6,7 @@
 # Set useful shell options.
 set -Cueo pipefail
 
-shopt -s extglob
+shopt -s dotglob
 shopt -s nullglob
 
 warning () {
@@ -30,48 +30,13 @@ readonly xdg_config_dstpath=$XDG_CONFIG_HOME
 readonly home_config_srcpath="${parent}/home"
 readonly home_config_dstpath=~
 
-# List files in a directory which is specified as an argument. Each files are
-# preceded by the directory path.
-list_files () {
-  local src="${1%%*(/)}"
-
-  if [[ ! -d "$src" ]]; then
-    warning "$src is not directory."
-    return 1
-  fi
-
-  local GLOBIGNORE="$src/*~:$src/*.sw[a-z]"
-  printf '%s\n' "$src"/*
-}
-
 # Make symbolik links from files in source directory to in destination
 # directory.
 links () {
-  local -r src_dir="${1%%*(/)}"
-  local -r dst_dir="${2%%*(/)}"
+  local -r src_dir=$1
+  local -r dst_dir=$2
 
-  # validations
-  if [[ ! "$src_dir" =~ ^/ ]]; then
-    error "Source directory is not absolute path '$src_dir'"
-    return 1
-  fi
-
-  if [[ ! -d "$src_dir" ]]; then
-    error "No such source directory '$src_dir'"
-    return 1
-  fi
-
-  if [[ ! "$dst_dir" =~ ^/ ]]; then
-    error "Destination directory is not absolute path '$dst_dir'"
-    return 1
-  fi
-
-  if [[ ! -d "$dst_dir" ]]; then
-    error "No such destination directory '$dst_dir'"
-    return 1
-  fi
-
-  list_files "$src_dir" | while read -r -d $'\n' link_src; do
+  for link_src in "$src_dir"/*; do
     local f_base="${link_src##*/}"
     local link_dst="${dst_dir}/${f_base}"
 
@@ -85,41 +50,15 @@ links () {
 
 # Remove symbolic links from destination directory.
 unlinks () {
-  local -r src_dir="${1%%*(/)}"
-  local -r dst_dir="${2%%*(/)}"
+  local -r src_dir=$1
+  local -r dst_dir=$2
 
-  # validations
-  if [[ ! "$src_dir" =~ ^/ ]]; then
-    error "Source directory is not absolute path '$src_dir'"
-    return 1
-  fi
-
-  if [[ ! -d "$src_dir" ]]; then
-    error "No such source directory '$src_dir'"
-    return 1
-  fi
-
-  if [[ ! "$dst_dir" =~ ^/ ]]; then
-    error "Destination directory is not absolute path '$dst_dir'"
-    return 1
-  fi
-
-  if [[ ! -d "$dst_dir" ]]; then
-    error "No such destination directory '$dst_dir'"
-    return 1
-  fi
-
-  list_files "$src_dir" | while read -r -d $'\n' link_src; do
+  for link_src in "$src_dir"/*; do
     local f_base="${link_src##*/}"
     local link_dst="${dst_dir}/${f_base}"
 
-    if [[ ! -h "$link_dst" ]]; then
-      warning "Skip unlinking $link_dst because no such link."
-      continue
-    fi
-
     if ! [[ $link_src -ef $link_dst ]]; then
-      warning "Skip unlinking $link_dst because the link is not under control of this repository."
+      warning "Skip unlinking $link_dst because the file is not a symbolic link points a file in this repository."
       continue
     fi
 
