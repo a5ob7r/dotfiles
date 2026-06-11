@@ -96,7 +96,7 @@ while (( $# )); do
     -h | --help )
       echo -e -n "\
 Descriptions:
-  Dotfiles installer and uninstaller with extra.
+  A dotfiles installer and uninstaller.
 
 Usage:
   INSTALL <SUBCOMMAND>
