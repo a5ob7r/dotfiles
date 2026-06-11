@@ -109,7 +109,7 @@ Descriptions:
   A dotfiles installer and uninstaller.
 
 Usage:
-  INSTALL <SUBCOMMAND>
+  DOTFILES <SUBCOMMAND>
 
 Subcommands:
   init         Initialize setup
