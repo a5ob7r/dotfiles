@@ -5,19 +5,11 @@ set -eu
 shopt -s dotglob
 shopt -s nullglob
 
-warning () {
-  echo -e '\033[33m'"$*"'\033[0m' >&2
-}
-
-error () {
-  echo -e '\033[31m'"$*"'\033[0m' >&2
-}
-
-parent=$(cd "${0%/*}" && pwd)
-
 XDG_CONFIG_HOME=${XDG_CONFIG_HOME:-~/.config}
 XDG_CACHE_HOME=${XDG_CACHE_HOME:-~/.cache}
 XDG_DATA_HOME=${XDG_DATA_HOME:-~/.local/share}
+
+parent=$(cd "${0%/*}" && pwd)
 
 readonly bin_srcpath="${parent}/bin"
 readonly bin_dstpath=~/bin
@@ -25,6 +17,14 @@ readonly xdg_config_srcpath="${parent}/xdg_config_home"
 readonly xdg_config_dstpath=$XDG_CONFIG_HOME
 readonly home_config_srcpath="${parent}/home"
 readonly home_config_dstpath=~
+
+warning () {
+  echo -e '\033[33m'"$*"'\033[0m' >&2
+}
+
+error () {
+  echo -e '\033[31m'"$*"'\033[0m' >&2
+}
 
 # Make symbolik links from files in source directory to in destination
 # directory.
@@ -67,6 +67,15 @@ unlinks_from () {
   done
 }
 
+init () {
+  mkdir -vp \
+    ~/bin \
+    "$XDG_CONFIG_HOME" \
+    "$XDG_CACHE_HOME" \
+    "$XDG_DATA_HOME" \
+    ;
+}
+
 deploy () {
   links_to "$bin_dstpath" "$bin_srcpath"/*
   links_to "$xdg_config_dstpath" "$xdg_config_srcpath"/*
@@ -77,15 +86,6 @@ undeploy () {
   unlinks_from "$bin_dstpath" "$bin_srcpath"/*
   unlinks_from "$xdg_config_dstpath" "$xdg_config_srcpath"/*
   unlinks_from "$home_config_dstpath" "$home_config_srcpath"/*
-}
-
-init () {
-  mkdir -vp \
-    ~/bin \
-    "$XDG_CONFIG_HOME" \
-    "$XDG_CACHE_HOME" \
-    "$XDG_DATA_HOME" \
-    ;
 }
 
 if ! (( $# )); then
