@@ -31,20 +31,20 @@ error () {
 # $1: the destination directory path
 # $2...: dotfile paths in this repository.
 links_to () {
-  local -r dst_dir=$1
+  local -r destination_directory_path=$1
   shift
 
   while (( $# )); do
-    local link_src=$1
+    local dotfile_path=$1
     shift
 
-    local f_base="${link_src##*/}"
-    local link_dst="${dst_dir}/${f_base}"
+    local dotfile_basename="${dotfile_path##*/}"
+    local symbolic_link_destination_path="${destination_directory_path}/${dotfile_basename}"
 
-    if [[ -e "${link_dst}" ]]; then
-      warning "Skip linking from ${link_src} to ${link_dst} because ${f_base} has already existed in ${dst_dir}."
+    if [[ -e "${symbolic_link_destination_path}" ]]; then
+      warning "Skip linking from ${dotfile_path} to ${symbolic_link_destination_path} because ${dotfile_basename} has already existed in ${destination_directory_path}."
     else
-      command ln -sv "$link_src" "$link_dst"
+      command ln -sv "$dotfile_path" "$symbolic_link_destination_path"
     fi
   done
 }
@@ -54,20 +54,20 @@ links_to () {
 # $1: the destination directory path
 # $2...: dotfile paths in this repository.
 unlinks_from () {
-  local -r dst_dir=$1
+  local -r destination_directory_path=$1
   shift
 
   while (( $# )); do
-    local link_src=$1
+    local dotfile_path=$1
     shift
 
-    local f_base="${link_src##*/}"
-    local link_dst="${dst_dir}/${f_base}"
+    local dotfile_basename="${dotfile_path##*/}"
+    local symbolic_link_destination_path="${destination_directory_path}/${dotfile_basename}"
 
-    if [[ $link_src -ef $link_dst ]]; then
-      command unlink "$link_dst" && echo "unlink: $link_dst"
+    if [[ $dotfile_path -ef $symbolic_link_destination_path ]]; then
+      command unlink "$symbolic_link_destination_path" && echo "unlink: $symbolic_link_destination_path"
     else
-      warning "Skip unlinking $link_dst because the file is not a symbolic link points a file in this repository."
+      warning "Skip unlinking $symbolic_link_destination_path because the file is not a symbolic link points a file in this repository."
     fi
   done
 }
