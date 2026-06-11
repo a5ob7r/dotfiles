@@ -53,12 +53,11 @@ unlinks () {
     local f_base="${link_src##*/}"
     local link_dst="${dst_dir}/${f_base}"
 
-    if ! [[ $link_src -ef $link_dst ]]; then
+    if [[ $link_src -ef $link_dst ]]; then
+      command unlink "$link_dst" && echo "unlink: $link_dst"
+    else
       warning "Skip unlinking $link_dst because the file is not a symbolic link points a file in this repository."
-      continue
     fi
-
-    command unlink "$link_dst" && echo "unlink: $link_dst"
   done
 }
 
