@@ -8,14 +8,10 @@
 # Load a shared configuration between shells.
 #
 
-xsource () {
-  if [[ -r $1 ]]; then
-    # shellcheck disable=1090
-    source "$1"
-  fi
-}
-
-xsource ~/.shrc
+if [[ -r ~/.shrc ]]; then
+  # shellcheck disable=1090
+  source ~/.shrc
+fi
 
 ###############################################################################
 #
@@ -93,4 +89,7 @@ prompt_command () {
 PROMPT_COMMAND=prompt_command
 HISTSIZE=5000000
 
-xsource ~/.local.bashrc
+if [[ -r ~/.local.bashrc ]]; then
+  # shellcheck disable=1090
+  source ~/.local.bashrc
+fi
