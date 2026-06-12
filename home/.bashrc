@@ -22,18 +22,6 @@ xsource ~/.shrc
 # Bash-specific configurations.
 #
 
-has () {
-  type "$1" &>/dev/null
-}
-
-stdswap () {
-  "$@" 3>&2 2>&1 1>&3 3>&-
-}
-
-path () {
-  echo "${PATH//:/$'\n'}"
-}
-
 # NOTE: This function must be executed on the head of 'PROMPT_COMMAND' to
 # capture the previous command' status code.
 prompt_command () {
