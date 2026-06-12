@@ -85,6 +85,11 @@ fi
 
 export XMONAD_TERMINAL=st-direct
 
+if has firefox-developer-edition; then
+  # NOTE: Referenced by xmonad's 'raiseBrowser', man's '--html' or gh.
+  export BROWSER=firefox-developer-edition
+fi
+
 if [ -r ~/.local.profile ]; then
   # shellcheck disable=SC1090
   . ~/.local.profile
