@@ -56,10 +56,8 @@ export XDG_DATA_HOME=~/.local/share
 
 export MANOPT='--nj'
 
-if has vim; then
-  # Require Vim 9.2 or later.
-  export MANPAGER='vim +MANPAGER +"nnoremap <buffer> <silent> q <Cmd>quit<CR>" --not-a-term -'
-fi
+# Require Vim 9.2 or later.
+export MANPAGER='vim +MANPAGER +"nnoremap <buffer> <silent> q <Cmd>quit<CR>" --not-a-term -'
 
 export LESS='-ij10FMRX'
 
@@ -79,12 +77,10 @@ fi
 
 if has delta; then
   export GIT_PAGER=delta
-elif has less; then
-  if has diff-so-fancy; then
-    export GIT_PAGER='diff-so-fancy | less'
-  elif has diff-highlight; then
-    export GIT_PAGER='diff-highlight | less'
-  fi
+elif has diff-so-fancy; then
+  export GIT_PAGER='diff-so-fancy | less'
+elif has diff-highlight; then
+  export GIT_PAGER='diff-highlight | less'
 fi
 
 export XMONAD_TERMINAL=st-direct
