@@ -14,6 +14,14 @@ path () {
   echo "$PATH" | tr : '\n'
 }
 
+lscolors () {
+  echo "${LS_COLORS-}" | tr : '\n'
+}
+
+lsicons () {
+  echo "${LS_ICONS-}" | tr : '\n'
+}
+
 shinit () {
   exec "$SHELL" "$@"
 }
