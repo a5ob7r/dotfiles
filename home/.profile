@@ -43,8 +43,11 @@ dedup_prepend_path ~/.cabal/bin
 dedup_prepend_path ~/bin
 
 export ENV=~/.shrc
+
 export EDITOR=vim
 export VISUAL=vim
+export SUDO_EDITOR='vim -Z --clean'
+
 export PAGER=less
 
 export XDG_CONFIG_HOME=~/.config
