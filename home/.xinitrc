@@ -2,7 +2,6 @@
 
 readonly USERRECOURCES=~/.Xresources
 readonly USERRECOURCES_LOCAL=~/.local.Xresources
-readonly SYSXINITRCS=/etc/X11/xinit/xinitrc.d
 readonly USERXINITRC_LOCAL=~/.local.xinitrc
 
 xsource () {
@@ -10,6 +9,13 @@ xsource () {
     # shellcheck disable=SC1090
     . "$1"
   fi
+}
+
+xsources () {
+  while [ $# -ne 0 ]; do
+    xsource "$1"
+    shift
+  done
 }
 
 if [ -f "$USERRECOURCES" ]; then
@@ -20,11 +26,6 @@ if [ -f "$USERRECOURCES_LOCAL" ]; then
   xrdb -merge "$USERRECOURCES_LOCAL"
 fi
 
-if [ -d "$SYSXINITRCS" ] ; then
-  for f in "$SYSXINITRCS"/?*.sh ; do
-    xsource "$f"
-  done
-  unset f
-fi
+xsources /etc/X11/xinit/xinitrc.d/?*.sh
 
 xsource "$USERXINITRC_LOCAL"
