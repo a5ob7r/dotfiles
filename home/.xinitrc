@@ -1,7 +1,5 @@
 #!/bin/sh
 
-readonly USERRECOURCES=~/.Xresources
-readonly USERRECOURCES_LOCAL=~/.local.Xresources
 readonly USERXINITRC_LOCAL=~/.local.xinitrc
 
 xsource () {
@@ -18,13 +16,20 @@ xsources () {
   done
 }
 
-if [ -f "$USERRECOURCES" ]; then
-  xrdb -merge "$USERRECOURCES"
-fi
+xrdb_merge () {
+  if [ -f "$1" ]; then
+    xrdb -merge "$1"
+  fi
+}
 
-if [ -f "$USERRECOURCES_LOCAL" ]; then
-  xrdb -merge "$USERRECOURCES_LOCAL"
-fi
+xrdb_merges () {
+  while [ $# -ne 0 ]; do
+    xrdb_merge "$1"
+    shift
+  done
+}
+
+xrdb_merges ~/.Xresources ~/.local.Xresources
 
 xsources /etc/X11/xinit/xinitrc.d/?*.sh
 
