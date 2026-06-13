@@ -1,7 +1,5 @@
 #!/bin/sh
 
-readonly USERXINITRC_LOCAL=~/.local.xinitrc
-
 xsource () {
   if [ -r "$1" ]; then
     # shellcheck disable=SC1090
@@ -33,4 +31,4 @@ xrdb_merges ~/.Xresources ~/.local.Xresources
 
 xsources /etc/X11/xinit/xinitrc.d/?*.sh
 
-xsource "$USERXINITRC_LOCAL"
+xsource ~/.local.xinitrc
