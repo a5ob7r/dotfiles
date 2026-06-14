@@ -43,6 +43,8 @@ alias cgs='cg +stable'
 alias cgb='cg +beta'
 alias cgn='cg +nightly'
 
+alias hl='command haskellorls --color=auto --extra-color --icons --time-style=iso -ABFhov'
+
 if [ -t 0 ]; then
   # Disable flow control to use CTRL-S and CTRL-Q for key bindings.
   stty -ixon
