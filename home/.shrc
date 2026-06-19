@@ -26,6 +26,29 @@ shinit () {
   exec "$SHELL" "$@"
 }
 
+# Oceanic Next colorscheme for Linux console.
+oceanic_next () {
+  printf '\033]P%s' \
+    0121c21 \
+    1e44754 \
+    289bd82 \
+    3f7bd51 \
+    45486c0 \
+    5b77eb8 \
+    650a5a4 \
+    7ffffff \
+    852606b \
+    9e44754 \
+    A89bd82 \
+    Bf7bd51 \
+    C5486c0 \
+    Db77eb8 \
+    E50a5a4 \
+    Fffffff \
+    ;
+  clear
+}
+
 alias g=git
 alias v=vim
 alias m=man
