@@ -96,7 +96,7 @@ fi
 while (( $# )); do
   case "$1" in
     -h | --help )
-      echo -e -n "\
+      echo -n "\
 Descriptions:
   A deployer/undeployer for dotfiles.
 
