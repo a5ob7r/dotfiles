@@ -99,10 +99,6 @@ fi
 
 while (( $# )); do
   case "$1" in
-    --debug )
-      set -x
-      shift
-      ;;
     -h | --help )
       echo -e -n "\
 Descriptions:
