@@ -72,8 +72,8 @@ unlinks_from () {
 
 init () {
   mkdir -vp \
-    ~/bin \
-    "$XDG_CONFIG_HOME" \
+    "$bin_dstpath" \
+    "$xdg_config_dstpath" \
     ;
 }
 
