@@ -102,15 +102,15 @@ while (( $# )); do
     -h | --help )
       echo -e -n "\
 Descriptions:
-  A dotfiles installer and uninstaller.
+  A deployer/undeployer for dotfiles.
 
 Usage:
   DOTFILES <SUBCOMMAND>
 
 Subcommands:
-  init         Initialize setup
-  deploy       Deploy dotfiles
-  undeploy     Remove deployed dotfiles
+  init         Make directories for dotfiles deploying.
+  deploy       Make symbolic links points each dotfiles.
+  undeploy     Unlink symbolic links points each dotfiles.
 
 Options:
   -h, --help   Show this messages and exit.
