@@ -42,7 +42,7 @@ links_to () {
     if [[ -e $symbolic_link_destination_path ]]; then
       warning "Skip linking from $dotfile_path to $symbolic_link_destination_path because $dotfile_basename has already existed in $destination_directory_path."
     else
-      command ln -sv "$dotfile_path" "$symbolic_link_destination_path"
+      ln -sv "$dotfile_path" "$symbolic_link_destination_path"
     fi
   done
 }
@@ -63,7 +63,7 @@ unlinks_from () {
     local symbolic_link_destination_path=$destination_directory_path/$dotfile_basename
 
     if [[ $dotfile_path -ef $symbolic_link_destination_path ]]; then
-      command unlink "$symbolic_link_destination_path" && echo "unlink: $symbolic_link_destination_path"
+      unlink "$symbolic_link_destination_path" && echo "unlink: $symbolic_link_destination_path"
     else
       warning "Skip unlinking $symbolic_link_destination_path because the file is not a symbolic link points a file in this repository."
     fi
