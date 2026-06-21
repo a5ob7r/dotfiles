@@ -23,45 +23,45 @@ error () {
   echo -e '\033[31m'"$*"'\033[0m' >&2
 }
 
-# Make symbolik links from files in this repository to the destination directory.
+# Make symbolic links that points to files passed as arguments under the destination directory.
 #
 # $1: the destination directory path
-# $2...: dotfile paths in this repository.
+# $2...: filepaths
 links_to () {
   local -r destination_directory_path=$1
   shift
 
   while (( $# )); do
-    local dotfile_path=$1
+    local filepath=$1
     shift
 
-    local dotfile_basename=${dotfile_path##*/}
-    local symbolic_link_destination_path=$destination_directory_path/$dotfile_basename
+    local file_basename=${filepath##*/}
+    local symbolic_link_destination_path=$destination_directory_path/$file_basename
 
     if [[ -e $symbolic_link_destination_path ]]; then
-      warning "Skip linking from $dotfile_path to $symbolic_link_destination_path because $dotfile_basename has already existed in $destination_directory_path."
+      warning "Skip linking from $filepath to $symbolic_link_destination_path because $file_basename has already existed in $destination_directory_path."
     else
-      ln -sv "$dotfile_path" "$symbolic_link_destination_path"
+      ln -sv "$filepath" "$symbolic_link_destination_path"
     fi
   done
 }
 
-# Remove symbolic links poiint dotfiles in this repository from the destination directory.
+# Remove symbolic links that points to files passed as arguments under the destination directory.
 #
 # $1: the destination directory path
-# $2...: dotfile paths in this repository.
+# $2...: filepaths
 unlinks_from () {
   local -r destination_directory_path=$1
   shift
 
   while (( $# )); do
-    local dotfile_path=$1
+    local filepath=$1
     shift
 
-    local dotfile_basename=${dotfile_path##*/}
-    local symbolic_link_destination_path=$destination_directory_path/$dotfile_basename
+    local file_basename=${filepath##*/}
+    local symbolic_link_destination_path=$destination_directory_path/$file_basename
 
-    if [[ $dotfile_path -ef $symbolic_link_destination_path ]]; then
+    if [[ $filepath -ef $symbolic_link_destination_path ]]; then
       unlink "$symbolic_link_destination_path" && echo "unlink: $symbolic_link_destination_path"
     else
       warning "Skip unlinking $symbolic_link_destination_path because the file is not a symbolic link points a file in this repository."
