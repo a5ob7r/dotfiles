@@ -1,5 +1,4 @@
 gibo-bin
-light
 physlock
 simplescreenrecorder
 ttf-hackgen

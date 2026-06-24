@@ -5,6 +5,7 @@ base
 base-devel
 bash-completion
 bash-language-server
+brightnessctl
 curl
 difftastic
 dunst
