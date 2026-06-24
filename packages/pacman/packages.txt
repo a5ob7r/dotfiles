@@ -42,7 +42,6 @@ pkgconf
 profile-sync-daemon
 ripgrep
 rsync
-shellcheck
 skk-jisyo
 skktools
 socat
