@@ -1,0 +1,6 @@
+ShellCheck
+cabal-fmt
+cabal-gild
+goldplate
+hlint
+ormolu
