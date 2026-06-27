@@ -37,6 +37,7 @@
 	dshow = -c diff.external=difft show --ext-diff
 	ddiff = -c diff.external=difft diff
 	dchanges = -c diff.external=difft changes
+	unstage = restore --staged
 [core]
 	# NOTE: This is for staging/unstading files, which contains multibyte character in its path, on gina.vim.
 	quotepath = false
