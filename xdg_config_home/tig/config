@@ -13,4 +13,4 @@ color cursor black white bold
 color title-focus black white bold
 color title-blur black white bold
 
-source ~/.local.tigrc
+source -q ~/.local.tigrc
