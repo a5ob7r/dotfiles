@@ -1,6 +1,10 @@
 [user]
 	name = a5ob7r
 	email = 12132068+a5ob7r@users.noreply.github.com
+[init]
+	# Suppress a warning message about the initial branch name by 'git init'.
+	# This option will be by default since Git 3.0.
+	defaultBranch = main
 [diff]
 	tool = vimdiff
 	colorMoved = true
