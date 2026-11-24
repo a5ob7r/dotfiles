@@ -66,7 +66,7 @@ extract () {
         unzip "$1"
         ;;
       * )
-        error "$0: '$1' has an unknown filename extension to extract"
+        error "extract: '$1' has an unknown filename extension to extract"
         ;;
     esac
 
