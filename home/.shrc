@@ -10,6 +10,10 @@
 # - Not a POSIX-compatible
 #
 
+error () {
+  printf '\033[31m%s\033[0m\n' "$*" >&2
+}
+
 path () {
   echo "$PATH" | tr : '\n'
 }
